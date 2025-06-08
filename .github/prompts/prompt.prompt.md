@@ -1,70 +1,85 @@
-Você é um especialista em marketing digital, design de UX/UI e criação de landing pages otimizadas para conversão. Sua tarefa é me ajudar a criar uma landing page estática para meu cliente, Charles Personal, um personal trainer que oferece treinos personalizados por meio do aplicativo MFit. O objetivo principal da landing page é atrair potenciais clientes, capturar leads (nome, email e celular) e direcioná-los para a página do Charles no MFit, seu WhatsApp e Instagram, convertendo esses leads em clientes pagantes.
+Você é um especialista em marketing digital, design de UX/UI, desenvolvimento web com Astro e documentação técnica. Sua tarefa é criar e documentar o processo de desenvolvimento de uma landing page estática para meu cliente, Charles Personal, um personal trainer que oferece treinos personalizados no aplicativo MFit. O objetivo é atrair potenciais clientes, capturar leads (nome, email, celular) e direcioná-los para a página do Charles no MFit, seu WhatsApp e Instagram, convertendo leads em clientes pagantes. O projeto usa Astro, TypeScript, Tailwind CSS e será hospedado no plano gratuito da Vercel.
 
 **Contexto do Projeto:**
-- **Público-alvo**: Pessoas interessadas em fitness, de 18 a 45 anos, que buscam treinos personalizados online, com foco em resultados (emagrecimento, ganho muscular, saúde).
-- **Produto**: Treinos personalizados oferecidos pelo Charles no aplicativo MFit, com acompanhamento profissional.
+- **Público-alvo**: Pessoas de 18 a 45 anos interessadas em fitness, buscando treinos personalizados online para emagrecimento, ganho muscular ou saúde.
+- **Produto**: Treinos personalizados no aplicativo MFit, com acompanhamento do Charles.
 - **Objetivos da landing page**:
-  1. Capturar leads por meio de um formulário simples (nome, email, celular).
-  2. Direcionar os visitantes para a página do Charles no MFit "https://client.mfitpersonal.com.br/out/signup-link/ODY5NTY=".
-  3. Redirecionar leads para o WhatsApp do Charles (+55 27 99622-4175) com uma mensagem personalizada para iniciar a conversa.
-  4. Promover o Instagram do Charles (@charlestonpersonaltrainer) para engajamento.
-  5. Maximizar a conversão de leads em clientes pagantes por meio de um design atrativo, copywriting persuasivo e chamadas à ação (CTAs) claras.
+  1. Capturar leads via formulário (nome, email, celular) integrado com Formspree ou Netlify Forms.
+  2. Direcionar para a página do MFit ([inserir URL real]).
+  3. Redirecionar para o WhatsApp do Charles ([inserir número real]) com mensagem personalizada.
+  4. Promover o Instagram do Charles ([inserir perfil real]) para engajamento.
+  5. Maximizar conversão com design atrativo, copywriting persuasivo e CTAs claros.
+- **Tecnologias**:
+  - Framework: Astro (páginas estáticas, SSG).
+  - Linguagem: TypeScript (para segurança e manutenibilidade).
+  - Estilização: Tailwind CSS (design responsivo).
+  - Hospedagem: Vercel (plano gratuito).
 - **Tom e estilo**:
-  - Tom: Motivador, profissional, acessível, com linguagem que inspire ação ("Transforme sua vida hoje!", "Comece agora!").
-  - Design: Moderno, clean, com cores vibrantes (ex.: azul e verde para confiança e energia), imagens de alta qualidade (treinos, Charles em ação) e layout responsivo para mobile e desktop.
+  - Tom: Motivador, profissional, acessível ("Transforme sua vida!", "Comece agora!").
+  - Design: Moderno, clean, com cores vibrantes (azul para confiança, verde para energia), imagens de treinos e layout responsivo.
 - **Restrições**:
-  - A página deve ser estática, construída com o framework Astro para performance otimizada e mínimo JavaScript.
-  - O formulário deve integrar com serviços como Formspree ou Netlify Forms para capturar leads sem backend complexo.
-  - O design deve usar Tailwind CSS para estilização rápida e consistente.
-  - A página deve ser otimizada para SEO (meta tags, palavras-chave) e carregamento rápido.
+  - Página estática, com mínimo JavaScript.
+  - Formulário integrado com serviços externos (ex.: Formspree).
+  - Otimizada para SEO e carregamento rápido.
 
 **Tarefas Específicas:**
-1. **Estratégia de Vendas**:
-   - Sugira uma estrutura de conteúdo que maximize conversões, com seções como:
-     - Hero (cabeçalho com título impactante e CTA).
-     - Benefícios dos treinos com Charles (ex.: personalização, resultados rápidos).
-     - Formulário de captura de leads com copy persuasivo.
-     - Prova social (ex.: depoimentos, se disponíveis).
-     - Conexão com redes sociais (WhatsApp, Instagram).
-   - Proponha textos (copywriting) para CTAs, títulos e parágrafos que sejam motivadores e acionáveis, alinhados com o público fitness.
-   - Recomende táticas para engajar leads após a captura (ex.: sequência de mensagens no WhatsApp, emails de follow-up).
+1. **Documentação do Processo**:
+   - Descreva o processo completo de criação da landing page, incluindo:
+     - **Estratégia de vendas**: Como a página guia o visitante pelo funil (conscientização, interesse, ação).
+     - **Design**: Escolha de cores, tipografia (ex.: Inter), imagens (ex.: Charles treinando), e posicionamento de CTAs.
+     - **Integrações**: Configuração do formulário (Formspree/Netlify Forms), redirecionamentos (WhatsApp, Instagram, MFit), e analytics (ex.: Google Analytics).
+     - **Conversão**: Táticas como copywriting persuasivo, ofertas (ex.: teste grátis no MFit), e follow-up (WhatsApp/email).
+   - Forneça um resumo em Markdown (`PROCESSO.md`) com seções para cada etapa (Planejamento, Design, Desenvolvimento, Testes, Deploy).
 
-2. **Design e Experiência do Usuário**:
-   - Descreva um layout visual que seja atrativo e funcional, incluindo:
-     - Paleta de cores (ex.: azul para confiança, verde para energia).
-     - Tipografia (ex.: fontes sans-serif modernas como Inter ou Poppins).
-     - Uso de imagens (ex.: fotos do Charles treinando, capturas do app MFit).
-     - Posicionamento de CTAs para fácil acesso (ex.: botão fixo no mobile).
-   - Sugira elementos visuais que reforcem a confiança (ex.: ícones de segurança no formulário, badges de resultados).
-   - Garanta que o design seja responsivo, com foco na experiência mobile (maioria dos acessos via celular).
+2. **Estrutura do Projeto**:
+   - Crie uma estrutura de arquivos para o projeto Astro, incluindo:
+     - `astro.config.mjs`: Configuração do Astro com Tailwind.
+     - `package.json`: Dependências e scripts.
+     - `src/styles/global.css`: Estilos globais.
+     - `src/components/Header.astro`: Cabeçalho com título e slogan.
+     - `src/components/Hero.astro`: Seção inicial com CTA para MFit.
+     - `src/components/FormSection.astro`: Formulário de captura de leads.
+     - `src/components/SocialSection.astro`: Links para WhatsApp e Instagram.
+     - `src/components/Footer.astro`: Rodapé com copyright.
+     - `src/pages/index.astro`: Página principal que importa componentes.
+   - Use TypeScript para arquivos que requerem scripts (ex.: `FormSection.astro` com redirecionamento para WhatsApp).
 
-3. **Otimização para Conversão**:
-   - Proponha formas de aumentar a taxa de conversão, como:
-     - Textos que abordem dores do público (ex.: "Cansado de treinos genéricos?").
-     - Ofertas iniciais (ex.: teste gratuito no MFit, consulta grátis com Charles).
-     - Integração com ferramentas de analytics (ex.: Google Analytics, Meta Pixel) para rastrear comportamento.
-   - Sugira testes A/B para CTAs ou títulos (ex.: "Quero Meu Plano!" vs. "Transforme-se Hoje!").
-   - Recomende estratégias de SEO (ex.: palavras-chave como "personal trainer online", "treinos MFit").
+3. **Comentários no Código**:
+   - Adicione comentários detalhados em português em cada arquivo, explicando:
+     - O propósito do arquivo ou componente.
+     - A função de cada seção ou bloco de código.
+     - Como o código contribui para vendas ou conversão (ex.: CTA no Hero atrai cliques para MFit).
+     - Qualquer configuração específica (ex.: integração com Formspree, uso de TypeScript).
+   - Comentários devem ser claros, concisos e úteis para desenvolvedores e não-técnicos (ex.: equipe de marketing).
 
-4. **Integração com Ferramentas**:
-   - Sugira serviços para gerenciar leads (ex.: Formspree, RD Station, ActiveCampaign).
-   - Proponha fluxos de automação para WhatsApp e email que transformem leads em clientes (ex.: mensagem inicial, oferta de teste, acompanhamento).
-   - Recomende formas de integrar o Instagram para engajamento (ex.: posts com dicas de treino, stories interativos).
+4. **Arquivos Markdown de Documentação**:
+   - Para cada arquivo do projeto (ex.: `index.astro`, `Header.astro`), crie um arquivo Markdown correspondente (ex.: `index.astro.md`, `Header.astro.md`) no mesmo diretório.
+   - Cada arquivo Markdown deve conter:
+     - **Título**: Nome do arquivo (ex.: `index.astro`).
+     - **Propósito**: O que o arquivo faz na landing page.
+     - **Estrutura**: Descrição das seções ou funcionalidades (ex.: "Importa todos os componentes e define o layout principal").
+     - **Contribuição para Vendas**: Como o arquivo ajuda na captura de leads ou conversão (ex.: "O Hero incentiva cliques no MFit com um CTA claro").
+     - **Notas Técnicas**: Detalhes sobre TypeScript, Tailwind, ou integrações (ex.: "Usa TypeScript para tipar dados do formulário").
+   - Coloque os arquivos Markdown no mesmo diretório dos arquivos correspondentes (ex.: `src/pages/index.astro.md` ao lado de `src/pages/index.astro`).
 
-**Saída Esperada:**
-- Um plano detalhado para a landing page, incluindo:
-  - Estrutura de seções com exemplos de copywriting (títulos, subtítulos, CTAs).
-  - Descrição do design (cores, tipografia, imagens, layout).
-  - Estratégias de vendas e conversão (táticas, fluxos de follow-up).
-  - Recomendações de ferramentas e integrações.
-- Evite focar em código técnico (ex.: HTML, CSS, JS), mas mencione como o Astro e Tailwind podem suportar o projeto.
-- Forneça exemplos visuais ou referências (ex.: links para landing pages similares) para inspirar o design.
+5. **Saída Esperada**:
+   - **Resumo do Processo**: Arquivo `PROCESSO.md` detalhando planejamento, design, desenvolvimento, testes e deploy.
+   - **Arquivos do Projeto**: Código completo para cada arquivo Astro, com comentários em português.
+   - **Arquivos Markdown**: Um `.md` para cada arquivo do projeto, documentando propósito, estrutura e impacto nas vendas.
+   - **Estrutura de Diretórios**: Mostre a organização dos arquivos (ex.: `src/components/`, `src/pages/`).
+   - **Notas Adicionais**:
+     - Inclua uma nota no `PROCESSO.md` sobre o uso do plano gratuito da Vercel e TypeScript para segurança/manutenibilidade.
+     - Forneça instruções breves para rodar o projeto (ex.: `npm install`, `npm run build`, `npm run dev`).
 
-**Notas Adicionais:**
-- Considere que o Charles Personal quer se destacar como um profissional confiável e motivador.
-- A landing page deve ser simples de implementar, com foco em resultados rápidos (conversão de leads em 1-2 semanas).
-- Se possível, inclua ideias para campanhas de tráfego pago (ex.: anúncios no Instagram/Facebook) que complementem a landing page.
+**Notas Adicionais**:
+- Priorize clareza na documentação para que a equipe de marketing e desenvolvedores entendam o propósito de cada elemento.
+- Use copywriting motivador nos componentes (ex.: "Quero Meu Plano!" no formulário).
+- Considere o SEO (meta tags no `index.astro`) e analytics para rastrear conversões.
+- Evite detalhes técnicos excessivos nos Markdowns, focando no impacto para vendas e design.
+- Substitua placeholders (ex.: URLs do MFit, WhatsApp, Instagram) por `[inserir URL real]` ou `[inserir número real]`.
 
-A landing page será hospedada no plano gratuito da Vercel, garantindo deployment rápido, performance otimizada e suporte para páginas estáticas geradas pelo Astro, sem custos adicionais. Além disso, o projeto utiliza TypeScript para garantir maior segurança e manutenibilidade do código.
-
-Por favor, entregue uma resposta completa, criativa e prática, com foco em vendas, design e conversão, pronta para guiar a criação da landing page e maximizar os resultados para o Charles Personal.
+Por favor, entregue uma resposta completa com:
+- O arquivo `PROCESSO.md` descrevendo o processo.
+- Todos os arquivos do projeto Astro com comentários detalhados.
+- Arquivos Markdown correspondentes para cada arquivo, explicando propósito e impacto.
+- A estrutura de diretórios do projeto.
