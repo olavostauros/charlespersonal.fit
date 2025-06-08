@@ -65,6 +65,6 @@ Você é um especialista em marketing digital, design de UX/UI e criação de la
 - A landing page deve ser simples de implementar, com foco em resultados rápidos (conversão de leads em 1-2 semanas).
 - Se possível, inclua ideias para campanhas de tráfego pago (ex.: anúncios no Instagram/Facebook) que complementem a landing page.
 
-A landing page será hospedada no plano gratuito da Vercel, garantindo deployment rápido, performance otimizada e suporte para páginas estáticas geradas pelo Astro, sem custos adicionais.
+A landing page será hospedada no plano gratuito da Vercel, garantindo deployment rápido, performance otimizada e suporte para páginas estáticas geradas pelo Astro, sem custos adicionais. Além disso, o projeto utiliza TypeScript para garantir maior segurança e manutenibilidade do código.
 
 Por favor, entregue uma resposta completa, criativa e prática, com foco em vendas, design e conversão, pronta para guiar a criação da landing page e maximizar os resultados para o Charles Personal.
