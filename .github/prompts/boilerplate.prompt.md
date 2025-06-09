@@ -2,7 +2,7 @@
 
 ## 📋 Visão Geral do Projeto
 
-Este documento define a estrutura base (boilerplate) para a landing page do Charles Personal, um personal trainer que oferece treinos personalizados no aplicativo MFit. O projeto utiliza **Astro**, **TypeScript** e **Tailwind CSS** para criar uma página estática otimizada para conversão de leads.
+Este documento define a estrutura base (boilerplate) para a landing page do Charles Personal, um personal trainer que oferece treinos personalizados no aplicativo MFit. O projeto utiliza **Astro** e **CSS puro** para criar uma página estática otimizada para conversão de leads.
 
 ## 🎯 Objetivos da Landing Page
 
@@ -51,22 +51,18 @@ charlespersonal.fit/
 │   │   ├── obrigado.astro              # Página de agradecimento (pós-lead)
 │   │   └── obrigado.astro.md           # Documentação da página de agradecimento
 │   │
-│   ├── 📁 styles/                      # Estilos CSS
-│   │   ├── global.css                  # Estilos globais + Tailwind
-│   │   └── global.css.md               # Documentação dos estilos
-│   │
-│   └── 📁 types/                       # Tipos TypeScript
-│       ├── form.ts                     # Tipos para formulários
-│       └── form.ts.md                  # Documentação dos tipos
+│   └── 📁 styles/                      # Estilos CSS
+│       ├── global.css                  # Estilos globais + CSS custom
+│       ├── global.css.md               # Documentação dos estilos
+│       ├── components.css              # Estilos específicos de componentes
+│       └── utilities.css               # Classes utilitárias personalizadas
 │
 ├── 📁 .github/                         # Configurações GitHub
 │   └── 📁 prompts/                     # Prompts do projeto
-│       └── prompt.prompt.md            # Prompt principal do projeto
+│       └── boilerplate.prompt.md       # Este arquivo (estrutura base)
 │
 ├── 📄 astro.config.mjs                 # Configuração do Astro
 ├── 📄 package.json                     # Dependências e scripts
-├── 📄 tsconfig.json                    # Configuração TypeScript
-├── 📄 tailwind.config.mjs              # Configuração Tailwind CSS
 ├── 📄 README.md                        # Documentação do projeto
 ├── 📄 PROCESSO.md                      # Processo de desenvolvimento
 ├── 📄 BOILERPLATE.md                   # Este arquivo (estrutura base)
@@ -79,10 +75,10 @@ charlespersonal.fit/
 ```json
 {
   "dependencies": {
-    "astro": "^5.9.1",
-    "@astrojs/tailwind": "^5.1.2",
-    "@astrojs/typescript": "^5.0.0",
-    "tailwindcss": "^3.4.0"
+    "astro": "^5.9.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.0"
   }
 }
 ```
@@ -92,29 +88,12 @@ charlespersonal.fit/
 #### `astro.config.mjs`
 ```javascript
 import { defineConfig } from 'astro/config';
-import tailwind from '@astrojs/tailwind';
 
 export default defineConfig({
-  integrations: [tailwind()],
   site: 'https://charlespersonal.fit',
-  output: 'static'
+  output: 'static',
+  compressHTML: true
 });
-```
-
-#### `tailwind.config.mjs`
-```javascript
-export default {
-  content: ['./src/**/*.{astro,html,js,jsx,ts,tsx}'],
-  theme: {
-    extend: {
-      colors: {
-        primary: '#3B82F6',    // Azul confiança
-        secondary: '#10B981',  // Verde energia
-        accent: '#F59E0B'      // Laranja ação
-      }
-    }
-  }
-}
 ```
 
 ## 📱 Componentes Essenciais
@@ -123,56 +102,93 @@ export default {
 - **Propósito**: Navegação e identidade visual
 - **Elementos**: Logo, menu, CTA para WhatsApp
 - **Responsivo**: Menu hambúrguer no mobile
+- **Estilos**: CSS Grid/Flexbox puro
 
 ### 2. Hero.astro
 - **Propósito**: Primeira impressão e CTA principal
 - **Elementos**: Foto do Charles, headline, CTA para MFit
 - **Estratégia**: Capturar atenção em 3 segundos
+- **Estilos**: CSS Grid para layout responsivo
 
 ### 3. About.astro
 - **Propósito**: Credibilidade e conexão emocional
 - **Elementos**: História do Charles, certificações, resultados
 - **Estratégia**: Construir confiança
+- **Estilos**: Flexbox para cards
 
 ### 4. Services.astro
 - **Propósito**: Demonstrar valor dos treinos
 - **Elementos**: Tipos de treino, benefícios, diferenciais
 - **Estratégia**: Mostrar soluções para dores do cliente
+- **Estilos**: CSS Grid para layout de serviços
 
 ### 5. FormSection.astro
 - **Propósito**: Captura de leads
 - **Elementos**: Formulário (nome, email, celular), oferta
 - **Integração**: Formspree ou Netlify Forms
 - **Estratégia**: Converter visitantes em leads
+- **Estilos**: Form styling com CSS puro
 
 ### 6. Testimonials.astro
 - **Propósito**: Prova social
 - **Elementos**: Depoimentos reais, fotos, resultados
 - **Estratégia**: Reduzir objeções
+- **Estilos**: Carousel com CSS animations
 
 ## 🎨 Design System
 
-### Paleta de Cores
-- **Primária**: #3B82F6 (Azul - Confiança, Profissionalismo)
-- **Secundária**: #10B981 (Verde - Energia, Saúde, Sucesso)
-- **Accent**: #F59E0B (Laranja - Urgência, Call-to-Action)
-- **Neutros**: #F9FAFB, #6B7280, #111827
+### Paleta de Cores (CSS Custom Properties)
+```css
+:root {
+  --color-primary: #3B82F6;     /* Azul - Confiança, Profissionalismo */
+  --color-secondary: #10B981;   /* Verde - Energia, Saúde, Sucesso */
+  --color-accent: #F59E0B;      /* Laranja - Urgência, Call-to-Action */
+  --color-neutral-50: #F9FAFB;
+  --color-neutral-500: #6B7280;
+  --color-neutral-900: #111827;
+  --color-white: #FFFFFF;
+}
+```
 
 ### Tipografia
-- **Principal**: Inter (Google Fonts)
-- **Títulos**: font-bold, text-4xl/text-2xl
-- **Corpo**: font-normal, text-lg/text-base
-- **CTAs**: font-semibold, text-xl
+```css
+:root {
+  --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-4xl: 2.25rem;
+  --font-weight-normal: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}
+```
 
 ### Espaçamentos
-- **Seções**: py-16 (desktop), py-12 (mobile)
-- **Containers**: max-w-6xl mx-auto px-4
-- **Elementos**: gap-8, space-y-6
+```css
+:root {
+  --spacing-4: 1rem;
+  --spacing-6: 1.5rem;
+  --spacing-8: 2rem;
+  --spacing-12: 3rem;
+  --spacing-16: 4rem;
+  --container-max-width: 72rem;
+}
+```
+
+### Componentes CSS
+- **Buttons**: Classes `.btn`, `.btn-primary`, `.btn-secondary`
+- **Cards**: Classes `.card`, `.card-shadow`
+- **Container**: Classes `.container`, `.section`
+- **Grid**: Classes `.grid-2`, `.grid-3`, `.grid-auto`
 
 ## 🔗 Integrações Essenciais
 
-### 1. Formulário de Leads
-```typescript
+### 1. Formulário de Leads (JavaScript Vanilla)
+```javascript
 interface LeadForm {
   nome: string;
   email: string;
@@ -217,6 +233,35 @@ interface LeadForm {
 }
 ```
 
+## 🎯 Arquitetura CSS
+
+### Metodologia
+- **BEM**: Block Element Modifier para nomenclatura
+- **CSS Custom Properties**: Para design tokens
+- **Mobile First**: Abordagem responsiva
+- **Progressive Enhancement**: Funcionalidade básica primeiro
+
+### Estrutura de Estilos
+```css
+/* global.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+/* Reset & Base */
+/* Design Tokens */
+/* Typography */
+/* Layout */
+
+/* components.css */
+/* Button Components */
+/* Card Components */
+/* Form Components */
+
+/* utilities.css */
+/* Spacing Utilities */
+/* Display Utilities */
+/* Responsive Utilities */
+```
+
 ## 📊 Métricas de Sucesso
 
 ### KPIs Principais
@@ -232,13 +277,15 @@ interface LeadForm {
 
 ## 📝 Próximos Passos
 
-1. **Configurar dependências**: Instalar Tailwind CSS
-2. **Criar componentes base**: Header, Hero, FormSection
-3. **Implementar formulário**: Integração com Formspree
-4. **Adicionar conteúdo**: Textos, imagens, depoimentos
-5. **Otimizar SEO**: Meta tags, structured data
-6. **Testar conversões**: A/B testing de CTAs
-7. **Deploy**: Configurar Vercel
+1. **Configurar projeto**: Inicializar Astro puro
+2. **Criar sistema de design**: CSS custom properties
+3. **Desenvolver componentes**: Header, Hero, FormSection
+4. **Implementar formulário**: Integração com Formspree
+5. **Adicionar conteúdo**: Textos, imagens, depoimentos
+6. **Otimizar performance**: CSS minification, image optimization
+7. **Otimizar SEO**: Meta tags, structured data
+8. **Testar conversões**: A/B testing de CTAs
+9. **Deploy**: Configurar Vercel
 
 ---
 
@@ -251,4 +298,4 @@ interface LeadForm {
 
 ---
 
-*Este boilerplate serve como base para o desenvolvimento da landing page. Cada arquivo .md específico conterá detalhes técnicos e de implementação para sua respectiva parte do projeto.*
+*Este boilerplate serve como base para o desenvolvimento da landing page usando Astro com CSS puro. Cada arquivo .md específico conterá detalhes técnicos e de implementação para sua respectiva parte do projeto.*
