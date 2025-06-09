@@ -17,6 +17,10 @@
   --color-accent: #F59E0B;         /* Laranja - Urgência, Call-to-Action */
   --color-accent-light: #FBBF24;   /* Laranja claro para hover */
   --color-accent-dark: #D97706;    /* Laranja escuro para pressed */
+  
+  --color-error: #EF4444;          /* Vermelho - Erros, Validações */
+  --color-error-light: #F87171;    /* Vermelho claro */
+  --color-error-dark: #DC2626;     /* Vermelho escuro */
 
   /* 🎨 CORES NEUTRAS */
   --color-white: #FFFFFF;
