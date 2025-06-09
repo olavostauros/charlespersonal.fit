@@ -1,1 +1,41 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Brand Colors */
+    --color-primary: 59 130 246;        /* #3B82F6 (blue) */
+    --color-secondary: 16 185 129;      /* #10B981 (green) */
+    --color-accent: 245 158 11;         /* #F59E0B (orange) */
+    
+    /* Neutral Colors */
+    --color-gray-50: 249 250 251;       /* #F9FAFB */
+    --color-gray-600: 107 114 128;      /* #6B7280 */
+    --color-gray-900: 17 24 39;         /* #111827 */
+    
+    /* Typography */
+    --font-family-primary: 'Inter', sans-serif;
+    
+    /* Spacing */
+    --spacing-section: 4rem;            /* 64px */
+    --spacing-section-mobile: 3rem;     /* 48px */
+    
+    /* Container */
+    --container-max-width: 72rem;       /* 1152px */
+  }
+  
+  @media (max-width: 768px) {
+    :root {
+      --spacing-section: var(--spacing-section-mobile);
+    }
+  }
+}
+
+/* Apply global styles */
+@layer base {
+  body {
+    font-family: var(--font-family-primary);
+    color: rgb(var(--color-gray-900));
+  }
+}
