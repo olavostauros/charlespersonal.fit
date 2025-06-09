@@ -1,0 +1,261 @@
+---
+// Página de agradecimento pós-lead capture
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Obrigado! - Charles Personal | Sua Transformação Começa Agora"
+  description="Parabéns! Você deu o primeiro passo para transformar seu corpo. Confira os próximos passos para começar seus treinos personalizados com Charles Personal no MFit."
+  keywords="obrigado, transformação, treinos personalizados, Charles Personal, MFit, próximos passos"
+>
+  <Header slot="header" />
+  
+  <!-- Thank You Hero -->
+  <section class="section" style="min-height: 100vh; display: flex; align-items: center; padding-top: 120px;">
+    <div class="container">
+      <div class="max-w-3xl mx-auto text-center">
+        <!-- Success Icon -->
+        <div class="thank-you__icon mb-8">
+          <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-secondary mx-auto">
+            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+            <polyline points="22,4 12,14.01 9,11.01"></polyline>
+          </svg>
+        </div>
+        
+        <h1 class="text-4xl font-bold text-gray-900 mb-6">
+          🎉 Parabéns! Sua Jornada de Transformação Começou!
+        </h1>
+        
+        <p class="text-xl text-gray-600 mb-8 leading-relaxed">
+          Obrigado por confiar no meu trabalho! Em breve você receberá um <strong>email</strong> com todas as informações 
+          para começar seus treinos personalizados no MFit.
+        </p>
+        
+        <!-- Next Steps -->
+        <div class="thank-you__steps mb-12">
+          <h2 class="text-2xl font-bold text-gray-900 mb-8">Próximos Passos:</h2>
+          
+          <div class="grid grid-auto gap-6 max-w-4xl mx-auto">
+            <!-- Step 1 -->
+            <div class="card card-shadow text-center">
+              <div class="step-number">1</div>
+              <h3 class="text-lg font-bold text-gray-900 mb-3">Verifique seu Email</h3>
+              <p class="text-gray-600 mb-4">
+                Você receberá um email com instruções detalhadas e acesso aos treinos.
+              </p>
+              <div class="text-sm text-primary font-semibold">
+                📧 Chegará em até 5 minutos
+              </div>
+            </div>
+            
+            <!-- Step 2 -->
+            <div class="card card-shadow text-center">
+              <div class="step-number">2</div>
+              <h3 class="text-lg font-bold text-gray-900 mb-3">Baixe o MFit</h3>
+              <p class="text-gray-600 mb-4">
+                Baixe o aplicativo MFit onde você terá acesso aos seus treinos personalizados.
+              </p>
+              <a 
+                href="https://mfit.com.br/download" 
+                class="btn btn-primary"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-cta="mfit"
+              >
+                📱 Baixar MFit
+              </a>
+            </div>
+            
+            <!-- Step 3 -->
+            <div class="card card-shadow text-center">
+              <div class="step-number">3</div>
+              <h3 class="text-lg font-bold text-gray-900 mb-3">Salve meu WhatsApp</h3>
+              <p class="text-gray-600 mb-4">
+                Adicione meu número para receber dicas e acompanhamento personalizado.
+              </p>
+              <a 
+                href="https://wa.me/5527996224715?text=Oi%20Charles!%20Acabei%20de%20me%20cadastrar%20e%20quero%20começar%20minha%20transformação!" 
+                class="btn btn-secondary"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-cta="whatsapp"
+              >
+                💬 Salvar Contato
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Social Media CTA -->
+        <div class="thank-you__social mb-12">
+          <h3 class="text-xl font-bold text-gray-900 mb-6">
+            Enquanto isso, me siga no Instagram! 📸
+          </h3>
+          <p class="text-gray-600 mb-6">
+            Receba dicas diárias de treino, motivação e veja os resultados dos meus clientes.
+          </p>
+          <a 
+            href="https://instagram.com/charlestonpersonaltrainer" 
+            class="btn btn-outline btn-lg"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-cta="instagram"
+          >
+            <svg class="mr-2" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+              <path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+              <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+            </svg>
+            Seguir @charlestonpersonaltrainer
+          </a>
+        </div>
+        
+        <!-- Expectation Setting -->
+        <div class="thank-you__expectation">
+          <div class="bg-gray-50 rounded-xl p-8">
+            <h3 class="text-lg font-bold text-gray-900 mb-4">
+              ⏰ O que esperar agora?
+            </h3>
+            <div class="text-left max-w-2xl mx-auto">
+              <ul class="space-y-3 text-gray-700">
+                <li class="flex items-start">
+                  <span class="text-primary mr-3 mt-1">•</span>
+                  <span><strong>Em 5 minutos:</strong> Email com instruções chegará na sua caixa de entrada</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary mr-3 mt-1">•</span>
+                  <span><strong>Em 24 horas:</strong> Entregarei seus primeiros treinos personalizados no MFit</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary mr-3 mt-1">•</span>
+                  <span><strong>Em 7 dias:</strong> Primeira análise da sua evolução e ajustes nos treinos</span>
+                </li>
+                <li class="flex items-start">
+                  <span class="text-primary mr-3 mt-1">•</span>
+                  <span><strong>Em 30 dias:</strong> Primeiros resultados visíveis da sua transformação</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Back to Home -->
+        <div class="thank-you__home mt-12">
+          <p class="text-gray-600 mb-4">Quer conhecer mais sobre meu trabalho?</p>
+          <a href="/" class="btn btn-outline">
+            ← Voltar para o Início
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <Footer slot="footer" />
+</Layout>
+
+<style>
+  .thank-you__icon {
+    animation: successPulse 2s ease-in-out infinite;
+  }
+  
+  @keyframes successPulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  
+  .step-number {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+    color: var(--color-white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    margin: 0 auto var(--spacing-4);
+  }
+  
+  .max-w-3xl {
+    max-width: 48rem;
+  }
+  
+  .max-w-4xl {
+    max-width: 56rem;
+  }
+  
+  .max-w-2xl {
+    max-width: 42rem;
+  }
+  
+  .space-y-3 > * + * {
+    margin-top: var(--spacing-3);
+  }
+  
+  .text-left {
+    text-align: left;
+  }
+  
+  .mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>
+
+<script>
+  // Conversion tracking for thank you page
+  document.addEventListener('DOMContentLoaded', function() {
+    // Track page view conversion
+    if (typeof (globalThis as any).gtag !== 'undefined') {
+      (globalThis as any).gtag('event', 'conversion', {
+        event_category: 'Lead',
+        event_label: 'Thank You Page View',
+        value: 1
+      });
+    }
+    
+    // Track specific CTA clicks with enhanced data
+    document.querySelectorAll('[data-cta]').forEach(button => {
+      button.addEventListener('click', function() {
+        const ctaType = this.getAttribute('data-cta');
+        
+        if (typeof (globalThis as any).gtag !== 'undefined') {
+          (globalThis as any).gtag('event', 'cta_click_thankyou', {
+            event_category: 'Thank You CTA',
+            event_label: ctaType,
+            page_location: window.location.href
+          });
+        }
+        
+        console.log(`Thank You CTA Clicked: ${ctaType}`);
+      });
+    });
+    
+    // Auto-focus on email check reminder after 30 seconds
+    setTimeout(() => {
+      const emailStep = document.querySelector('.step-number:first-child')?.closest('.card') as HTMLElement;
+      if (emailStep) {
+        emailStep.style.border = '2px solid var(--color-accent)';
+        emailStep.style.animation = 'glow 2s ease-in-out 3';
+      }
+    }, 30000);
+  });
+</script>
+
+<style>
+  @keyframes glow {
+    0%, 100% {
+      box-shadow: 0 0 5px var(--color-accent);
+    }
+    50% {
+      box-shadow: 0 0 20px var(--color-accent);
+    }
+  }
+</style>

@@ -1,0 +1,469 @@
+---
+// Hero.astro - Seção principal da landing page
+---
+
+<section class="hero section" id="hero">
+  <div class="container">
+    <div class="hero__content grid grid-2">
+      <!-- Conteúdo de Texto -->
+      <div class="hero__text">
+        <div class="hero__badge">
+          <span class="hero__badge-icon">🏆</span>
+          Personal Trainer Certificado
+        </div>
+        
+        <h1 class="hero__title">
+          Transforme Seu Corpo em 
+          <span class="hero__highlight">90 Dias</span>
+        </h1>
+        
+        <p class="hero__subtitle">
+          Treinos personalizados no <strong>MFit</strong> para emagrecimento, ganho muscular e saúde. 
+          Acompanhamento profissional com resultados comprovados.
+        </p>
+        
+        <div class="hero__benefits">
+          <div class="hero__benefit">
+            <svg class="hero__benefit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Treinos 100% personalizados</span>
+          </div>
+          
+          <div class="hero__benefit">
+            <svg class="hero__benefit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Acompanhamento diário via MFit</span>
+          </div>
+          
+          <div class="hero__benefit">
+            <svg class="hero__benefit-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Resultados em 30 dias</span>
+          </div>
+        </div>
+        
+        <div class="hero__ctas">
+          <a 
+            href="https://mfit.com.br/charles" 
+            class="btn btn-primary btn-lg hero__cta-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-cta="mfit"
+          >
+            <svg class="hero__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+              <path d="m2 17 10 5 10-5"></path>
+              <path d="m2 12 10 5 10-5"></path>
+            </svg>
+            Começar Grátis no MFit
+          </a>
+          
+          <a 
+            href="https://wa.me/5527996224715?text=Oi%20Charles!%20Quero%20saber%20mais%20sobre%20seus%20treinos%20personalizados!" 
+            class="btn btn-outline btn-lg hero__cta-secondary"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-cta="whatsapp"
+          >
+            <svg class="hero__icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.512z"/>
+            </svg>
+            Falar no WhatsApp
+          </a>
+        </div>
+        
+        <div class="hero__social-proof">
+          <p class="hero__social-text">
+            <strong>+200 clientes</strong> já transformaram seus corpos
+          </p>
+          <div class="hero__rating">
+            <div class="hero__stars" aria-label="5 estrelas de avaliação">
+              <span class="hero__star" aria-hidden="true">★</span>
+              <span class="hero__star" aria-hidden="true">★</span>
+              <span class="hero__star" aria-hidden="true">★</span>
+              <span class="hero__star" aria-hidden="true">★</span>
+              <span class="hero__star" aria-hidden="true">★</span>
+            </div>
+            <span class="hero__rating-text">4.9/5 no Google</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Imagem do Charles -->
+      <div class="hero__image">
+        <div class="hero__image-container">
+          <img 
+            src="/images/charles-hero.jpg" 
+            alt="Charles Personal Trainer sorrindo em uma academia, demonstrando confiança e profissionalismo"
+            class="hero__img"
+            width="600"
+            height="800"
+            loading="eager"
+          />
+          
+          <!-- Badge de Credencial -->
+          <div class="hero__credential">
+            <div class="hero__credential-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                <path d="m2 17 10 5 10-5"></path>
+                <path d="m2 12 10 5 10-5"></path>
+              </svg>
+            </div>
+            <div class="hero__credential-text">
+              <span class="hero__credential-title">CREF Ativo</span>
+              <span class="hero__credential-subtitle">Personal Certificado</span>
+            </div>
+          </div>
+          
+          <!-- Badge MFit -->
+          <div class="hero__mfit-badge">
+            <span class="hero__mfit-text">Disponível no</span>
+            <strong class="hero__mfit-brand">MFit</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Scroll Indicator -->
+  <div class="hero__scroll">
+    <a href="#sobre" class="hero__scroll-link" aria-label="Rolar para a próxima seção">
+      <span class="hero__scroll-text">Role para baixo</span>
+      <svg class="hero__scroll-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </a>
+  </div>
+</section>
+
+<style>
+  /* ==========================================================================
+     HERO SECTION STYLES
+     ========================================================================== */
+  
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+    padding-top: 80px; /* Header height compensation */
+  }
+  
+  .hero__content {
+    align-items: center;
+    gap: var(--spacing-12);
+  }
+  
+  /* Text Content */
+  .hero__text {
+    order: 2;
+  }
+  
+  .hero__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    padding: var(--spacing-2) var(--spacing-4);
+    border-radius: var(--radius-full);
+    margin-bottom: var(--spacing-6);
+  }
+  
+  .hero__badge-icon {
+    font-size: var(--font-size-base);
+  }
+  
+  .hero__title {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    color: var(--color-gray-900);
+    margin-bottom: var(--spacing-6);
+  }
+  
+  .hero__highlight {
+    color: var(--color-primary);
+    position: relative;
+  }
+  
+  .hero__highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background-color: var(--color-accent);
+    border-radius: var(--radius-sm);
+  }
+  
+  .hero__subtitle {
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-gray-600);
+    margin-bottom: var(--spacing-8);
+  }
+  
+  .hero__benefits {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+    margin-bottom: var(--spacing-8);
+  }
+  
+  .hero__benefit {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+    font-size: var(--font-size-base);
+    color: var(--color-gray-700);
+  }
+  
+  .hero__benefit-icon {
+    flex-shrink: 0;
+    color: var(--color-secondary);
+  }
+  
+  .hero__ctas {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-4);
+    margin-bottom: var(--spacing-8);
+  }
+  
+  .hero__icon {
+    margin-right: var(--spacing-2);
+    flex-shrink: 0;
+  }
+  
+  .hero__social-proof {
+    padding-top: var(--spacing-6);
+    border-top: 1px solid var(--color-gray-200);
+  }
+  
+  .hero__social-text {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-600);
+    margin-bottom: var(--spacing-2);
+  }
+  
+  .hero__rating {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+  }
+  
+  .hero__stars {
+    display: flex;
+    gap: var(--spacing-1);
+  }
+  
+  .hero__star {
+    color: var(--color-accent);
+    font-size: var(--font-size-lg);
+  }
+  
+  .hero__rating-text {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-600);
+    font-weight: var(--font-weight-semibold);
+  }
+  
+  /* Image Content */
+  .hero__image {
+    order: 1;
+    position: relative;
+  }
+  
+  .hero__image-container {
+    position: relative;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+  }
+  
+  .hero__img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    aspect-ratio: 3/4;
+  }
+  
+  .hero__credential {
+    position: absolute;
+    top: var(--spacing-6);
+    left: var(--spacing-6);
+    background-color: var(--color-white);
+    padding: var(--spacing-3) var(--spacing-4);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+  }
+  
+  .hero__credential-icon {
+    background-color: var(--color-secondary);
+    color: var(--color-white);
+    padding: var(--spacing-2);
+    border-radius: var(--radius-md);
+  }
+  
+  .hero__credential-text {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .hero__credential-title {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-900);
+    line-height: var(--line-height-tight);
+  }
+  
+  .hero__credential-subtitle {
+    font-size: var(--font-size-xs);
+    color: var(--color-gray-600);
+    line-height: var(--line-height-tight);
+  }
+  
+  .hero__mfit-badge {
+    position: absolute;
+    bottom: var(--spacing-6);
+    right: var(--spacing-6);
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    padding: var(--spacing-3) var(--spacing-4);
+    border-radius: var(--radius-lg);
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+  }
+  
+  .hero__mfit-text {
+    display: block;
+    font-size: var(--font-size-xs);
+    opacity: 0.9;
+    line-height: var(--line-height-tight);
+  }
+  
+  .hero__mfit-brand {
+    display: block;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+  }
+  
+  /* Scroll Indicator */
+  .hero__scroll {
+    position: absolute;
+    bottom: var(--spacing-8);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .hero__scroll-link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-2);
+    text-decoration: none;
+    color: var(--color-gray-600);
+    transition: color var(--transition-fast);
+  }
+  
+  .hero__scroll-link:hover {
+    color: var(--color-primary);
+  }
+  
+  .hero__scroll-text {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+  }
+  
+  .hero__scroll-icon {
+    animation: bounce 2s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-6px);
+    }
+    60% {
+      transform: translateY(-3px);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (min-width: 640px) {
+    .hero__ctas {
+      flex-direction: row;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .hero__title {
+      font-size: var(--font-size-4xl);
+    }
+    
+    .hero__benefits {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: var(--spacing-6);
+    }
+    
+    .hero__benefit {
+      flex: 1;
+      min-width: 200px;
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .hero {
+      padding-top: 100px;
+    }
+    
+    .hero__text {
+      order: 1;
+    }
+    
+    .hero__image {
+      order: 2;
+    }
+    
+    .hero__title {
+      font-size: 3.5rem;
+    }
+    
+    .hero__benefits {
+      flex-direction: column;
+    }
+    
+    .hero__credential {
+      top: var(--spacing-8);
+      left: var(--spacing-8);
+    }
+    
+    .hero__mfit-badge {
+      bottom: var(--spacing-8);
+      right: var(--spacing-8);
+    }
+  }
+  
+  @media (max-width: 640px) {
+    .hero__scroll {
+      display: none;
+    }
+  }
+</style>

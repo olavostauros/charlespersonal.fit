@@ -1,16 +1,224 @@
 ---
-// No imports needed for now
+// Landing page principal do Charles Personal
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Footer from '../components/Footer.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout
+  title="Charles Personal - Personal Trainer no MFit | Treinos Personalizados"
+  description="Transforme seu corpo com Charles Personal! Personal trainer especializado em emagrecimento, ganho muscular e saúde. Treinos personalizados no aplicativo MFit. Comece sua transformação hoje!"
+  keywords="personal trainer, treinos personalizados, emagrecimento, ganho muscular, fitness, academia, MFit, Charles Personal, treino online"
+>
+  <Header slot="header" />
+  
+  <!-- Hero Section -->
+  <Hero />
+  
+  <!-- About Section -->
+  <section class="section" id="sobre">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          Sobre o Charles Personal
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Conheça a história e experiência de quem vai transformar sua relação com o fitness
+        </p>
+      </div>
+      
+      <div class="grid grid-2 gap-12 items-center">
+        <div>
+          <p class="text-base text-gray-700 mb-6 leading-relaxed">
+            Com mais de 5 anos de experiência em personal training, Charles já transformou 
+            a vida de centenas de pessoas através de treinos personalizados e metodologia comprovada.
+          </p>
+          
+          <div class="grid grid-2 gap-6 mb-8">
+            <div class="card card-shadow text-center">
+              <div class="text-2xl font-bold text-primary mb-2">+200</div>
+              <div class="text-sm text-gray-600">Clientes Transformados</div>
+            </div>
+            
+            <div class="card card-shadow text-center">
+              <div class="text-2xl font-bold text-secondary mb-2">5+</div>
+              <div class="text-sm text-gray-600">Anos de Experiência</div>
+            </div>
+          </div>
+          
+          <a href="#contato" class="btn btn-primary">
+            Quero Começar Minha Transformação
+          </a>
+        </div>
+        
+        <div class="text-center">
+          <img 
+            src="/images/charles-training.jpg" 
+            alt="Charles Personal Trainer orientando um cliente durante treino"
+            class="rounded-xl shadow-lg w-full max-w-md mx-auto"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Services Section -->
+  <section class="section bg-gray-50" id="servicos">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          Serviços Disponíveis
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Treinos personalizados para cada objetivo, sempre com acompanhamento profissional
+        </p>
+      </div>
+      
+      <div class="grid grid-3 gap-8">
+        <!-- Emagrecimento -->
+        <div class="card card-shadow text-center">
+          <div class="text-4xl mb-4">🔥</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Emagrecimento</h3>
+          <p class="text-gray-600 mb-6">
+            Treinos focados em queima de gordura e definição muscular. 
+            Resultados visíveis em 30 dias.
+          </p>
+          <a href="https://wa.me/5527996224715?text=Quero%20saber%20sobre%20treinos%20de%20emagrecimento!" 
+             class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+            Saiba Mais
+          </a>
+        </div>
+        
+        <!-- Ganho Muscular -->
+        <div class="card card-shadow text-center">
+          <div class="text-4xl mb-4">💪</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Ganho Muscular</h3>
+          <p class="text-gray-600 mb-6">
+            Hipertrofia e fortalecimento muscular com treinos progressivos 
+            e acompanhamento nutricional.
+          </p>
+          <a href="https://wa.me/5527996224715?text=Quero%20saber%20sobre%20treinos%20de%20ganho%20muscular!" 
+             class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+            Saiba Mais
+          </a>
+        </div>
+        
+        <!-- Condicionamento -->
+        <div class="card card-shadow text-center">
+          <div class="text-4xl mb-4">⚡</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Condicionamento</h3>
+          <p class="text-gray-600 mb-6">
+            Melhore sua resistência, força e capacidade cardiovascular 
+            com treinos funcionais.
+          </p>
+          <a href="https://wa.me/5527996224715?text=Quero%20saber%20sobre%20treinos%20de%20condicionamento!" 
+             class="btn btn-outline" target="_blank" rel="noopener noreferrer">
+            Saiba Mais
+          </a>
+        </div>
+      </div>
+      
+      <div class="text-center mt-12">
+        <a href="https://mfit.com.br/charles" 
+           class="btn btn-primary btn-lg" 
+           target="_blank" 
+           rel="noopener noreferrer"
+           data-cta="mfit">
+          Começar Grátis no MFit
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Testimonials Section -->
+  <section class="section" id="depoimentos">
+    <div class="container">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-gray-900 mb-4">
+          Depoimentos Reais
+        </h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Veja os resultados de quem já transformou o corpo com os treinos do Charles
+        </p>
+      </div>
+      
+      <div class="grid grid-2 gap-8">
+        <div class="card card-shadow">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-4">
+              M
+            </div>
+            <div>
+              <div class="font-semibold text-gray-900">Maria Silva</div>
+              <div class="text-sm text-gray-600">Emagreceu 15kg em 4 meses</div>
+            </div>
+          </div>
+          <p class="text-gray-700 italic">
+            "Os treinos do Charles no MFit são incríveis! Perdi 15kg em 4 meses e me sinto muito mais disposta. 
+            O acompanhamento é personalizado e ele sempre ajusta os exercícios conforme minha evolução."
+          </p>
+          <div class="flex mt-4">
+            <span class="text-accent text-lg">★★★★★</span>
+          </div>
+        </div>
+        
+        <div class="card card-shadow">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white font-bold mr-4">
+              J
+            </div>
+            <div>
+              <div class="font-semibold text-gray-900">João Santos</div>
+              <div class="text-sm text-gray-600">Ganhou 8kg de massa muscular</div>
+            </div>
+          </div>
+          <p class="text-gray-700 italic">
+            "Sempre tive dificuldade para ganhar peso e massa muscular. Com os treinos do Charles consegui 
+            ganhar 8kg de massa magra em 6 meses. Recomendo para todos que querem resultados reais!"
+          </p>
+          <div class="flex mt-4">
+            <span class="text-accent text-lg">★★★★★</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contact Section -->
+  <section class="section bg-primary text-white" id="contato">
+    <div class="container text-center">
+      <h2 class="text-3xl font-bold mb-4">
+        Pronto para Transformar seu Corpo?
+      </h2>
+      <p class="text-xl mb-8 opacity-90">
+        Entre em contato e comece sua jornada de transformação hoje mesmo!
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <a 
+          href="https://mfit.com.br/charles"
+          class="btn btn-accent btn-lg"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-cta="mfit"
+        >
+          Começar Grátis no MFit
+        </a>
+        
+        <a 
+          href="https://wa.me/5527996224715?text=Oi%20Charles!%20Quero%20começar%20minha%20transformação!"
+          class="btn btn-outline btn-lg text-white border-white hover:bg-white hover:text-primary"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-cta="whatsapp"
+        >
+          Falar no WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+  
+  <Footer slot="footer" />
+</Layout>
