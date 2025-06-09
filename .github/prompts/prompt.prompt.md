@@ -5,9 +5,9 @@ Você é um especialista em marketing digital, design de UX/UI, desenvolvimento 
 - **Produto**: Treinos personalizados no aplicativo MFit, com acompanhamento do Charles.
 - **Objetivos da landing page**:
   1. Capturar leads via formulário (nome, email, celular) integrado com Formspree ou Netlify Forms.
-  2. Direcionar para a página do MFit ([inserir URL real]).
-  3. Redirecionar para o WhatsApp do Charles ([inserir número real]) com mensagem personalizada.
-  4. Promover o Instagram do Charles ([inserir perfil real]) para engajamento.
+  2. Direcionar para a página do MFit (https://client.mfitpersonal.com.br/out/signup-link/ODY5NTY=).
+  3. Redirecionar para o WhatsApp do Charles (+55 27 99622-4715) com mensagem personalizada.
+  4. Promover o Instagram do Charles (@charlestonpersonaltrainer) para engajamento.
   5. Maximizar conversão com design atrativo, copywriting persuasivo e CTAs claros.
 - **Tecnologias**:
   - Framework: Astro (páginas estáticas, SSG).
@@ -24,8 +24,7 @@ Você é um especialista em marketing digital, design de UX/UI, desenvolvimento 
 
 **Tarefas Específicas:**
 1. **Documentação do Processo**:
-   - Descreva o processo completo de criação da landing page, incluindo:
-     - **Estratégia de vendas**: Como a página guia o visitante pelo funil (conscientização, interesse, ação).
+   - Descreva o processo completo de criação da landing page, incluindo: **Estratégia de vendas**: Como a página guia o visitante pelo funil (conscientização, interesse, ação).
      - **Design**: Escolha de cores, tipografia (ex.: Inter), imagens (ex.: Charles treinando), e posicionamento de CTAs.
      - **Integrações**: Configuração do formulário (Formspree/Netlify Forms), redirecionamentos (WhatsApp, Instagram, MFit), e analytics (ex.: Google Analytics).
      - **Conversão**: Táticas como copywriting persuasivo, ofertas (ex.: teste grátis no MFit), e follow-up (WhatsApp/email).
