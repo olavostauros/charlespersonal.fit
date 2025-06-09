@@ -608,3 +608,57 @@ body {
     font-weight: var(--font-weight-semibold);
   }
 }
+
+/* ==========================================================================
+   ADDITIONAL UTILITIES FOR TESTIMONIALS
+   ========================================================================== */
+
+/* Width and height utilities */
+.w-12 { width: 3rem; }
+.w-16 { width: 4rem; }
+.h-12 { height: 3rem; }
+.h-16 { height: 4rem; }
+
+/* Object fit utilities */
+.object-cover { object-fit: cover; }
+.object-contain { object-fit: contain; }
+
+/* Border radius utilities */
+.rounded-full { border-radius: var(--radius-full); }
+.rounded-xl { border-radius: var(--radius-xl); }
+
+/* Position utilities */
+.relative { position: relative; }
+.absolute { position: absolute; }
+
+/* Overflow utilities */
+.overflow-hidden { overflow: hidden; }
+
+/* Transform utilities */
+.transform { transform: translateZ(0); }
+
+/* Background utilities */
+.bg-gray-50 { background-color: var(--color-gray-50); }
+.bg-primary { background-color: var(--color-primary); }
+.bg-secondary { background-color: var(--color-secondary); }
+.bg-white { background-color: var(--color-white); }
+
+/* Flex utilities */
+.flex-shrink-0 { flex-shrink: 0; }
+
+/* Gap utilities for grid and flex */
+.gap-1 { gap: var(--spacing-1); }
+.gap-2 { gap: var(--spacing-2); }
+.gap-3 { gap: var(--spacing-3); }
+.gap-4 { gap: var(--spacing-4); }
+.gap-6 { gap: var(--spacing-6); }
+.gap-8 { gap: var(--spacing-8); }
+
+/* Margin utilities */
+.mr-4 { margin-right: var(--spacing-4); }
+
+/* Will-change for performance */
+.will-change-transform { will-change: transform; }
+
+/* Touch action for mobile gestures */
+.touch-pan-x { touch-action: pan-x; }

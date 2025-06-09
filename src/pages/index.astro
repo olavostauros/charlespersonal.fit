@@ -4,6 +4,7 @@ import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import Services from '../components/Services.astro';
+import Testimonials from '../components/Testimonials.astro';
 import FormSection from '../components/FormSection.astro';
 import Footer from '../components/Footer.astro';
 ---
@@ -71,58 +72,7 @@ import Footer from '../components/Footer.astro';
   </section>
   
   <!-- Testimonials Section -->
-  <section class="section" id="depoimentos">
-    <div class="container">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-900 mb-4">
-          Depoimentos Reais
-        </h2>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          Veja os resultados de quem já transformou o corpo com os treinos do Charles
-        </p>
-      </div>
-      
-      <div class="grid grid-2 gap-8">
-        <div class="card card-shadow">
-          <div class="flex items-center mb-4">
-            <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-white font-bold mr-4">
-              M
-            </div>
-            <div>
-              <div class="font-semibold text-gray-900">Maria Silva</div>
-              <div class="text-sm text-gray-600">Emagreceu 15kg em 4 meses</div>
-            </div>
-          </div>
-          <p class="text-gray-700 italic">
-            "Os treinos do Charles no MFit são incríveis! Perdi 15kg em 4 meses e me sinto muito mais disposta. 
-            O acompanhamento é personalizado e ele sempre ajusta os exercícios conforme minha evolução."
-          </p>
-          <div class="flex mt-4">
-            <span class="text-accent text-lg">★★★★★</span>
-          </div>
-        </div>
-        
-        <div class="card card-shadow">
-          <div class="flex items-center mb-4">
-            <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white font-bold mr-4">
-              J
-            </div>
-            <div>
-              <div class="font-semibold text-gray-900">João Santos</div>
-              <div class="text-sm text-gray-600">Ganhou 8kg de massa muscular</div>
-            </div>
-          </div>
-          <p class="text-gray-700 italic">
-            "Sempre tive dificuldade para ganhar peso e massa muscular. Com os treinos do Charles consegui 
-            ganhar 8kg de massa magra em 6 meses. Recomendo para todos que querem resultados reais!"
-          </p>
-          <div class="flex mt-4">
-            <span class="text-accent text-lg">★★★★★</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <Testimonials />
   
   <!-- Form Section -->
   <FormSection />
