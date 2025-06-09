@@ -89,6 +89,13 @@
   --radius-xl: 0.75rem;     /* 12px */
   --radius-full: 9999px;    /* Círculo completo */
 
+  /* Border radius aliases for compatibility */
+  --border-radius-sm: var(--radius-sm);
+  --border-radius-md: var(--radius-md);
+  --border-radius-lg: var(--radius-lg);
+  --border-radius-xl: var(--radius-xl);
+  --border-radius-full: var(--radius-full);
+
   /* ⏱️ TRANSIÇÕES */
   --transition-fast: 150ms ease-in-out;
   --transition-normal: 300ms ease-in-out;

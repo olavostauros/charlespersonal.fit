@@ -3,6 +3,7 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
+import Services from '../components/Services.astro';
 import Footer from '../components/Footer.astro';
 ---
 
@@ -16,6 +17,9 @@ import Footer from '../components/Footer.astro';
   
   <!-- Hero Section -->
   <Hero />
+  
+  <!-- Services Section -->
+  <Services />
   
   <!-- About Section -->
   <section class="section" id="sobre">
@@ -61,74 +65,6 @@ import Footer from '../components/Footer.astro';
             loading="lazy"
           />
         </div>
-      </div>
-    </div>
-  </section>
-  
-  <!-- Services Section -->
-  <section class="section bg-gray-50" id="servicos">
-    <div class="container">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-bold text-gray-900 mb-4">
-          Serviços Disponíveis
-        </h2>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
-          Treinos personalizados para cada objetivo, sempre com acompanhamento profissional
-        </p>
-      </div>
-      
-      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Emagrecimento -->
-        <div class="card card-shadow text-center">
-          <div class="text-4xl mb-4">🔥</div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Emagrecimento</h3>
-          <p class="text-gray-600 mb-6">
-            Treinos focados em queima de gordura e definição muscular. 
-            Resultados visíveis em 30 dias.
-          </p>
-          <a href="https://wa.me/5527996224715?text=Quero%20saber%20sobre%20treinos%20de%20emagrecimento!" 
-             class="btn btn-outline" target="_blank" rel="noopener noreferrer">
-            Saiba Mais
-          </a>
-        </div>
-        
-        <!-- Ganho Muscular -->
-        <div class="card card-shadow text-center">
-          <div class="text-4xl mb-4">💪</div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Ganho Muscular</h3>
-          <p class="text-gray-600 mb-6">
-            Hipertrofia e fortalecimento muscular com treinos progressivos 
-            e acompanhamento nutricional.
-          </p>
-          <a href="https://wa.me/5527996224715?text=Quero%20saber%20sobre%20treinos%20de%20ganho%20muscular!" 
-             class="btn btn-outline" target="_blank" rel="noopener noreferrer">
-            Saiba Mais
-          </a>
-        </div>
-        
-        <!-- Condicionamento -->
-        <div class="card card-shadow text-center">
-          <div class="text-4xl mb-4">⚡</div>
-          <h3 class="text-xl font-bold text-gray-900 mb-3">Condicionamento</h3>
-          <p class="text-gray-600 mb-6">
-            Melhore sua resistência, força e capacidade cardiovascular 
-            com treinos funcionais.
-          </p>
-          <a href="https://wa.me/5527996224715?text=Quero%20saber%20sobre%20treinos%20de%20condicionamento!" 
-             class="btn btn-outline" target="_blank" rel="noopener noreferrer">
-            Saiba Mais
-          </a>
-        </div>
-      </div>
-      
-      <div class="text-center mt-12">
-        <a href="https://mfit.com.br/charles" 
-           class="btn btn-primary btn-lg" 
-           target="_blank" 
-           rel="noopener noreferrer"
-           data-cta="mfit">
-          Começar Grátis no MFit
-        </a>
       </div>
     </div>
   </section>
