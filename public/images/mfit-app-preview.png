@@ -1,0 +1,77 @@
+<svg width="400" height="800" viewBox="0 0 400 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Phone mockup background -->
+  <rect width="400" height="800" rx="40" fill="#1F2937"/>
+  <rect x="20" y="60" width="360" height="680" rx="20" fill="#FFFFFF"/>
+  
+  <!-- Status bar -->
+  <rect x="30" y="70" width="340" height="30" fill="#F3F4F6"/>
+  <text x="40" y="88" fill="#6B7280" font-family="Inter, sans-serif" font-size="12" font-weight="500">9:41 AM</text>
+  <text x="350" y="88" text-anchor="end" fill="#6B7280" font-family="Inter, sans-serif" font-size="12" font-weight="500">100%</text>
+  
+  <!-- Header -->
+  <rect x="30" y="110" width="340" height="60" fill="#3B82F6"/>
+  <text x="200" y="145" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="18" font-weight="600">MFit - Charles Personal</text>
+  
+  <!-- Navigation tabs -->
+  <rect x="30" y="180" width="113" height="40" fill="#3B82F6" opacity="0.1"/>
+  <rect x="143" y="180" width="114" height="40" fill="transparent"/>
+  <rect x="257" y="180" width="113" height="40" fill="transparent"/>
+  
+  <text x="86" y="203" text-anchor="middle" fill="#3B82F6" font-family="Inter, sans-serif" font-size="14" font-weight="600">Treinos</text>
+  <text x="200" y="203" text-anchor="middle" fill="#6B7280" font-family="Inter, sans-serif" font-size="14">Dieta</text>
+  <text x="313" y="203" text-anchor="middle" fill="#6B7280" font-family="Inter, sans-serif" font-size="14">Progresso</text>
+  
+  <!-- Today's workout card -->
+  <rect x="40" y="240" width="320" height="120" rx="12" fill="#F8FAFC" stroke="#E2E8F0"/>
+  <text x="50" y="265" fill="#1F2937" font-family="Inter, sans-serif" font-size="16" font-weight="600">Treino de Hoje</text>
+  <text x="50" y="285" fill="#6B7280" font-family="Inter, sans-serif" font-size="14">Peito, Ombro e Tríceps</text>
+  
+  <!-- Exercise list -->
+  <rect x="50" y="300" width="280" height="25" fill="transparent"/>
+  <circle cx="60" cy="312" r="4" fill="#10B981"/>
+  <text x="75" y="318" fill="#374151" font-family="Inter, sans-serif" font-size="12">4x Supino Reto - 12 reps</text>
+  
+  <rect x="50" y="325" width="280" height="25" fill="transparent"/>
+  <circle cx="60" cy="337" r="4" fill="#10B981"/>
+  <text x="75" y="343" fill="#374151" font-family="Inter, sans-serif" font-size="12">3x Desenvolvimento - 10 reps</text>
+  
+  <!-- Progress section -->
+  <rect x="40" y="380" width="320" height="100" rx="12" fill="#F0FDF4" stroke="#BBF7D0"/>
+  <text x="50" y="405" fill="#166534" font-family="Inter, sans-serif" font-size="16" font-weight="600">Seu Progresso</text>
+  <text x="50" y="425" fill="#15803D" font-family="Inter, sans-serif" font-size="14">12 treinos completados</text>
+  
+  <!-- Progress bar -->
+  <rect x="50" y="440" width="280" height="8" rx="4" fill="#DCFCE7"/>
+  <rect x="50" y="440" width="180" height="8" rx="4" fill="#22C55E"/>
+  
+  <text x="50" y="465" fill="#15803D" font-family="Inter, sans-serif" font-size="12">64% do objetivo mensal</text>
+  
+  <!-- Stats cards -->
+  <rect x="40" y="500" width="100" height="80" rx="8" fill="#FEF3C7" stroke="#FDE68A"/>
+  <text x="90" y="525" text-anchor="middle" fill="#92400E" font-family="Inter, sans-serif" font-size="20" font-weight="700">-5kg</text>
+  <text x="90" y="545" text-anchor="middle" fill="#B45309" font-family="Inter, sans-serif" font-size="11">Peso Perdido</text>
+  
+  <rect x="150" y="500" width="100" height="80" rx="8" fill="#DBEAFE" stroke="#BFDBFE"/>
+  <text x="200" y="525" text-anchor="middle" fill="#1E40AF" font-family="Inter, sans-serif" font-size="20" font-weight="700">28</text>
+  <text x="200" y="545" text-anchor="middle" fill="#1D4ED8" font-family="Inter, sans-serif" font-size="11">Dias Ativos</text>
+  
+  <rect x="260" y="500" width="100" height="80" rx="8" fill="#F3E8FF" stroke="#DDD6FE"/>
+  <text x="310" y="525" text-anchor="middle" fill="#7C3AED" font-family="Inter, sans-serif" font-size="20" font-weight="700">4.8</text>
+  <text x="310" y="545" text-anchor="middle" fill="#8B5CF6" font-family="Inter, sans-serif" font-size="11">Avaliação</text>
+  
+  <!-- Quick actions -->
+  <rect x="40" y="600" width="320" height="50" rx="8" fill="#10B981"/>
+  <text x="200" y="630" text-anchor="middle" fill="white" font-family="Inter, sans-serif" font-size="16" font-weight="600">Iniciar Treino</text>
+  
+  <rect x="40" y="660" width="155" height="40" rx="6" fill="transparent" stroke="#E5E7EB"/>
+  <text x="117" y="683" text-anchor="middle" fill="#6B7280" font-family="Inter, sans-serif" font-size="14">Chat Charles</text>
+  
+  <rect x="205" y="660" width="155" height="40" rx="6" fill="transparent" stroke="#E5E7EB"/>
+  <text x="282" y="683" text-anchor="middle" fill="#6B7280" font-family="Inter, sans-serif" font-size="14">Ver Dieta</text>
+  
+  <!-- Bottom navigation -->
+  <rect x="30" y="720" width="340" height="60" fill="#F9FAFB" stroke="#E5E7EB"/>
+  <circle cx="85" cy="750" r="6" fill="#3B82F6"/>
+  <circle cx="200" cy="750" r="6" fill="#9CA3AF"/>
+  <circle cx="315" cy="750" r="6" fill="#9CA3AF"/>
+</svg>
