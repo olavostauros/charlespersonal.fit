@@ -1,133 +1,254 @@
-# Charles Personal Landing Page - File Structure Documentation
+# Charles Personal Landing Page - Boilerplate Structure
 
-## Complete Project Structure
+## 📋 Visão Geral do Projeto
+
+Este documento define a estrutura base (boilerplate) para a landing page do Charles Personal, um personal trainer que oferece treinos personalizados no aplicativo MFit. O projeto utiliza **Astro**, **TypeScript** e **Tailwind CSS** para criar uma página estática otimizada para conversão de leads.
+
+## 🎯 Objetivos da Landing Page
+
+1. **Capturar leads** via formulário (nome, email, celular)
+2. **Direcionar para o MFit** (aplicativo de treinos)
+3. **Redirecionar para WhatsApp** do Charles com mensagem personalizada
+4. **Promover Instagram** (@charlestonpersonaltrainer)
+5. **Maximizar conversão** com design atrativo e copywriting persuasivo
+
+## 🏗️ Estrutura de Arquivos do Projeto
 
 ```
 charlespersonal.fit/
-├── .github/
-│   └── prompts/
-│       ├── prompt.prompt.md              # Main project requirements and specifications
-│       └── test.prompt.md                # Test prompt for development
-├── .vscode/
-│   ├── extensions.json                   # Recommended VS Code extensions for Astro
-│   └── launch.json                       # Debug configuration for development server
-├── public/
-│   ├── favicon.svg                       # Site favicon
-│   ├── robots.txt                        # SEO crawling instructions
-│   └── images/
-│       ├── charles-hero.jpg              # Main hero image of Charles training
-│       ├── charles-training.jpg          # Secondary training images
-│       └── mfit-app-screenshot.png       # MFit app interface screenshot
-├── src/
-│   ├── components/
-│   │   ├── Header.astro                  # Navigation header with logo and main slogan
-│   │   ├── Header.astro.md               # Documentation for Header component
-│   │   ├── Hero.astro                    # Main hero section with primary CTA to MFit
-│   │   ├── Hero.astro.md                 # Documentation for Hero component
-│   │   ├── FormSection.astro             # Lead capture form with Formspree integration
-│   │   ├── FormSection.astro.md          # Documentation for FormSection component
-│   │   ├── SocialSection.astro           # WhatsApp and Instagram redirect buttons
-│   │   ├── SocialSection.astro.md        # Documentation for SocialSection component
-│   │   ├── Footer.astro                  # Site footer with copyright and links
-│   │   └── Footer.astro.md               # Documentation for Footer component
-│   ├── layouts/
-│   │   ├── Layout.astro                  # Base layout with SEO meta tags and analytics
-│   │   └── Layout.astro.md               # Documentation for Layout component
-│   ├── pages/
-│   │   ├── index.astro                   # Main landing page importing all components
-│   │   └── index.astro.md                # Documentation for main page
-│   ├── styles/
-│   │   └── global.css                    # Global styles and Tailwind imports
-│   └── types/
-│       └── form.ts                       # TypeScript interfaces for form data
-├── .env.example                          # Template for environment variables
-├── .gitignore                           # Git ignore rules
-├── astro.config.mjs                     # Astro configuration with Tailwind integration
-├── package.json                         # Dependencies and build scripts
-├── PROCESSO.md                          # Complete development process documentation
-├── README.md                            # Project overview and setup instructions
-├── tailwind.config.mjs                 # Tailwind CSS configuration
-└── tsconfig.json                        # TypeScript configuration
+├── 📁 public/                          # Arquivos estáticos
+│   ├── favicon.svg                     # Ícone do site
+│   ├── images/                         # Imagens da landing page
+│   │   ├── charles-hero.jpg            # Foto principal do Charles
+│   │   ├── charles-training.jpg        # Charles treinando
+│   │   └── mfit-app-preview.png        # Preview do app MFit
+│   └── robots.txt                      # SEO - Instruções para crawlers
+│
+├── 📁 src/                             # Código fonte
+│   ├── 📁 components/                  # Componentes Astro reutilizáveis
+│   │   ├── Header.astro                # Cabeçalho com navegação
+│   │   ├── Header.astro.md             # Documentação do Header
+│   │   ├── Hero.astro                  # Seção principal com CTA
+│   │   ├── Hero.astro.md               # Documentação do Hero
+│   │   ├── About.astro                 # Seção sobre o Charles
+│   │   ├── About.astro.md              # Documentação do About
+│   │   ├── Services.astro              # Serviços oferecidos
+│   │   ├── Services.astro.md           # Documentação dos Services
+│   │   ├── FormSection.astro           # Formulário de captura de leads
+│   │   ├── FormSection.astro.md        # Documentação do FormSection
+│   │   ├── Testimonials.astro          # Depoimentos de clientes
+│   │   ├── Testimonials.astro.md       # Documentação dos Testimonials
+│   │   ├── Footer.astro                # Rodapé com links
+│   │   └── Footer.astro.md             # Documentação do Footer
+│   │
+│   ├── 📁 layouts/                     # Layouts base
+│   │   ├── Layout.astro                # Layout principal
+│   │   └── Layout.astro.md             # Documentação do Layout
+│   │
+│   ├── 📁 pages/                       # Páginas do site
+│   │   ├── index.astro                 # Página principal
+│   │   ├── index.astro.md              # Documentação da página principal
+│   │   ├── obrigado.astro              # Página de agradecimento (pós-lead)
+│   │   └── obrigado.astro.md           # Documentação da página de agradecimento
+│   │
+│   ├── 📁 styles/                      # Estilos CSS
+│   │   ├── global.css                  # Estilos globais + Tailwind
+│   │   └── global.css.md               # Documentação dos estilos
+│   │
+│   └── 📁 types/                       # Tipos TypeScript
+│       ├── form.ts                     # Tipos para formulários
+│       └── form.ts.md                  # Documentação dos tipos
+│
+├── 📁 .github/                         # Configurações GitHub
+│   └── 📁 prompts/                     # Prompts do projeto
+│       └── prompt.prompt.md            # Prompt principal do projeto
+│
+├── 📄 astro.config.mjs                 # Configuração do Astro
+├── 📄 package.json                     # Dependências e scripts
+├── 📄 tsconfig.json                    # Configuração TypeScript
+├── 📄 tailwind.config.mjs              # Configuração Tailwind CSS
+├── 📄 README.md                        # Documentação do projeto
+├── 📄 PROCESSO.md                      # Processo de desenvolvimento
+├── 📄 BOILERPLATE.md                   # Este arquivo (estrutura base)
+└── 📄 .gitignore                       # Arquivos ignorados pelo Git
 ```
 
-## Directory Structure Explanation
+## 🛠️ Tecnologias e Dependências
 
-### Root Level Files
+### Dependências Principais
+```json
+{
+  "dependencies": {
+    "astro": "^5.9.1",
+    "@astrojs/tailwind": "^5.1.2",
+    "@astrojs/typescript": "^5.0.0",
+    "tailwindcss": "^3.4.0"
+  }
+}
+```
 
-| File | Purpose | Sales Impact |
-|------|---------|--------------|
-| `.env.example` | Environment variables template (Formspree API, analytics) | Enables lead capture and conversion tracking |
-| `PROCESSO.md` | Complete process documentation | Documents marketing strategy and conversion tactics |
-| `README.md` | Project setup and overview | Developer onboarding for maintenance |
-| `tailwind.config.mjs` | Custom design system configuration | Brand consistency and conversion-optimized design |
-| `astro.config.mjs` | Framework configuration | Performance optimization for better conversions |
-| `package.json` | Project dependencies and scripts | Development workflow efficiency |
-| `tsconfig.json` | TypeScript configuration | Code safety and maintainability |
+### Configurações Base
 
-### Public Directory (`/public/`)
+#### `astro.config.mjs`
+```javascript
+import { defineConfig } from 'astro/config';
+import tailwind from '@astrojs/tailwind';
 
-**Static Assets for Marketing Impact**
-- `favicon.svg` - Brand recognition in browser tabs
-- `robots.txt` - SEO optimization for organic traffic
-- `images/` - High-quality visuals for trust and engagement
-  - Hero images of Charles training (credibility)
-  - MFit app screenshots (product visualization)
+export default defineConfig({
+  integrations: [tailwind()],
+  site: 'https://charlespersonal.fit',
+  output: 'static'
+});
+```
 
-### Source Directory (`/src/`)
+#### `tailwind.config.mjs`
+```javascript
+export default {
+  content: ['./src/**/*.{astro,html,js,jsx,ts,tsx}'],
+  theme: {
+    extend: {
+      colors: {
+        primary: '#3B82F6',    // Azul confiança
+        secondary: '#10B981',  // Verde energia
+        accent: '#F59E0B'      // Laranja ação
+      }
+    }
+  }
+}
+```
 
-#### Components (`/src/components/`)
-**Conversion-Focused UI Components**
-- `Header.astro` - First impression and brand positioning
-- `Hero.astro` - Primary conversion driver with MFit CTA
-- `FormSection.astro` - Lead capture mechanism
-- `SocialSection.astro` - Multi-channel engagement (WhatsApp/Instagram)
-- `Footer.astro` - Trust signals and additional conversion opportunities
+## 📱 Componentes Essenciais
 
-#### Layouts (`/src/layouts/`)
-- `Layout.astro` - SEO foundation and analytics integration
+### 1. Header.astro
+- **Propósito**: Navegação e identidade visual
+- **Elementos**: Logo, menu, CTA para WhatsApp
+- **Responsivo**: Menu hambúrguer no mobile
 
-#### Pages (`/src/pages/`)
-- `index.astro` - Main conversion funnel orchestration
+### 2. Hero.astro
+- **Propósito**: Primeira impressão e CTA principal
+- **Elementos**: Foto do Charles, headline, CTA para MFit
+- **Estratégia**: Capturar atenção em 3 segundos
 
-#### Styles (`/src/styles/`)
-- `global.css` - Brand-consistent styling for trust and professionalism
+### 3. About.astro
+- **Propósito**: Credibilidade e conexão emocional
+- **Elementos**: História do Charles, certificações, resultados
+- **Estratégia**: Construir confiança
 
-#### Types (`/src/types/`)
-- `form.ts` - Type safety for lead data integrity
+### 4. Services.astro
+- **Propósito**: Demonstrar valor dos treinos
+- **Elementos**: Tipos de treino, benefícios, diferenciais
+- **Estratégia**: Mostrar soluções para dores do cliente
 
-### Documentation Strategy
+### 5. FormSection.astro
+- **Propósito**: Captura de leads
+- **Elementos**: Formulário (nome, email, celular), oferta
+- **Integração**: Formspree ou Netlify Forms
+- **Estratégia**: Converter visitantes em leads
 
-Each `.astro` component has a corresponding `.md` file documenting:
-1. **Component Purpose** - Role in the sales funnel
-2. **Structure** - Technical implementation details
-3. **Sales Contribution** - How it drives conversions
-4. **Technical Notes** - TypeScript, Tailwind, integrations
+### 6. Testimonials.astro
+- **Propósito**: Prova social
+- **Elementos**: Depoimentos reais, fotos, resultados
+- **Estratégia**: Reduzir objeções
 
-### Configuration Directories
+## 🎨 Design System
 
-#### `.vscode/` - Development Environment
-- Optimized for Astro development workflow
-- Consistent team development experience
+### Paleta de Cores
+- **Primária**: #3B82F6 (Azul - Confiança, Profissionalismo)
+- **Secundária**: #10B981 (Verde - Energia, Saúde, Sucesso)
+- **Accent**: #F59E0B (Laranja - Urgência, Call-to-Action)
+- **Neutros**: #F9FAFB, #6B7280, #111827
 
-#### `.github/` - Project Requirements
-- Central location for project specifications
-- AI assistance and documentation standards
+### Tipografia
+- **Principal**: Inter (Google Fonts)
+- **Títulos**: font-bold, text-4xl/text-2xl
+- **Corpo**: font-normal, text-lg/text-base
+- **CTAs**: font-semibold, text-xl
 
-## Key Design Principles
+### Espaçamentos
+- **Seções**: py-16 (desktop), py-12 (mobile)
+- **Containers**: max-w-6xl mx-auto px-4
+- **Elementos**: gap-8, space-y-6
 
-1. **Conversion-First Structure** - Every component serves the sales funnel
-2. **Performance Optimized** - Static generation for fast loading
-3. **SEO Ready** - Proper meta tags and structure
-4. **Type Safe** - TypeScript for reliable lead capture
-5. **Responsive Design** - Tailwind CSS for mobile-first approach
-6. **Analytics Ready** - Built-in tracking for conversion optimization
+## 🔗 Integrações Essenciais
 
-## Technology Stack Alignment
+### 1. Formulário de Leads
+```typescript
+interface LeadForm {
+  nome: string;
+  email: string;
+  celular: string;
+  objetivo?: 'emagrecimento' | 'ganho_muscular' | 'saude';
+}
+```
 
-- **Astro** - Static site generation for performance
-- **TypeScript** - Type safety for form handling
-- **Tailwind CSS** - Rapid, consistent UI development
-- **Formspree** - Reliable form handling service
-- **Vercel** - Free hosting with excellent performance
+### 2. Links de Conversão
+- **MFit**: `https://client.mfitpersonal.com.br/out/signup-link/ODY1NTY=`
+- **WhatsApp**: `https://wa.me/5527996224715?text=Olá Charles! Vi sua landing page e quero saber mais sobre os treinos personalizados!`
+- **Instagram**: `https://instagram.com/charlestonpersonaltrainer`
 
-This structure ensures every file serves the ultimate goal of converting visitors into Charles Personal's paying clients through the MFit platform.
+### 3. Analytics e Tracking
+- Google Analytics 4
+- Meta Pixel (Facebook/Instagram)
+- Hotjar (opcional - heatmaps)
+
+## 📈 Estratégia de Conversão
+
+### Funil de Vendas
+1. **Conscientização**: Hero section + About
+2. **Interesse**: Services + Testimonials
+3. **Consideração**: FormSection + Ofertas
+4. **Ação**: CTAs para MFit + WhatsApp
+
+### CTAs Estratégicos
+- **Primário**: "Começar Treino Grátis" (MFit)
+- **Secundário**: "Falar com Charles" (WhatsApp)
+- **Terciário**: "Quero Meu Plano!" (Formulário)
+
+## 🚀 Scripts de Desenvolvimento
+
+```json
+{
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check"
+  }
+}
+```
+
+## 📊 Métricas de Sucesso
+
+### KPIs Principais
+- **Taxa de conversão** (formulário): Meta 3-5%
+- **CTR MFit**: Meta 15-20%
+- **Engajamento WhatsApp**: Meta 10-15%
+- **Tempo na página**: Meta >2 minutos
+
+### Ferramentas de Monitoramento
+- Google Analytics 4
+- Formspree Analytics
+- Vercel Analytics
+
+## 📝 Próximos Passos
+
+1. **Configurar dependências**: Instalar Tailwind CSS
+2. **Criar componentes base**: Header, Hero, FormSection
+3. **Implementar formulário**: Integração com Formspree
+4. **Adicionar conteúdo**: Textos, imagens, depoimentos
+5. **Otimizar SEO**: Meta tags, structured data
+6. **Testar conversões**: A/B testing de CTAs
+7. **Deploy**: Configurar Vercel
+
+---
+
+## 📞 Contatos do Projeto
+
+- **Cliente**: Charles Personal Trainer
+- **WhatsApp**: +55 27 99622-4715
+- **Instagram**: @charlestonpersonaltrainer
+- **MFit**: https://client.mfitpersonal.com.br/out/signup-link/ODY1NTY=
+
+---
+
+*Este boilerplate serve como base para o desenvolvimento da landing page. Cada arquivo .md específico conterá detalhes técnicos e de implementação para sua respectiva parte do projeto.*
