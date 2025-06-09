@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://charlespersonal.fit/sitemap.xml
+
+# Página de agradecimento - não indexar
+Disallow: /obrigado
+
+# Diretório de arquivos estáticos
+Allow: /images/
+Allow: /favicon.svg
