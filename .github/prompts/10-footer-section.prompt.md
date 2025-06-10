@@ -15,7 +15,7 @@ Este prompt cobre a criação do Footer.astro, encerrando a página com informa�
 ## 📞 Informações de Contato
 
 ### Contatos Principais
-- **WhatsApp**: +55 27 99622-4715
+- **WhatsApp**: +55 27 99622-4175
 - **Instagram**: @charlestonpersonaltrainer
 - **Email**: Para contato profissional
 - **Localização**: Região de atuação

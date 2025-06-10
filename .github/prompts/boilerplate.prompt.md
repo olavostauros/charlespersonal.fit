@@ -199,7 +199,7 @@ interface LeadForm {
 
 ### 2. Links de Conversão
 - **MFit**: `https://client.mfitpersonal.com.br/out/signup-link/ODY1NTY=`
-- **WhatsApp**: `https://wa.me/5527996224715?text=Olá Charles! Vi sua landing page e quero saber mais sobre os treinos personalizados!`
+- **WhatsApp**: `https://wa.me/5527996224175?text=Olá Charles! Vi sua landing page e quero saber mais sobre os treinos personalizados!`
 - **Instagram**: `https://instagram.com/charlestonpersonaltrainer`
 
 ### 3. Analytics e Tracking
@@ -292,7 +292,7 @@ interface LeadForm {
 ## 📞 Contatos do Projeto
 
 - **Cliente**: Charles Personal Trainer
-- **WhatsApp**: +55 27 99622-4715
+- **WhatsApp**: +55 27 99622-4175
 - **Instagram**: @charlestonpersonaltrainer
 - **MFit**: https://client.mfitpersonal.com.br/out/signup-link/ODY1NTY=
 

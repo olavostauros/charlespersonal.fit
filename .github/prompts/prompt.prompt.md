@@ -6,7 +6,7 @@ Você é um especialista em marketing digital, design de UX/UI, desenvolvimento 
 - **Objetivos da landing page**:
   1. Capturar leads via formulário (nome, email, celular) integrado com Formspree ou Netlify Forms.
   2. Direcionar para a página do MFit (https://client.mfitpersonal.com.br/out/signup-link/ODY5NTY=).
-  3. Redirecionar para o WhatsApp do Charles (+55 27 99622-4715) com mensagem personalizada.
+  3. Redirecionar para o WhatsApp do Charles (+55 27 99622-4175) com mensagem personalizada.
   4. Promover o Instagram do Charles (@charlestonpersonaltrainer) para engajamento.
   5. Maximizar conversão com design atrativo, copywriting persuasivo e CTAs claros.
 - **Tecnologias**:

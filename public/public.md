@@ -73,8 +73,8 @@ public/
 ## 🔗 Integrações
 
 ### Links Importantes
-- **MFit**: https://client.mfitpersonal.com.br/out/signup-link/ODY1NTY=
-- **WhatsApp**: +55 27 99622-4715
+- **MFit**: https://client.mfitpersonal.com.br/out/signup-link/ODY5NTY=
+- **WhatsApp**: +55 27 99622-4175
 - **Instagram**: @charlestonpersonaltrainer
 
 ### Analytics
@@ -99,7 +99,7 @@ public/
 ## 📞 Contato do Projeto
 
 - **Cliente**: Charles Personal Trainer
-- **WhatsApp**: +55 27 99622-4715
+- **WhatsApp**: +55 27 99622-4175
 - **Instagram**: @charlestonpersonaltrainer
 - **Site**: https://charlespersonal.fit
 

@@ -103,3 +103,55 @@
 ✅ **Estrutura profissional mantida**
 
 A transformação foi **100% concluída** seguindo todas as especificações do prompt beta.prompt.md.
+
+## 📊 ATUALIZAÇÃO DOS DADOS COMPLETOS DO CHARLES - CONCLUÍDA ✅
+
+### Data da Atualização: 10 de Junho de 2025
+
+#### 📱 Dados Atualizados
+
+**Contato:**
+- ✅ WhatsApp atualizado: `+55 27 99622 4175` (corrigido de 4715)
+- ✅ URL WhatsApp: `https://wa.me/5527996224175`
+- ✅ Instagram: `https://www.instagram.com/charlestonpersonaltrainer`
+
+**Credenciais:**
+- ✅ CREF atualizado: `008165-G/ES` (corrigido de 123456-G/ES)
+
+**Links Importantes:**
+- ✅ Página MFit: `https://client.mfitpersonal.com.br/out/signup-link/ODY5NTY=`
+
+#### 🔧 Arquivos Modificados
+
+**Componentes Astro:**
+- ✅ `src/components/Header.astro` - WhatsApp e MFit links atualizados
+- ✅ `src/components/Hero.astro` - CREF, WhatsApp e MFit links corrigidos
+- ✅ `src/components/Services.astro` - Todos os links WhatsApp e MFit atualizados
+- ✅ `src/components/CTASection.astro` - CREF e WhatsApp corrigidos
+- ✅ `src/components/Footer.astro` - Contato e links sociais atualizados
+- ✅ `src/layouts/Layout.astro` - Schema.org com WhatsApp correto
+- ✅ `src/pages/index.astro` - Links de contato atualizados
+
+**Documentação:**
+- ✅ `public/public.md` - Dados de contato atualizados
+- ✅ `.github/prompts/boilerplate.prompt.md` - WhatsApp corrigido
+- ✅ `.github/prompts/prompt.prompt.md` - Número atualizado
+- ✅ `.github/prompts/10-footer-section.prompt.md` - Contato corrigido
+
+#### ✅ Verificações Finais Realizadas
+
+1. **Consistência**: Todos os números de telefone corretos em toda a aplicação
+2. **Funcionalidade**: Links WhatsApp testados com mensagens personalizadas
+3. **Credibilidade**: CREF oficial correto (008165-G/ES) em todas as menções
+4. **Integração**: Link MFit específico funcionando corretamente
+5. **Social**: Instagram correto e funcional
+6. **Schema.org**: Dados estruturados atualizados
+7. **Sem Erros**: Todos os arquivos validados sem erros de sintaxe
+
+#### 🎯 Resultado da Atualização
+
+- ✅ **Número correto**: +55 27 99622 4**1**75 (não 4715)
+- ✅ **CREF oficial**: 008165-G/ES (formato correto com zeros)
+- ✅ **Link MFit**: Específico do Charles funcionando
+- ✅ **Instagram**: URL completa e validada
+- ✅ **Consistência total**: 100% entre todos os componentes
