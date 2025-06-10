@@ -167,23 +167,23 @@ const {
     // Event listeners para CTAs
     document.addEventListener('DOMContentLoaded', function() {
       // WhatsApp CTAs
-      document.querySelectorAll('[data-cta="whatsapp"]').forEach(button => {
+      document.querySelectorAll('[data-cta*="whatsapp"]').forEach(button => {
         button.addEventListener('click', () => trackCTA('cta_whatsapp_click', 'WhatsApp CTA'));
       });
       
       // MFit CTAs
-      document.querySelectorAll('[data-cta="mfit"]').forEach(button => {
+      document.querySelectorAll('[data-cta*="mfit"]').forEach(button => {
         button.addEventListener('click', () => trackCTA('cta_mfit_click', 'MFit CTA'));
       });
       
       // Instagram CTAs
-      document.querySelectorAll('[data-cta="instagram"]').forEach(button => {
+      document.querySelectorAll('[data-cta*="instagram"]').forEach(button => {
         button.addEventListener('click', () => trackCTA('instagram_click', 'Instagram CTA'));
       });
       
-      // Form Submit
-      document.querySelectorAll('form').forEach(form => {
-        form.addEventListener('submit', () => trackCTA('form_submit', 'Lead Form'));
+      // CTA Section interactions
+      document.querySelectorAll('[data-cta*="cta"]').forEach(button => {
+        button.addEventListener('click', () => trackCTA('cta_section_click', 'CTA Section'));
       });
     });
   </script>
@@ -192,6 +192,11 @@ const {
 
 <!-- CSS para Screen Reader Only -->
 <style>
+  /* Smooth scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+  
   .sr-only {
     position: absolute;
     width: 1px;

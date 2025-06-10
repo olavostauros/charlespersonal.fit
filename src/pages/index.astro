@@ -1,18 +1,18 @@
 ---
-// Landing page principal do Charles Personal
+// Landing page principal do Charles Personal - Página única otimizada
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import Services from '../components/Services.astro';
 import Testimonials from '../components/Testimonials.astro';
-import FormSection from '../components/FormSection.astro';
+import CTASection from '../components/CTASection.astro';
 import Footer from '../components/Footer.astro';
 ---
 
 <Layout
-  title="Charles Personal | Treinos Personalizados MFit - Personal Trainer Vitória ES"
-  description="Transforme seu corpo com Charles Personal! Personal trainer especializado em emagrecimento, ganho muscular e saúde. Treinos personalizados no aplicativo MFit. Comece sua transformação hoje!"
-  keywords="personal trainer vitória, treinos personalizados, emagrecimento, ganho muscular, fitness vitória, academia, MFit, Charles Personal, treino online, personal trainer es"
+  title="Charles Personal | Transforme Seu Corpo em 90 Dias - Personal Trainer Vitória ES"
+  description="Transforme seu corpo em 90 dias com Charles Personal! Treinos personalizados no MFit, suporte 24/7 via WhatsApp. +200 clientes transformados. Personal trainer em Vitória/ES com método comprovado."
+  keywords="personal trainer vitória, treinos personalizados, emagrecimento, ganho muscular, fitness vitória, MFit, Charles Personal, treino online, transformação corporal, 90 dias"
   ogImage="/images/charles-hero.jpg"
 >
   <Header slot="header" />
@@ -54,7 +54,7 @@ import Footer from '../components/Footer.astro';
             </div>
           </div>
           
-          <a href="#contato" class="btn btn-primary">
+          <a href="#cta" class="btn btn-primary">
             Quero Começar Minha Transformação
           </a>
         </div>
@@ -74,8 +74,8 @@ import Footer from '../components/Footer.astro';
   <!-- Testimonials Section -->
   <Testimonials />
   
-  <!-- Form Section -->
-  <FormSection />
+  <!-- CTA Section -->
+  <CTASection />
   
   <!-- Contact Section -->
   <section class="section bg-primary text-white" id="contato">
