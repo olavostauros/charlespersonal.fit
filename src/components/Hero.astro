@@ -115,21 +115,6 @@
             loading="eager"
           />
           
-          <!-- Badge de Credencial -->
-          <div class="hero__credential">
-            <div class="hero__credential-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
-                <path d="m2 17 10 5 10-5"></path>
-                <path d="m2 12 10 5 10-5"></path>
-              </svg>
-            </div>
-            <div class="hero__credential-text">
-              <span class="hero__credential-title">CREF Ativo</span>
-              <span class="hero__credential-subtitle">Personal Certificado</span>
-            </div>
-          </div>
-          
           <!-- Badge MFit -->
           <div class="hero__mfit-badge">
             <span class="hero__mfit-text">Disponível no</span>
@@ -353,44 +338,6 @@
     aspect-ratio: 3/4;
   }
   
-  .hero__credential {
-    position: absolute;
-    top: var(--spacing-6);
-    left: var(--spacing-6);
-    background-color: var(--color-white);
-    padding: var(--spacing-3) var(--spacing-4);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg);
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-3);
-  }
-  
-  .hero__credential-icon {
-    background-color: var(--color-secondary);
-    color: var(--color-white);
-    padding: var(--spacing-2);
-    border-radius: var(--radius-md);
-  }
-  
-  .hero__credential-text {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .hero__credential-title {
-    font-size: var(--font-size-sm);
-    font-weight: var(--font-weight-bold);
-    color: var(--color-gray-900);
-    line-height: var(--line-height-tight);
-  }
-  
-  .hero__credential-subtitle {
-    font-size: var(--font-size-xs);
-    color: var(--color-gray-600);
-    line-height: var(--line-height-tight);
-  }
-  
   .hero__mfit-badge {
     position: absolute;
     bottom: var(--spacing-6);
@@ -507,11 +454,6 @@
     
     .hero__benefits {
       flex-direction: column;
-    }
-    
-    .hero__credential {
-      top: var(--spacing-8);
-      left: var(--spacing-8);
     }
     
     .hero__mfit-badge {
