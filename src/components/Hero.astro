@@ -4,7 +4,7 @@
 
 <section class="hero section" id="hero">
   <div class="container">
-    <div class="hero__content grid grid-2">
+    <div class="hero__content">
       <!-- Conteúdo de Texto -->
       <div class="hero__text">
         <div class="hero__badge">
@@ -162,10 +162,12 @@
     display: flex;
     align-items: center;
     background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);
-    padding-top: 80px; /* Header height compensation */
+    padding-top: var(--header-height); /* Using CSS variable for header height */
   }
   
   .hero__content {
+    display: grid;
+    grid-template-columns: 1fr;
     align-items: center;
     gap: var(--spacing-12);
   }
@@ -470,6 +472,10 @@
       font-size: var(--font-size-4xl);
     }
     
+    .hero__content {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    
     .hero__benefits {
       flex-direction: row;
       flex-wrap: wrap;
@@ -484,7 +490,7 @@
   
   @media (min-width: 1024px) {
     .hero {
-      padding-top: 100px;
+      padding-top: var(--header-height-lg); /* Using CSS variable for large screens */
     }
     
     .hero__text {

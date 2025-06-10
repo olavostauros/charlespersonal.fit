@@ -1,5 +1,7 @@
 ---
 // Layout.astro - Template base para todas as páginas
+import '../styles/design-system.css';
+
 export interface Props {
   title?: string;
   description?: string;
@@ -67,11 +69,6 @@ const {
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" 
     rel="stylesheet" 
   />
-  
-  <!-- CSS Imports -->
-  <style>
-    @import url("/src/styles/design-system.css");
-  </style>
   
   <!-- Preload Critical Resources -->
   <link rel="preload" href="/images/charles-hero.jpg" as="image" />
