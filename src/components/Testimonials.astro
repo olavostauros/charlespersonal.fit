@@ -406,6 +406,15 @@
   will-change: transform;
 }
 
+/* Clone slides styling */
+.testimonial-card.clone {
+  pointer-events: none;
+}
+
+.testimonial-card.clone .testimonial-image {
+  opacity: 0.8;
+}
+
 .testimonial-card {
   flex: 0 0 100%;
   background: var(--color-white);
@@ -823,6 +832,22 @@
   }
 }
 
+/* Performance optimizations for infinite scroll */
+.testimonials-carousel {
+  overflow: hidden;
+  position: relative;
+  transform: translateZ(0); /* Force hardware acceleration */
+}
+
+.testimonials-wrapper {
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.testimonial-card {
+  transform: translateZ(0); /* Force hardware acceleration for individual cards */
+}
+
 /* High contrast mode support */
 @media (prefers-contrast: high) {
   .testimonial-card {
@@ -844,6 +869,7 @@
     carousel: HTMLElement;
     track: HTMLElement;
     testimonials: NodeListOf<HTMLElement>;
+    originalTestimonials: HTMLElement[];
     prevBtn: HTMLElement | null;
     nextBtn: HTMLElement | null;
     dots: NodeListOf<HTMLButtonElement>;
@@ -852,11 +878,14 @@
     autoPlayInterval: ReturnType<typeof setInterval> | null;
     touchStartX: number;
     touchEndX: number;
+    isTransitioning: boolean;
+    totalSlides: number;
+    clonesCount: number;
 
     constructor(element: HTMLElement) {
       this.carousel = element;
       this.track = element.querySelector('[data-carousel-track]') as HTMLElement;
-      this.testimonials = element.querySelectorAll('[data-testimonial]') as NodeListOf<HTMLElement>;
+      this.originalTestimonials = Array.from(element.querySelectorAll('[data-testimonial]') as NodeListOf<HTMLElement>);
       this.prevBtn = element.querySelector('[data-carousel-prev]');
       this.nextBtn = element.querySelector('[data-carousel-next]');
       this.dots = element.querySelectorAll('[data-dot]') as NodeListOf<HTMLButtonElement>;
@@ -866,15 +895,57 @@
       this.autoPlayInterval = null;
       this.touchStartX = 0;
       this.touchEndX = 0;
+      this.isTransitioning = false;
+      this.totalSlides = this.originalTestimonials.length;
+      this.clonesCount = this.getSlidesPerView();
       
       this.init();
     }
     
     init() {
+      this.setupInfiniteCarousel();
       this.setupEventListeners();
       this.updateCarousel();
       this.startAutoPlay();
       this.setupImageLoading();
+    }
+    
+    setupInfiniteCarousel() {
+      // Clone testimonials for infinite effect
+      const clonesToPrepend = this.originalTestimonials.slice(-this.clonesCount);
+      const clonesToAppend = this.originalTestimonials.slice(0, this.clonesCount);
+      
+      // Prepend clones
+      clonesToPrepend.reverse().forEach(testimonial => {
+        const clone = testimonial.cloneNode(true) as HTMLElement;
+        clone.classList.add('clone');
+        this.track.insertBefore(clone, this.track.firstChild);
+      });
+      
+      // Append clones
+      clonesToAppend.forEach(testimonial => {
+        const clone = testimonial.cloneNode(true) as HTMLElement;
+        clone.classList.add('clone');
+        this.track.appendChild(clone);
+      });
+      
+      // Update testimonials list to include clones
+      this.testimonials = this.track.querySelectorAll('[data-testimonial]') as NodeListOf<HTMLElement>;
+      
+      // Set initial position to show first real testimonial
+      this.currentIndex = this.clonesCount;
+      this.updateCarouselPosition(false);
+    }
+    
+    getSlidesPerView() {
+      const viewportWidth = window.innerWidth;
+      if (viewportWidth >= 1024) {
+        return 3; // 3 slides per view
+      } else if (viewportWidth >= 768) {
+        return 2; // 2 slides per view
+      } else {
+        return 1; // 1 slide per view
+      }
     }
     
     setupEventListeners() {
@@ -927,18 +998,46 @@
     }
     
     updateCarousel() {
+      this.updateCarouselPosition(true);
+      this.updateDots();
+      this.addAnimationClass();
+    }
+    
+    updateCarouselPosition(withTransition: boolean = true) {
       const slideWidth = this.getSlideWidth();
       const offset = -this.currentIndex * slideWidth;
       
+      if (withTransition) {
+        this.track.style.transition = 'transform 0.5s ease-in-out';
+      } else {
+        this.track.style.transition = 'none';
+      }
+      
       this.track.style.transform = `translateX(${offset}%)`;
+    }
+    
+    updateDots() {
+      // Calculate real slide index for dots
+      const realIndex = this.getRealSlideIndex();
       
-      // Update dots
       this.dots.forEach((dot: HTMLButtonElement, index: number) => {
-        dot.classList.toggle('active', index === this.currentIndex);
+        dot.classList.toggle('active', index === realIndex);
       });
-      
-      // Add animation class
-      const currentSlide = this.testimonials[this.currentIndex];
+    }
+    
+    getRealSlideIndex() {
+      if (this.currentIndex < this.clonesCount) {
+        return this.totalSlides - (this.clonesCount - this.currentIndex);
+      } else if (this.currentIndex >= this.clonesCount + this.totalSlides) {
+        return this.currentIndex - this.clonesCount - this.totalSlides;
+      } else {
+        return this.currentIndex - this.clonesCount;
+      }
+    }
+    
+    addAnimationClass() {
+      const realIndex = this.getRealSlideIndex();
+      const currentSlide = this.originalTestimonials[realIndex];
       if (currentSlide) {
         currentSlide.classList.add('animate-in');
         
@@ -950,40 +1049,63 @@
     }
     
     getSlideWidth() {
-      const viewportWidth = window.innerWidth;
-      if (viewportWidth >= 1024) {
-        return 100 / 3; // 3 slides per view
-      } else if (viewportWidth >= 768) {
-        return 50; // 2 slides per view
-      } else {
-        return 100; // 1 slide per view
-      }
+      const slidesPerView = this.getSlidesPerView();
+      return 100 / slidesPerView;
     }
     
     goToPrev() {
-      this.currentIndex = this.currentIndex > 0 
-        ? this.currentIndex - 1 
-        : this.testimonials.length - 1;
+      if (this.isTransitioning) return;
+      
+      this.isTransitioning = true;
+      this.currentIndex--;
       this.updateCarousel();
+      
+      // Check if we need to loop to end
+      setTimeout(() => {
+        if (this.currentIndex < 0) {
+          this.currentIndex = this.totalSlides + this.clonesCount - 1;
+          this.updateCarouselPosition(false);
+        }
+        this.isTransitioning = false;
+      }, 500);
     }
     
     goToNext() {
-      this.currentIndex = this.currentIndex < this.testimonials.length - 1 
-        ? this.currentIndex + 1 
-        : 0;
+      if (this.isTransitioning) return;
+      
+      this.isTransitioning = true;
+      this.currentIndex++;
       this.updateCarousel();
+      
+      // Check if we need to loop to beginning
+      setTimeout(() => {
+        if (this.currentIndex >= this.totalSlides + this.clonesCount) {
+          this.currentIndex = this.clonesCount;
+          this.updateCarouselPosition(false);
+        }
+        this.isTransitioning = false;
+      }, 500);
     }
     
     goToSlide(index: number) {
-      this.currentIndex = index;
+      if (this.isTransitioning) return;
+      
+      this.isTransitioning = true;
+      this.currentIndex = index + this.clonesCount;
       this.updateCarousel();
+      
+      setTimeout(() => {
+        this.isTransitioning = false;
+      }, 500);
     }
     
     startAutoPlay() {
       if (!this.isAutoPlay) return;
       
       this.autoPlayInterval = setInterval(() => {
-        this.goToNext();
+        if (!this.isTransitioning) {
+          this.goToNext();
+        }
       }, 5000); // 5 seconds
     }
     
@@ -1007,7 +1129,7 @@
       const swipeThreshold = 50;
       const swipeDistance = this.touchStartX - this.touchEndX;
       
-      if (Math.abs(swipeDistance) > swipeThreshold) {
+      if (Math.abs(swipeDistance) > swipeThreshold && !this.isTransitioning) {
         if (swipeDistance > 0) {
           this.goToNext(); // Swipe left
         } else {
@@ -1049,7 +1171,28 @@
   window.addEventListener('resize', () => {
     const carousel = document.querySelector('[data-carousel]') as CarouselHTMLElement | null;
     if (carousel && carousel._carouselInstance) {
-      carousel._carouselInstance.updateCarousel();
+      // Rebuild carousel for responsive changes
+      const instance = carousel._carouselInstance;
+      const newSlidesPerView = instance.getSlidesPerView();
+      
+      // Only rebuild if slides per view changed
+      if (newSlidesPerView !== instance.clonesCount) {
+        const currentRealIndex = instance.getRealSlideIndex();
+        
+        // Remove existing clones
+        const clones = instance.track.querySelectorAll('.clone');
+        clones.forEach(clone => clone.remove());
+        
+        // Update clones count and rebuild
+        instance.clonesCount = newSlidesPerView;
+        instance.setupInfiniteCarousel();
+        
+        // Restore position to current slide
+        instance.currentIndex = currentRealIndex + instance.clonesCount;
+        instance.updateCarouselPosition(false);
+      } else {
+        instance.updateCarousel();
+      }
     }
   });
 })();
