@@ -499,8 +499,6 @@
     });
     
     // Header scroll effect
-    let lastScrollY = window.scrollY;
-    
     function updateHeaderOnScroll() {
       const currentScrollY = window.scrollY;
       const header = document.querySelector('.header') as HTMLElement;
@@ -512,8 +510,6 @@
       } else {
         header.classList.remove('scrolled');
       }
-      
-      lastScrollY = currentScrollY;
     }
     
     window.addEventListener('scroll', updateHeaderOnScroll, { passive: true });

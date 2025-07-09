@@ -418,7 +418,7 @@
   let currentSlide = 0;
   const totalSlides = 7;
   
-  function moveCarousel(direction) {
+  function moveCarousel(direction: number): void {
     currentSlide += direction;
     
     if (currentSlide >= totalSlides) {
@@ -430,10 +430,10 @@
     updateCarousel();
   }
   
-  function goToSlide(slideIndex) {
-    currentSlide = slideIndex;
-    updateCarousel();
-  }
+  // function goToSlide(slideIndex: number): void {
+  //   currentSlide = slideIndex;
+  //   updateCarousel();
+  // }
   
   function updateCarousel() {
     const track = document.getElementById('carousel-track');
@@ -463,12 +463,18 @@
     
     if (carousel) {
       carousel.addEventListener('touchstart', e => {
-        touchStartX = (e as TouchEvent).changedTouches[0].screenX;
+        const touchEvent = e as TouchEvent;
+        if (touchEvent.changedTouches && touchEvent.changedTouches[0]) {
+          touchStartX = touchEvent.changedTouches[0].screenX;
+        }
       });
       
       carousel.addEventListener('touchend', e => {
-        touchEndX = (e as TouchEvent).changedTouches[0].screenX;
-        handleSwipe();
+        const touchEvent = e as TouchEvent;
+        if (touchEvent.changedTouches && touchEvent.changedTouches[0]) {
+          touchEndX = touchEvent.changedTouches[0].screenX;
+          handleSwipe();
+        }
       });
     }
   });

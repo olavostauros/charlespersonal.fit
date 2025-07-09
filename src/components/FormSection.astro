@@ -1,0 +1,504 @@
+---
+// BUSINESS PURPOSE: Lead capture form optimized for Charles Personal conversion funnel
+// TECHNICAL PURPOSE: Contact form with TypeScript validation and WhatsApp integration
+// TARGET AUDIENCE: Adults 40-70 interested in fitness, primarily mobile users in Vila Velha, ES
+// CONVERSION IMPACT: Primary lead generation mechanism with mobile-first design
+// ACCESSIBILITY: Large touch targets, clear labels, real-time validation for mature users
+// DEPENDENCIES: TypeScript form validation, WhatsApp Business API, design system CSS
+
+// FormSection.astro - Formulário de captura de leads com validação TypeScript
+---
+
+<section class="form-section" id="contato">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="form-section__header">
+      <div class="form-section__badge">
+        <span class="form-section__badge-icon">📞</span>
+        Fale Conosco
+      </div>
+      
+      <h2 class="form-section__title">
+        Pronto para <span class="form-section__highlight">Transformar</span> Seu Corpo?
+      </h2>
+      
+      <p class="form-section__subtitle">
+        Preencha o formulário abaixo e fale diretamente com Charles no WhatsApp. 
+        Comece sua jornada de transformação hoje mesmo!
+      </p>
+    </div>
+
+    <!-- Form Container -->
+    <div class="form-section__container">
+      <!-- Contact Form -->
+      <form 
+        id="contact-form" 
+        class="contact-form" 
+        novalidate
+        aria-label="Formulário de contato para treinos personalizados"
+      >
+        <!-- Name Field -->
+        <div class="form-group">
+          <label for="name" class="form-label">
+            Nome Completo *
+          </label>
+          <input 
+            type="text"
+            id="name"
+            name="name"
+            class="form-input"
+            placeholder="Digite seu nome completo"
+            required
+            autocomplete="given-name"
+            aria-describedby="name-error"
+            maxlength="50"
+          />
+          <div 
+            id="name-error" 
+            class="form-error" 
+            data-error-for="name"
+            role="alert"
+            aria-live="polite"
+          ></div>
+        </div>
+
+        <!-- Email Field -->
+        <div class="form-group">
+          <label for="email" class="form-label">
+            Email *
+          </label>
+          <input 
+            type="email"
+            id="email"
+            name="email"
+            class="form-input"
+            placeholder="seu.email@exemplo.com"
+            required
+            autocomplete="email"
+            aria-describedby="email-error"
+          />
+          <div 
+            id="email-error" 
+            class="form-error" 
+            data-error-for="email"
+            role="alert"
+            aria-live="polite"
+          ></div>
+        </div>
+
+        <!-- Phone Field -->
+        <div class="form-group">
+          <label for="phone" class="form-label">
+            WhatsApp *
+          </label>
+          <input 
+            type="tel"
+            id="phone"
+            name="phone"
+            class="form-input"
+            placeholder="(27) 99999-9999"
+            required
+            autocomplete="tel"
+            aria-describedby="phone-error phone-help"
+            maxlength="15"
+          />
+          <div id="phone-help" class="form-help">
+            Digite seu número do WhatsApp para recebermos seu contato
+          </div>
+          <div 
+            id="phone-error" 
+            class="form-error" 
+            data-error-for="phone"
+            role="alert"
+            aria-live="polite"
+          ></div>
+        </div>
+
+        <!-- Submit Button -->
+        <button 
+          type="submit" 
+          class="form-submit-button"
+          data-cta="form-submit"
+          aria-describedby="form-submit-help"
+        >
+          <span class="form-submit-icon">💬</span>
+          Falar com Charles no WhatsApp
+        </button>
+        
+        <div id="form-submit-help" class="form-help form-help--center">
+          Você será redirecionado para o WhatsApp do Charles
+        </div>
+
+        <!-- Privacy Notice -->
+        <div class="form-privacy">
+          <p class="form-privacy-text">
+            🔒 Seus dados estão seguros. Utilizamos suas informações apenas para entrar em contato 
+            sobre os treinos personalizados. Não compartilhamos com terceiros.
+          </p>
+        </div>
+      </form>
+
+      <!-- Success Message Container -->
+      <div id="form-success-message" class="form-success" style="display: none;"></div>
+
+      <!-- Alternative CTAs -->
+      <div class="form-section__alternatives">
+        <div class="form-section__divider">
+          <span class="form-section__divider-text">ou</span>
+        </div>
+        
+        <div class="form-section__cta-buttons">
+          <a 
+            href="https://client.mfitpersonal.com.br/out/signup-link/ODY5NTY="
+            class="btn btn-secondary btn-lg"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-cta="mfit-alternative"
+          >
+            <span class="btn-icon">🏋️</span>
+            Começar Grátis no MFit
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ==========================================================================
+     FORM SECTION STYLES - Mobile-First BEM Methodology
+     ========================================================================== */
+
+  .form-section {
+    background: linear-gradient(135deg, var(--color-gray-50) 0%, var(--color-white) 100%);
+    padding: var(--spacing-16) 0;
+    position: relative;
+  }
+
+  .form-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-gray-200), transparent);
+  }
+
+  /* Section Header */
+  .form-section__header {
+    text-align: center;
+    margin-bottom: var(--spacing-12);
+  }
+
+  .form-section__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    background: var(--color-primary-light);
+    color: var(--color-primary-dark);
+    padding: var(--spacing-2) var(--spacing-4);
+    border-radius: 2rem;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-4);
+  }
+
+  .form-section__badge-icon {
+    font-size: var(--font-size-base);
+  }
+
+  .form-section__title {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-900);
+    line-height: var(--line-height-tight);
+    margin-bottom: var(--spacing-4);
+  }
+
+  .form-section__highlight {
+    color: var(--color-primary);
+  }
+
+  .form-section__subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-600);
+    line-height: var(--line-height-relaxed);
+    max-width: 42rem;
+    margin: 0 auto;
+  }
+
+  /* Form Container */
+  .form-section__container {
+    max-width: 32rem;
+    margin: 0 auto;
+  }
+
+  /* Contact Form */
+  .contact-form {
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-8);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--color-gray-200);
+  }
+
+  /* Form Groups */
+  .form-group {
+    margin-bottom: var(--spacing-6);
+  }
+
+  .form-label {
+    display: block;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-700);
+    margin-bottom: var(--spacing-2);
+  }
+
+  /* Form Inputs - Mobile-first with touch optimization */
+  .form-input {
+    width: 100%;
+    padding: var(--spacing-4);
+    font-size: var(--font-size-base);
+    color: var(--color-gray-900);
+    background-color: var(--color-white);
+    border: 2px solid var(--color-gray-300);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-fast);
+    min-height: var(--touch-target-min); /* Accessibility for mature users */
+    font-family: var(--font-family);
+  }
+
+  .form-input:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+
+  .form-input::placeholder {
+    color: var(--color-gray-500);
+    opacity: 1;
+  }
+
+  /* Form Input States */
+  .form-input.has-success {
+    border-color: var(--color-secondary);
+    background-color: var(--color-secondary-light);
+    background-opacity: 0.05;
+  }
+
+  .form-input.has-error {
+    border-color: var(--color-error);
+    background-color: rgba(239, 68, 68, 0.05);
+  }
+
+  /* Form Help Text */
+  .form-help {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-600);
+    margin-top: var(--spacing-1);
+    line-height: var(--line-height-normal);
+  }
+
+  .form-help--center {
+    text-align: center;
+    margin-top: var(--spacing-2);
+  }
+
+  /* Form Errors */
+  .form-error {
+    font-size: var(--font-size-sm);
+    color: var(--color-error);
+    margin-top: var(--spacing-1);
+    line-height: var(--line-height-normal);
+    display: none;
+  }
+
+  /* Submit Button - Mobile-first with touch optimization */
+  .form-submit-button {
+    width: 100%;
+    background: linear-gradient(135deg, var(--color-secondary), var(--color-secondary-dark));
+    color: var(--color-white);
+    border: none;
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-4) var(--spacing-6);
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    font-family: var(--font-family);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    min-height: var(--touch-target-comfortable); /* Comfortable for 40-70 age group */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-2);
+    margin-bottom: var(--spacing-2);
+    box-shadow: var(--shadow-md);
+  }
+
+  .form-submit-button:hover {
+    background: linear-gradient(135deg, var(--color-secondary-dark), var(--color-secondary));
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+  }
+
+  .form-submit-button:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-md);
+  }
+
+  .form-submit-icon {
+    flex-shrink: 0;
+    font-size: var(--font-size-lg);
+  }
+
+  /* Privacy Notice */
+  .form-privacy {
+    margin-top: var(--spacing-6);
+    padding-top: var(--spacing-4);
+    border-top: 1px solid var(--color-gray-200);
+  }
+
+  .form-privacy-text {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-600);
+    text-align: center;
+    line-height: var(--line-height-relaxed);
+  }
+
+  /* Success Message */
+  .form-success {
+    background: var(--color-secondary-light);
+    border: 2px solid var(--color-secondary);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-6);
+    margin-top: var(--spacing-6);
+    text-align: center;
+  }
+
+  .form-success h3 {
+    color: var(--color-secondary-dark);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-2);
+  }
+
+  .form-success p {
+    color: var(--color-gray-700);
+    font-size: var(--font-size-base);
+    line-height: var(--line-height-relaxed);
+  }
+
+  .form-success a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    font-weight: var(--font-weight-semibold);
+  }
+
+  /* Alternative CTAs */
+  .form-section__alternatives {
+    margin-top: var(--spacing-8);
+  }
+
+  .form-section__divider {
+    position: relative;
+    text-align: center;
+    margin: var(--spacing-6) 0;
+  }
+
+  .form-section__divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: var(--color-gray-300);
+    transform: translateY(-50%);
+  }
+
+  .form-section__divider-text {
+    background-color: var(--color-white);
+    color: var(--color-gray-500);
+    padding: 0 var(--spacing-4);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    position: relative;
+    z-index: 1;
+  }
+
+  .form-section__cta-buttons {
+    display: flex;
+    justify-content: center;
+  }
+
+  .btn-icon {
+    margin-right: var(--spacing-2);
+    flex-shrink: 0;
+  }
+
+  /* Responsive Design */
+  @media (min-width: 640px) {
+    .contact-form {
+      padding: var(--spacing-10);
+    }
+    
+    .form-section__container {
+      max-width: 36rem;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .form-section__title {
+      font-size: var(--font-size-4xl);
+    }
+    
+    .form-input {
+      font-size: var(--font-size-lg);
+      padding: var(--spacing-5);
+    }
+    
+    .form-submit-button {
+      font-size: var(--font-size-xl);
+      padding: var(--spacing-5) var(--spacing-8);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .form-section {
+      padding: var(--spacing-24) 0;
+    }
+    
+    .form-section__container {
+      max-width: 40rem;
+    }
+  }
+
+  /* Accessibility improvements for mature users */
+  @media (prefers-reduced-motion: reduce) {
+    .form-submit-button {
+      transition: none;
+    }
+    
+    .form-input {
+      transition: none;
+    }
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .form-input {
+      border-width: 3px;
+    }
+    
+    .form-submit-button {
+      border: 2px solid var(--color-white);
+    }
+  }
+</style>
+
+<script>
+  // Import TypeScript form validation functionality
+  import '../scripts/main.ts';
+</script>

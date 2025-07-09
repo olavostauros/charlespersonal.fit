@@ -136,7 +136,7 @@
   let currentSlide = 0;
   const totalSlides = 7;
   
-  function moveCarousel(direction) {
+  function moveCarousel(direction: number): void {
     currentSlide += direction;
     
     if (currentSlide >= totalSlides) {
@@ -148,10 +148,10 @@
     updateCarousel();
   }
   
-  function goToSlide(slideIndex) {
-    currentSlide = slideIndex;
-    updateCarousel();
-  }
+  // function goToSlide(slideIndex: number): void {
+  //   currentSlide = slideIndex;
+  //   updateCarousel();
+  // }
   
   function updateCarousel() {
     const track = document.getElementById('carousel-track');

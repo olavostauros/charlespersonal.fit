@@ -160,6 +160,14 @@ body {
    ========================================================================== */
 
 /* 📦 CONTAINER */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
 .c-container {
   width: 100%;
   max-width: var(--container-max-width);
@@ -169,12 +177,14 @@ body {
 }
 
 @media (min-width: 640px) {
+  .container,
   .c-container {
     --container-padding: var(--spacing-6);
   }
 }
 
 @media (min-width: 1024px) {
+  .container,
   .c-container {
     --container-padding: var(--spacing-8);
   }
@@ -193,8 +203,8 @@ body {
   }
 }
 
-/* 🔘 BUTTONS */
-.c-btn {
+/* Button components with mobile-first approach */
+.btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -208,63 +218,66 @@ body {
   cursor: pointer;
   transition: all var(--transition-fast);
   white-space: nowrap;
+  min-height: var(--touch-target-min); /* Accessibility for mature users */
+  font-family: var(--font-family);
 }
 
-.c-btn:focus {
+.btn:focus {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
 
-.c-btn-primary {
+.btn-primary {
   background-color: var(--color-primary);
   color: var(--color-white);
   border-color: var(--color-primary);
 }
 
-.c-btn-primary:hover {
+.btn-primary:hover {
   background-color: var(--color-primary-dark);
   border-color: var(--color-primary-dark);
 }
 
-.c-btn-secondary {
+.btn-secondary {
   background-color: var(--color-secondary);
   color: var(--color-white);
   border-color: var(--color-secondary);
 }
 
-.c-btn-secondary:hover {
+.btn-secondary:hover {
   background-color: var(--color-secondary-dark);
   border-color: var(--color-secondary-dark);
 }
 
-.c-btn-accent {
+.btn-accent {
   background-color: var(--color-accent);
   color: var(--color-white);
   border-color: var(--color-accent);
 }
 
-.c-btn-accent:hover {
+.btn-accent:hover {
   background-color: var(--color-accent-dark);
   border-color: var(--color-accent-dark);
 }
 
-.c-btn-outline {
+.btn-outline {
   background-color: transparent;
   color: var(--color-primary);
   border-color: var(--color-primary);
 }
 
-.c-btn-outline:hover {
+.btn-outline:hover {
   background-color: var(--color-primary);
   color: var(--color-white);
 }
 
-.c-btn-lg {
+.btn-lg {
   padding: var(--spacing-4) var(--spacing-8);
   font-size: var(--font-size-lg);
+  min-height: var(--touch-target-comfortable); /* Comfortable for 40-70 age group */
 }
 
-.c-btn-sm {
+.btn-sm {
   padding: var(--spacing-2) var(--spacing-4);
   font-size: var(--font-size-sm);
 }
