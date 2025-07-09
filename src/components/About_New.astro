@@ -463,11 +463,11 @@
     
     if (carousel) {
       carousel.addEventListener('touchstart', e => {
-        touchStartX = e.changedTouches[0].screenX;
+        touchStartX = (e as TouchEvent).changedTouches[0].screenX;
       });
       
       carousel.addEventListener('touchend', e => {
-        touchEndX = e.changedTouches[0].screenX;
+        touchEndX = (e as TouchEvent).changedTouches[0].screenX;
         handleSwipe();
       });
     }
