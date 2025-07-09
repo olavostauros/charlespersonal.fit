@@ -1,12 +1,14 @@
 # Charles Personal Landing Page - Development Prompt
 
-> **Version**: 2.5  
+> **Version**: 2.7  
 > **Last Updated**: July 9, 2025  
-> **Project**: Charl### JavaScript Requirements**:
+> **Project**: charlinho
 - Mobile-first form validation (vanilla JS)
 - Touch-optimized interactions and feedback
 - WhatsApp redirect with pre-filled message including form data
-- Mobile analytics event tracking
+- Mobile analytics event - [ ] **Naming pattern compliance**: camelCase for JS/TS variables/functions, kebab-case for CSS, SCREAMING_SNAKE_CASE for constants
+- [ ] **BEM methodology**: CSS classes follow English BEM naming patterns
+- [ ] **TypeScript compliance**: Proper type definitions, interfaces, and strict type checking enabledacking
 - Progressive enhancement approach (mobile-first baseline)
 
 ### Code Language Standards
@@ -66,7 +68,7 @@ You are an expert in digital marketing, UX/UI design, web development with Astro
 | Framework | Astro (SSG) | Static site generation |
 | Markup | HTML | Structure |
 | Styling | Vanilla CSS | Custom responsive design |
-| Scripting | Pure JavaScript | Form handling and interactions |
+| Scripting | TypeScript | Form handling and interactions with type safety |
 | Hosting | Vercel (free) | Static hosting |
 
 ### Performance Requirements
@@ -126,11 +128,12 @@ Create modular Astro project structure:
 ```
 ├── astro.config.mjs          # Basic Astro configuration
 ├── package.json              # Minimal dependencies and scripts
+├── tsconfig.json             # TypeScript configuration
 ├── src/
 │   ├── styles/
 │   │   └── global.css        # Global and responsive styles
 │   ├── scripts/
-│   │   └── main.js           # Form validation and interactions
+│   │   └── main.ts           # Form validation and interactions (TypeScript)
 │   ├── components/
 │   │   ├── Header.astro      # Navigation with title and tagline
 │   │   ├── Hero.astro        # Primary CTA section
@@ -141,12 +144,13 @@ Create modular Astro project structure:
 │       └── index.astro       # Main landing page
 ```
 
-**JavaScript Requirements**:
-- Mobile-first form validation (vanilla JS)
-- Touch-optimized interactions and feedback
-- WhatsApp redirect with pre-filled message including form data
-- Mobile analytics event tracking
-- Progressive enhancement approach (mobile-first baseline)
+**TypeScript Requirements**:
+- Mobile-first form validation with type safety
+- Touch-optimized interactions with typed event handlers
+- WhatsApp redirect with strongly-typed message data structure
+- Mobile analytics event tracking with typed event parameters
+- Progressive enhancement approach with type definitions
+- Interface definitions for form data, validation rules, and API responses
 
 ### Task 3: Code Documentation Standards
 
@@ -164,11 +168,12 @@ For each file, include comments explaining:
 - **Tertiary**: Client (project understanding)
 
 #### 3.3 Comment Format
-```javascript
+```typescript
 /**
  * BUSINESS PURPOSE: [How this contributes to conversion]
  * TECHNICAL PURPOSE: [What this code does]
  * DEPENDENCIES: [External services, APIs, etc.]
+ * TYPE DEFINITIONS: [Custom types and interfaces used]
  * NOTE: All comments, variables, and function names must be in English
  */
 ```
@@ -180,6 +185,9 @@ For each file, include comments explaining:
 - **Functions**: camelCase verbs (`validateEmail`, `redirectToWhatsapp`, `trackFormSubmission`)
 - **Classes**: PascalCase (`FormValidator`, `WhatsappRedirect`, `ConversionTracker`)
 - **Objects**: camelCase (`formData`, `validationRules`, `userPreferences`)
+- **Types/Interfaces**: PascalCase (`FormData`, `ValidationRule`, `WhatsappConfig`)
+- **Type Parameters**: Single uppercase letter (`T`, `K`, `V`)
+- **Enums**: PascalCase (`FormStatus`, `ValidationError`, `EventType`)
 
 #### CSS
 - **Components**: kebab-case with BEM (`form-section`, `cta-button`, `hero-section`)
@@ -197,15 +205,29 @@ For each file, include comments explaining:
 - **Components**: PascalCase (`Header.astro`, `FormSection.astro`, `CTAButton.astro`)
 - **Pages**: lowercase (`index.astro`, `thank-you.astro`)
 - **Styles**: kebab-case (`design-system.css`, `form-components.css`)
-- **Scripts**: kebab-case (`form-validation.js`, `analytics-tracking.js`)
+- **Scripts**: kebab-case (`form-validation.ts`, `analytics-tracking.ts`)
+- **Types**: kebab-case (`form-types.ts`, `analytics-types.ts`)
 
 #### Content Variables
-Even when storing Portuguese content, use English variable names:
-```javascript
-// ✅ Correct
-const heroTitle = "Transforme sua vida com treinos personalizados";
-const ctaButtonText = "Comece Agora";
-const successMessage = "Obrigado! Entraremos em contato em breve.";
+Even when storing Portuguese content, use English variable names with proper TypeScript typing:
+```typescript
+// ✅ Correct - with TypeScript types
+const heroTitle: string = "Transforme sua vida com treinos personalizados";
+const ctaButtonText: string = "Comece Agora";
+const successMessage: string = "Obrigado! Entraremos em contato em breve.";
+
+// Better - with interface
+interface ContentStrings {
+  heroTitle: string;
+  ctaButtonText: string;
+  successMessage: string;
+}
+
+const content: ContentStrings = {
+  heroTitle: "Transforme sua vida com treinos personalizados",
+  ctaButtonText: "Comece Agora",
+  successMessage: "Obrigado! Entraremos em contato em breve."
+};
 
 // ❌ Incorrect
 const tituloHero = "Transforme sua vida com treinos personalizados";
@@ -254,13 +276,14 @@ src/components/
 - [ ] Semantic HTML structure optimized for mobile
 - [ ] Touch-accessible form design (44px+ touch targets)
 - [ ] Mobile-first responsive CSS approach
-- [ ] Minimal JavaScript footprint for fast mobile loading
+- [ ] TypeScript implementation with strict type checking for error prevention
 - [ ] Mobile SEO optimization compliance
 - [ ] CSS design token usage for consistent mobile experience
 - [ ] Component-based CSS architecture with mobile priority
 - [ ] **English-only code**: All variables, constants, functions, and comments in English
 - [ ] **Consistent naming**: Follow established camelCase/kebab-case/SCREAMING_SNAKE_CASE patterns
 - [ ] **BEM CSS methodology**: Component-based CSS class naming in English
+- [ ] **TypeScript standards**: Proper type definitions, interfaces, and error handling
 
 #### 5.2 Performance Benchmarks
 - [ ] Mobile Lighthouse score > 90 (optimized for Brazilian mobile networks)
@@ -290,6 +313,7 @@ src/components/
 ### Documentation Structure
 ```
 ├── PROCESS.md                    # Main process documentation
+├── tsconfig.json                 # TypeScript configuration
 ├── src/
 │   ├── components/
 │   │   ├── Header.astro         # Component files
@@ -298,6 +322,10 @@ src/components/
 │   ├── pages/
 │   │   ├── index.astro
 │   │   └── index.astro.md
+│   ├── scripts/
+│   │   ├── main.ts              # TypeScript files
+│   │   └── types/
+│   │       └── form-types.ts    # Type definitions
 │   └── styles/
 │       ├── global.css
 │       └── global.css.md
@@ -354,9 +382,9 @@ src/components/
 ## 🔧 Technical Implementation Notes
 
 ### Form Integration Options
-1. **Client-side handling**: Form validation and WhatsApp redirect with pre-filled data
-2. **Analytics tracking**: Form interaction events and conversion funnels
-3. **Progressive enhancement**: Works without JavaScript, enhanced with it
+1. **Client-side handling**: TypeScript-based form validation and WhatsApp redirect with type-safe data structures
+2. **Analytics tracking**: Strongly-typed form interaction events and conversion funnels
+3. **Progressive enhancement**: Works without JavaScript, enhanced with TypeScript for better reliability
 
 ### Responsive Design Strategy
 - **Mobile-first**: Design and code for mobile, then enhance for larger screens
@@ -386,6 +414,7 @@ When reviewing or modifying CSS in this project, ensure:
 - [ ] New styles follow existing naming patterns
 - [ ] Component styles are grouped logically
 - [ ] Utility classes remain single-purpose
+- [ ] TypeScript integration for CSS-in-JS or type-safe style handling (if applicable)
 
 #### Design Tokens
 - [ ] Use existing custom properties before creating new ones
@@ -597,6 +626,8 @@ npm run preview
 ### Required Dependencies
 - `astro`: Static site generator
 - `@astrojs/sitemap`: SEO sitemap generation
+- `typescript`: Type checking and error prevention
+- `@types/node`: Node.js type definitions
 - Minimal external dependencies for performance
 
 ## 📋 Maintenance Guidelines
@@ -625,6 +656,7 @@ npm run preview
 
 | Version | Date | Changes | Maintainer |
 |---------|------|---------|------------|
+| 2.7 | 2025-07-09 | Updated to use TypeScript instead of JavaScript for better error tracking and type safety | Development Team |
 | 2.6 | 2025-07-09 | Added English-only code requirements and comprehensive naming conventions | Development Team |
 | 2.5 | 2025-07-09 | Emphasized Brazilian Portuguese speaking target audience throughout all sections | Development Team |
 | 2.4 | 2025-07-09 | Updated target audience to 40-70 years, Vila Velha location, accessibility improvements | Development Team |
