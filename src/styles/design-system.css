@@ -1,11 +1,25 @@
 /* Design System - Charles Personal Landing Page */
+/* 
+ * BUSINESS PURPOSE: Mobile-first design system for Brazilian Portuguese speakers (40-70 years)
+ * TECHNICAL PURPOSE: CSS custom properties and mobile-optimized utilities for Vila Velha market
+ * TARGET AUDIENCE: Adults 40-70 interested in fitness, primarily mobile users in Vila Velha, ES
+ * CULTURAL CONTEXT: Brazilian fitness culture, beach community lifestyle, mature adults
+ * 
+ * CSS NAMING CONVENTIONS:
+ * - Components: .c-component-name (e.g., .c-header, .c-hero)
+ * - Elements: .component__element (e.g., .c-header__nav, .c-hero__title) 
+ * - Modifiers: .component--modifier (e.g., .c-button--primary)
+ * - Utilities: .u-utility-name (e.g., .u-text-center, .u-margin-top-4)
+ * - JavaScript hooks: .js-hook-name (e.g., .js-mobile-menu, .js-carousel)
+ * - State classes: .is-state or .has-state (e.g., .is-active, .has-error)
+ */
 
 /* ==========================================================================
-   CSS Custom Properties (Design Tokens)
+   CSS Custom Properties (Design Tokens) - Mobile-First & Accessibility
    ========================================================================== */
 
 :root {
-  /* 🎨 CORES PRINCIPAIS */
+  /* 🎨 CORES PRINCIPAIS - Otimized for mobile displays and age-related vision */
   --color-primary: #3B82F6;        /* Azul - Confiança, Profissionalismo */
   --color-primary-light: #60A5FA;  /* Azul claro para hover */
   --color-primary-dark: #1E40AF;   /* Azul escuro para pressed */
@@ -22,7 +36,7 @@
   --color-error-light: #F87171;    /* Vermelho claro */
   --color-error-dark: #DC2626;     /* Vermelho escuro */
 
-  /* 🎨 CORES NEUTRAS */
+  /* 🎨 CORES NEUTRAS - High contrast for mature users */
   --color-white: #FFFFFF;
   --color-gray-50: #F9FAFB;
   --color-gray-100: #F3F4F6;
@@ -35,28 +49,28 @@
   --color-gray-800: #1F2937;
   --color-gray-900: #111827;
 
-  /* 📝 TIPOGRAFIA */
+  /* 📝 TIPOGRAFIA - Optimized for Portuguese text and mature users (40-70) */
   --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-weight-normal: 400;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
 
-  /* Escala tipográfica baseada em rem */
-  --font-size-xs: 0.75rem;     /* 12px */
-  --font-size-sm: 0.875rem;    /* 14px */
-  --font-size-base: 1rem;      /* 16px */
-  --font-size-lg: 1.125rem;    /* 18px */
-  --font-size-xl: 1.25rem;     /* 20px */
-  --font-size-2xl: 1.5rem;     /* 24px */
-  --font-size-3xl: 1.875rem;   /* 30px */
-  --font-size-4xl: 2.25rem;    /* 36px */
+  /* Mobile-first type scale - Larger base sizes for 40-70 age group */
+  --font-size-xs: 0.875rem;    /* 14px - Minimum readable size for mature users */
+  --font-size-sm: 1rem;        /* 16px - Mobile base size */
+  --font-size-base: 1.125rem;  /* 18px - Comfortable reading for 40-70 age group */
+  --font-size-lg: 1.25rem;     /* 20px */
+  --font-size-xl: 1.375rem;    /* 22px */
+  --font-size-2xl: 1.625rem;   /* 26px */
+  --font-size-3xl: 2rem;       /* 32px */
+  --font-size-4xl: 2.5rem;     /* 40px */
 
-  /* Line heights */
-  --line-height-tight: 1.25;
-  --line-height-normal: 1.5;
-  --line-height-relaxed: 1.625;
+  /* Line heights for Portuguese text readability */
+  --line-height-tight: 1.3;
+  --line-height-normal: 1.6;   /* Better for Portuguese text */
+  --line-height-relaxed: 1.75;
 
-  /* 📐 ESPAÇAMENTOS */
+  /* 📐 ESPAÇAMENTOS - Mobile-first with touch-friendly targets */
   --spacing-1: 0.25rem;    /* 4px */
   --spacing-2: 0.5rem;     /* 8px */
   --spacing-3: 0.75rem;    /* 12px */
@@ -65,22 +79,27 @@
   --spacing-6: 1.5rem;     /* 24px */
   --spacing-8: 2rem;       /* 32px */
   --spacing-10: 2.5rem;    /* 40px */
-  --spacing-12: 3rem;      /* 48px */
+  --spacing-12: 3rem;      /* 48px - Touch target minimum */
   --spacing-16: 4rem;      /* 64px */
   --spacing-20: 5rem;      /* 80px */
   --spacing-24: 6rem;      /* 96px */
 
-  /* 📱 BREAKPOINTS & CONTAINERS */
+  /* 📱 MOBILE-FIRST BREAKPOINTS & CONTAINERS */
   --container-max-width: 72rem;    /* 1152px */
   --container-padding: var(--spacing-4);
 
-  /* Breakpoints (para uso com @media) */
-  --breakpoint-sm: 640px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 1024px;
-  --breakpoint-xl: 1280px;
+  /* Breakpoints optimized for Brazilian mobile usage */
+  --breakpoint-xs: 320px;  /* Small mobile */
+  --breakpoint-sm: 375px;  /* Mobile */
+  --breakpoint-md: 768px;  /* Tablet */
+  --breakpoint-lg: 1024px; /* Desktop */
+  --breakpoint-xl: 1440px; /* Large desktop */
 
-  /* 🎭 SOMBRAS */
+  /* 🎯 Touch Targets - Accessibility for 40-70 age group */
+  --touch-target-min: 48px;     /* WCAG minimum for mature users */
+  --touch-target-comfortable: 56px; /* Recommended for 40-70 age group */
+
+  /* 🎭 SOMBRAS - Mobile optimized */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -141,7 +160,7 @@ body {
    ========================================================================== */
 
 /* 📦 CONTAINER */
-.container {
+.c-container {
   width: 100%;
   max-width: var(--container-max-width);
   margin: 0 auto;
@@ -150,32 +169,32 @@ body {
 }
 
 @media (min-width: 640px) {
-  .container {
+  .c-container {
     --container-padding: var(--spacing-6);
   }
 }
 
 @media (min-width: 1024px) {
-  .container {
+  .c-container {
     --container-padding: var(--spacing-8);
   }
 }
 
 /* 📄 SECTION */
-.section {
+.c-section {
   padding-top: var(--spacing-16);
   padding-bottom: var(--spacing-16);
 }
 
 @media (min-width: 1024px) {
-  .section {
+  .c-section {
     padding-top: var(--spacing-24);
     padding-bottom: var(--spacing-24);
   }
 }
 
 /* 🔘 BUTTONS */
-.btn {
+.c-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -191,67 +210,67 @@ body {
   white-space: nowrap;
 }
 
-.btn:focus {
+.c-btn:focus {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
 
-.btn-primary {
+.c-btn-primary {
   background-color: var(--color-primary);
   color: var(--color-white);
   border-color: var(--color-primary);
 }
 
-.btn-primary:hover {
+.c-btn-primary:hover {
   background-color: var(--color-primary-dark);
   border-color: var(--color-primary-dark);
 }
 
-.btn-secondary {
+.c-btn-secondary {
   background-color: var(--color-secondary);
   color: var(--color-white);
   border-color: var(--color-secondary);
 }
 
-.btn-secondary:hover {
+.c-btn-secondary:hover {
   background-color: var(--color-secondary-dark);
   border-color: var(--color-secondary-dark);
 }
 
-.btn-accent {
+.c-btn-accent {
   background-color: var(--color-accent);
   color: var(--color-white);
   border-color: var(--color-accent);
 }
 
-.btn-accent:hover {
+.c-btn-accent:hover {
   background-color: var(--color-accent-dark);
   border-color: var(--color-accent-dark);
 }
 
-.btn-outline {
+.c-btn-outline {
   background-color: transparent;
   color: var(--color-primary);
   border-color: var(--color-primary);
 }
 
-.btn-outline:hover {
+.c-btn-outline:hover {
   background-color: var(--color-primary);
   color: var(--color-white);
 }
 
-.btn-lg {
+.c-btn-lg {
   padding: var(--spacing-4) var(--spacing-8);
   font-size: var(--font-size-lg);
 }
 
-.btn-sm {
+.c-btn-sm {
   padding: var(--spacing-2) var(--spacing-4);
   font-size: var(--font-size-sm);
 }
 
 /* 🃏 CARDS */
-.card {
+.c-card {
   background-color: var(--color-white);
   border-radius: var(--radius-xl);
   padding: var(--spacing-6);
@@ -305,15 +324,15 @@ body {
 }
 
 /* 📱 RESPONSIVE UTILITIES */
-.text-center {
+.u-text-center {
   text-align: center;
 }
 
-.text-left {
+.u-text-left {
   text-align: left;
 }
 
-.text-right {
+.u-text-right {
   text-align: right;
 }
 
@@ -343,326 +362,404 @@ body {
 }
 
 /* ==========================================================================
-   UTILITÁRIOS DE TIPOGRAFIA
+   UTILITY CLASSES - Mobile-First Pattern
    ========================================================================== */
 
-.text-xs { font-size: var(--font-size-xs); }
-.text-sm { font-size: var(--font-size-sm); }
-.text-base { font-size: var(--font-size-base); }
-.text-lg { font-size: var(--font-size-lg); }
-.text-xl { font-size: var(--font-size-xl); }
-.text-2xl { font-size: var(--font-size-2xl); }
-.text-3xl { font-size: var(--font-size-3xl); }
-.text-4xl { font-size: var(--font-size-4xl); }
-
-.font-normal { font-weight: var(--font-weight-normal); }
-.font-semibold { font-weight: var(--font-weight-semibold); }
-.font-bold { font-weight: var(--font-weight-bold); }
-
-.leading-tight { line-height: var(--line-height-tight); }
-.leading-normal { line-height: var(--line-height-normal); }
-.leading-relaxed { line-height: var(--line-height-relaxed); }
-
-/* Cores de texto */
-.text-primary { color: var(--color-primary); }
-.text-secondary { color: var(--color-secondary); }
-.text-accent { color: var(--color-accent); }
-.text-gray-500 { color: var(--color-gray-500); }
-.text-gray-600 { color: var(--color-gray-600); }
-.text-gray-700 { color: var(--color-gray-700); }
-.text-gray-800 { color: var(--color-gray-800); }
-.text-gray-900 { color: var(--color-gray-900); }
-.text-white { color: var(--color-white); }
-
-/* ==========================================================================
-   UTILITÁRIOS DE ESPAÇAMENTO
-   ========================================================================== */
-
-.mt-1 { margin-top: var(--spacing-1); }
-.mt-2 { margin-top: var(--spacing-2); }
-.mt-3 { margin-top: var(--spacing-3); }
-.mt-4 { margin-top: var(--spacing-4); }
-.mt-5 { margin-top: var(--spacing-5); }
-.mt-6 { margin-top: var(--spacing-6); }
-.mt-8 { margin-top: var(--spacing-8); }
-.mt-10 { margin-top: var(--spacing-10); }
-.mt-12 { margin-top: var(--spacing-12); }
-
-.mb-1 { margin-bottom: var(--spacing-1); }
-.mb-2 { margin-bottom: var(--spacing-2); }
-.mb-3 { margin-bottom: var(--spacing-3); }
-.mb-4 { margin-bottom: var(--spacing-4); }
-.mb-5 { margin-bottom: var(--spacing-5); }
-.mb-6 { margin-bottom: var(--spacing-6); }
-.mb-8 { margin-bottom: var(--spacing-8); }
-.mb-10 { margin-bottom: var(--spacing-10); }
-.mb-12 { margin-bottom: var(--spacing-12); }
-
-.py-1 { padding-top: var(--spacing-1); padding-bottom: var(--spacing-1); }
-.py-2 { padding-top: var(--spacing-2); padding-bottom: var(--spacing-2); }
-.py-4 { padding-top: var(--spacing-4); padding-bottom: var(--spacing-4); }
-.py-6 { padding-top: var(--spacing-6); padding-bottom: var(--spacing-6); }
-.py-8 { padding-top: var(--spacing-8); padding-bottom: var(--spacing-8); }
-
-.px-1 { padding-left: var(--spacing-1); padding-right: var(--spacing-1); }
-.px-2 { padding-left: var(--spacing-2); padding-right: var(--spacing-2); }
-.px-4 { padding-left: var(--spacing-4); padding-right: var(--spacing-4); }
-.px-6 { padding-left: var(--spacing-6); padding-right: var(--spacing-6); }
-.px-8 { padding-left: var(--spacing-8); padding-right: var(--spacing-8); }
-
-/* ==========================================================================
-   ENHANCED RESPONSIVE UTILITIES (Mobile-First)
-   ========================================================================== */
-
-/* Width and max-width utilities */
-.w-full { width: 100%; }
-.max-w-xs { max-width: 20rem; }
-.max-w-sm { max-width: 24rem; }
-.max-w-md { max-width: 28rem; }
-.max-w-lg { max-width: 32rem; }
-.max-w-xl { max-width: 36rem; }
-.max-w-2xl { max-width: 42rem; }
-.max-w-3xl { max-width: 48rem; }
-.max-w-4xl { max-width: 56rem; }
-.max-w-5xl { max-width: 64rem; }
-.max-w-6xl { max-width: 72rem; }
-.max-w-full { max-width: 100%; }
-
-/* Margin auto */
-.mx-auto { margin-left: auto; margin-right: auto; }
-
-/* Flexbox utilities */
-.flex { display: flex; }
-.flex-col { flex-direction: column; }
-.flex-row { flex-direction: row; }
-.items-center { align-items: center; }
-.items-start { align-items: flex-start; }
-.items-end { align-items: flex-end; }
-.justify-center { justify-content: center; }
-.justify-between { justify-content: space-between; }
-.justify-start { justify-content: flex-start; }
-.justify-end { justify-content: flex-end; }
-
-/* Height utilities */
-.h-full { height: 100%; }
-.min-h-screen { min-height: 100vh; }
-
-/* Responsive breakpoint utilities - Mobile First */
-
-/* Small screens (640px and up) */
-@media (min-width: 640px) {
-  .sm\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
-  .sm\:flex-row { flex-direction: row; }
-  .sm\:text-left { text-align: left; }
-  .sm\:text-center { text-align: center; }
-  .sm\:block { display: block; }
-  .sm\:hidden { display: none; }
-  
-  /* Typography responsive */
-  .sm\:text-lg { font-size: var(--font-size-lg); }
-  .sm\:text-xl { font-size: var(--font-size-xl); }
-  .sm\:text-2xl { font-size: var(--font-size-2xl); }
-  .sm\:text-3xl { font-size: var(--font-size-3xl); }
-  .sm\:text-4xl { font-size: var(--font-size-4xl); }
+/* Touch-friendly spacing utilities for mature users (40-70) */
+.u-touch-target {
+  min-height: 48px; /* Accessibility for mature users */
+  min-width: 48px;
 }
 
-/* Medium screens (768px and up) - Tablet */
+.u-touch-target-comfortable {
+  min-height: 56px; /* Recommended for 40-70 age group */
+  min-width: 56px;
+}
+
+/* Mobile-optimized margin utilities */
+.u-margin-top-xs { margin-top: var(--spacing-1); }
+.u-margin-top-sm { margin-top: var(--spacing-2); }
+.u-margin-top-md { margin-top: var(--spacing-4); }
+.u-margin-top-lg { margin-top: var(--spacing-6); }
+.u-margin-top-xl { margin-top: var(--spacing-8); }
+
+.u-margin-bottom-xs { margin-bottom: var(--spacing-1); }
+.u-margin-bottom-sm { margin-bottom: var(--spacing-2); }
+.u-margin-bottom-md { margin-bottom: var(--spacing-4); }
+.u-margin-bottom-lg { margin-bottom: var(--spacing-6); }
+.u-margin-bottom-xl { margin-bottom: var(--spacing-8); }
+
+/* Mobile-optimized padding utilities */
+.u-padding-xs { padding: var(--spacing-2); }
+.u-padding-sm { padding: var(--spacing-3); }
+.u-padding-md { padding: var(--spacing-4); }
+.u-padding-lg { padding: var(--spacing-6); }
+.u-padding-xl { padding: var(--spacing-8); }
+
+/* Mobile-optimized logical properties for Portuguese text */
+.u-padding-inline-xs { padding-inline: var(--spacing-2); }
+.u-padding-inline-sm { padding-inline: var(--spacing-3); }
+.u-padding-inline-md { padding-inline: var(--spacing-4); }
+.u-padding-inline-lg { padding-inline: var(--spacing-6); }
+.u-padding-inline-xl { padding-inline: var(--spacing-8); }
+
+/* Responsive display utilities - Mobile First */
+.u-hide-mobile {
+  display: none;
+}
+
 @media (min-width: 768px) {
-  .md\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
-  .md\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
-  .md\:flex-row { flex-direction: row; }
-  .md\:text-left { text-align: left; }
-  .md\:text-center { text-align: center; }
-  .md\:block { display: block; }
-  .md\:hidden { display: none; }
+  .u-hide-mobile {
+    display: block;
+  }
   
-  /* Typography responsive */
-  .md\:text-lg { font-size: var(--font-size-lg); }
-  .md\:text-xl { font-size: var(--font-size-xl); }
-  .md\:text-2xl { font-size: var(--font-size-2xl); }
-  .md\:text-3xl { font-size: var(--font-size-3xl); }
-  .md\:text-4xl { font-size: var(--font-size-4xl); }
-}
-
-/* Large screens (1024px and up) - Desktop */
-@media (min-width: 1024px) {
-  .lg\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
-  .lg\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
-  .lg\:grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
-  .lg\:flex-row { flex-direction: row; }
-  .lg\:text-left { text-align: left; }
-  .lg\:text-center { text-align: center; }
-  .lg\:block { display: block; }
-  .lg\:hidden { display: none; }
-  
-  /* Typography responsive */
-  .lg\:text-lg { font-size: var(--font-size-lg); }
-  .lg\:text-xl { font-size: var(--font-size-xl); }
-  .lg\:text-2xl { font-size: var(--font-size-2xl); }
-  .lg\:text-3xl { font-size: var(--font-size-3xl); }
-  .lg\:text-4xl { font-size: var(--font-size-4xl); }
-  .lg\:text-5xl { font-size: 3rem; }
-  .lg\:text-6xl { font-size: 3.75rem; }
-}
-
-/* ==========================================================================
-   ENHANCED LAYOUT COMPONENTS
-   ========================================================================== */
-
-/* Hero section specific styling */
-.hero-section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  position: relative;
-  padding-top: 6rem; /* Account for fixed header */
-}
-
-@media (min-width: 1024px) {
-  .hero-section {
-    padding-top: 8rem;
+  .u-hide-desktop {
+    display: none;
   }
 }
 
-/* Thank you page specific components */
-.thank-you__icon {
-  width: 5rem;
-  height: 5rem;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-gray-50);
-  border-radius: var(--radius-full);
+/* Text utilities for Brazilian Portuguese optimization */
+.u-text-center { text-align: center; }
+.u-text-left { text-align: left; }
+.u-text-right { text-align: right; }
+
+/* Mobile-first typography utilities */
+.u-font-size-sm { font-size: var(--font-size-sm); }
+.u-font-size-base { font-size: var(--font-size-base); }
+.u-font-size-lg { font-size: var(--font-size-lg); }
+.u-font-size-xl { font-size: var(--font-size-xl); }
+
+/* Weight utilities optimized for Portuguese text readability */
+.u-font-weight-normal { font-weight: var(--font-weight-normal); }
+.u-font-weight-semibold { font-weight: var(--font-weight-semibold); }
+.u-font-weight-bold { font-weight: var(--font-weight-bold); }
+
+/* Line height utilities for Portuguese text */
+.u-line-height-tight { line-height: var(--line-height-tight); }
+.u-line-height-normal { line-height: var(--line-height-normal); }
+.u-line-height-relaxed { line-height: var(--line-height-relaxed); }
+
+/* Color utilities */
+.u-color-primary { color: var(--color-primary); }
+.u-color-secondary { color: var(--color-secondary); }
+.u-color-gray-600 { color: var(--color-gray-600); }
+.u-color-gray-800 { color: var(--color-gray-800); }
+.u-color-white { color: var(--color-white); }
+
+/* Background color utilities */
+.u-bg-primary { background-color: var(--color-primary); }
+.u-bg-secondary { background-color: var(--color-secondary); }
+.u-bg-white { background-color: var(--color-white); }
+.u-bg-gray-50 { background-color: var(--color-gray-50); }
+
+/* Border radius utilities */
+.u-radius-sm { border-radius: var(--radius-sm); }
+.u-radius-md { border-radius: var(--radius-md); }
+.u-radius-lg { border-radius: var(--radius-lg); }
+.u-radius-xl { border-radius: var(--radius-xl); }
+.u-radius-full { border-radius: var(--radius-full); }
+
+/* Accessibility utilities for mature users */
+.u-high-contrast {
+  color: var(--color-gray-900);
+  background-color: var(--color-white);
 }
 
-.step-number {
-  width: 3rem;
-  height: 3rem;
-  background-color: var(--color-primary);
-  color: var(--color-white);
-  border-radius: var(--radius-full);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: var(--font-weight-bold);
-  font-size: var(--font-size-lg);
-  margin: 0 auto var(--spacing-4);
-}
-
-/* Enhanced card hover effects */
-.card-interactive {
-  cursor: pointer;
-  transition: all var(--transition-normal);
-}
-
-.card-interactive:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-xl);
-  border-color: var(--color-primary-light);
-}
-
-/* Performance optimizations */
-.card, .btn, .hero-section {
-  will-change: transform;
-}
-
-/* Focus states for better accessibility */
-.card:focus-within {
+.u-focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
 
 /* ==========================================================================
-   MOBILE-SPECIFIC OPTIMIZATIONS
+   STATE CLASSES
    ========================================================================== */
 
-/* Touch-friendly button sizing on mobile */
-@media (max-width: 639px) {
-  .btn {
-    min-height: 44px; /* iOS recommended touch target */
-    padding: var(--spacing-4) var(--spacing-6);
-  }
-  
-  .btn-lg {
-    min-height: 48px;
-    padding: var(--spacing-5) var(--spacing-8);
-  }
-  
-  /* Mobile-optimized spacing */
-  .section {
-    padding-top: var(--spacing-12);
-    padding-bottom: var(--spacing-12);
-  }
-  
-  /* Mobile typography */
-  .mobile-h1 { 
-    font-size: 2rem; 
-    line-height: 1.2; 
-    font-weight: var(--font-weight-bold);
-  }
-  .mobile-h2 { 
-    font-size: 1.75rem; 
-    line-height: 1.25; 
-    font-weight: var(--font-weight-bold);
-  }
-  .mobile-h3 { 
-    font-size: 1.5rem; 
-    line-height: 1.3; 
-    font-weight: var(--font-weight-semibold);
-  }
+.is-active {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.is-loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.is-hidden {
+  display: none !important;
+}
+
+.is-visible {
+  display: block !important;
+}
+
+.is-disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.has-error {
+  border-color: var(--color-error);
+  color: var(--color-error);
+}
+
+.has-success {
+  border-color: var(--color-secondary);
+  color: var(--color-secondary);
+}
+
+/* Mobile menu states */
+.is-open {
+  overflow: hidden;
 }
 
 /* ==========================================================================
-   ADDITIONAL UTILITIES FOR TESTIMONIALS
+   JAVASCRIPT HOOKS - Class naming reference for developers
    ========================================================================== */
 
-/* Width and height utilities */
-.w-12 { width: 3rem; }
-.w-16 { width: 4rem; }
-.h-12 { height: 3rem; }
-.h-16 { height: 4rem; }
-
-/* Object fit utilities */
-.object-cover { object-fit: cover; }
-.object-contain { object-fit: contain; }
-
-/* Border radius utilities */
-.rounded-full { border-radius: var(--radius-full); }
-.rounded-xl { border-radius: var(--radius-xl); }
-
-/* Position utilities */
-.relative { position: relative; }
-.absolute { position: absolute; }
-
-/* Overflow utilities */
-.overflow-hidden { overflow: hidden; }
-
-/* Transform utilities */
-.transform { transform: translateZ(0); }
-
-/* Background utilities */
-.bg-gray-50 { background-color: var(--color-gray-50); }
-.bg-primary { background-color: var(--color-primary); }
-.bg-secondary { background-color: var(--color-secondary); }
-.bg-white { background-color: var(--color-white); }
-
-/* Flex utilities */
-.flex-shrink-0 { flex-shrink: 0; }
-
-/* Gap utilities for grid and flex */
-.gap-1 { gap: var(--spacing-1); }
-.gap-2 { gap: var(--spacing-2); }
-.gap-3 { gap: var(--spacing-3); }
-.gap-4 { gap: var(--spacing-4); }
-.gap-6 { gap: var(--spacing-6); }
-.gap-8 { gap: var(--spacing-8); }
-
-/* Margin utilities */
-.mr-4 { margin-right: var(--spacing-4); }
-
-/* Will-change for performance */
-.will-change-transform { will-change: transform; }
+/* JavaScript hook classes are used for functionality, not styling:
+ * .js-mobile-menu - Used for mobile menu toggle functionality
+ * .js-carousel - Used for testimonial/image carousels  
+ * .js-smooth-scroll - Used for anchor link smooth scrolling
+ * .js-cta-track - Used for CTA click tracking
+ * .js-form-validate - Used for form validation
+ */
 
 /* Touch action for mobile gestures */
 .touch-pan-x { touch-action: pan-x; }
+.touch-pan-y { touch-action: pan-y; }
+.touch-manipulation { touch-action: manipulation; }
+
+/* ==========================================================================
+   ABOUT SECTION STYLES - Mobile-First BEM Methodology
+   ========================================================================== */
+
+.about-section {
+  background: var(--color-white);
+  padding: var(--spacing-16) 0;
+}
+
+/* Section Header */
+.about-section__header {
+  text-align: center;
+  margin-bottom: var(--spacing-12);
+}
+
+.about-section__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--spacing-2);
+  background: var(--color-gray-100);
+  color: var(--color-gray-700);
+  padding: var(--spacing-2) var(--spacing-4);
+  border-radius: 2rem;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--spacing-4);
+}
+
+.about-section__badge-icon {
+  color: var(--color-secondary);
+}
+
+.about-section__title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-gray-900);
+  line-height: var(--line-height-tight);
+  margin-bottom: var(--spacing-4);
+}
+
+.about-section__highlight {
+  color: var(--color-primary);
+}
+
+.about-section__subtitle {
+  font-size: var(--font-size-lg);
+  color: var(--color-gray-600);
+  line-height: var(--line-height-normal);
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+/* Content Layout */
+.about-section__content {
+  display: grid;
+  gap: var(--spacing-12);
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .about-section__content {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-16);
+  }
+}
+
+/* Text Content */
+.about-section__text {
+  order: 2;
+}
+
+@media (min-width: 1024px) {
+  .about-section__text {
+    order: 1;
+  }
+}
+
+.about-section__description {
+  font-size: var(--font-size-base);
+  color: var(--color-gray-700);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-6);
+}
+
+.about-section__description--emphasis {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-800);
+}
+
+/* Statistics Grid */
+.about-section__stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: var(--spacing-4);
+  margin: var(--spacing-8) 0;
+}
+
+@media (min-width: 640px) {
+  .about-section__stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-6);
+  }
+}
+
+.stat-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-gray-200);
+  border-radius: 0.75rem;
+  padding: var(--spacing-6);
+  text-align: center;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card__number {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-2);
+}
+
+.stat-card__label {
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* CTA Section */
+.about-section__cta {
+  margin-top: var(--spacing-8);
+}
+
+.about-section__cta-icon {
+  margin-right: var(--spacing-2);
+}
+
+/* Media Section */
+.about-section__media {
+  order: 1;
+}
+
+@media (min-width: 1024px) {
+  .about-section__media {
+    order: 2;
+  }
+}
+
+/* Training Carousel */
+.training-carousel {
+  max-width: 28rem;
+  margin: 0 auto;
+}
+
+.training-carousel__container {
+  position: relative;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.training-carousel__track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.training-carousel__image {
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+/* Carousel Navigation */
+.training-carousel__nav {
+  position: absolute;
+  top: 50%;
+  left: var(--spacing-4);
+  right: var(--spacing-4);
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.training-carousel__button {
+  width: var(--touch-target-min);
+  height: var(--touch-target-min);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  color: var(--color-gray-700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  pointer-events: auto;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.training-carousel__button:hover {
+  background: var(--color-white);
+  color: var(--color-primary);
+  transform: scale(1.05);
+}
+
+/* Carousel Indicators */
+.training-carousel__indicators {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-2);
+  padding: var(--spacing-4);
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.training-carousel__dot {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-gray-300);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.training-carousel__dot--active,
+.training-carousel__dot:hover {
+  background: var(--color-primary);
+  transform: scale(1.2);
+}
+
+/* ==========================================================================
+   HERO SECTION STYLES - Updated Button Classes
+   ========================================================================== */

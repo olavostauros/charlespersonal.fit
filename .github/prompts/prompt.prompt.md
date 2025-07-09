@@ -2,7 +2,20 @@
 
 > **Version**: 2.5  
 > **Last Updated**: July 9, 2025  
-> **Project**: Charles Personal Fitness Landing Page  
+> **Project**: Charl### JavaScript Requirements**:
+- Mobile-first form validation (vanilla JS)
+- Touch-optimized interactions and feedback
+- WhatsApp redirect with pre-filled message including form data
+- Mobile analytics event tracking
+- Progressive enhancement approach (mobile-first baseline)
+
+### Code Language Standards
+- **Variables & Constants**: English only using camelCase (`userName`, `phoneNumber`, `whatsappRedirectUrl`)
+- **Functions**: English camelCase verbs (`validateForm`, `redirectToWhatsapp`, `trackConversion`)
+- **CSS Classes**: English kebab-case BEM methodology (`form-section__input`, `cta-button--primary`)
+- **Comments**: English only for all inline and block comments
+- **Content Variables**: English variable names even when storing Portuguese content (`heroTitle`, `ctaButtonText`)
+- **Constants**: English SCREAMING_SNAKE_CASE (`WHATSAPP_NUMBER`, `MFIT_SIGNUP_URL`, `FORM_VALIDATION_RULES`)sonal Fitness Landing Page  
 > **Maintainer**: Development Team  
 
 ## 🎯 Role Definition
@@ -156,7 +169,48 @@ For each file, include comments explaining:
  * BUSINESS PURPOSE: [How this contributes to conversion]
  * TECHNICAL PURPOSE: [What this code does]
  * DEPENDENCIES: [External services, APIs, etc.]
+ * NOTE: All comments, variables, and function names must be in English
  */
+```
+
+### Code Naming Conventions
+#### JavaScript/TypeScript
+- **Variables**: camelCase (`userName`, `isFormValid`, `submitButtonElement`)
+- **Constants**: SCREAMING_SNAKE_CASE (`WHATSAPP_NUMBER`, `FORM_SUBMIT_URL`, `MAX_NAME_LENGTH`)
+- **Functions**: camelCase verbs (`validateEmail`, `redirectToWhatsapp`, `trackFormSubmission`)
+- **Classes**: PascalCase (`FormValidator`, `WhatsappRedirect`, `ConversionTracker`)
+- **Objects**: camelCase (`formData`, `validationRules`, `userPreferences`)
+
+#### CSS
+- **Components**: kebab-case with BEM (`form-section`, `cta-button`, `hero-section`)
+- **Modifiers**: BEM double dash (`cta-button--primary`, `form-section--mobile`)
+- **Elements**: BEM double underscore (`form-section__input`, `cta-button__text`)
+- **Utilities**: prefix with `u-` (`u-margin-top`, `u-hide-mobile`, `u-text-center`)
+- **JavaScript hooks**: prefix with `js-` (`js-form-submit`, `js-whatsapp-redirect`)
+
+#### HTML
+- **IDs**: camelCase (`heroSection`, `contactForm`, `submitButton`)
+- **Classes**: kebab-case BEM methodology
+- **Data attributes**: kebab-case (`data-form-field`, `data-tracking-event`)
+
+#### File Naming
+- **Components**: PascalCase (`Header.astro`, `FormSection.astro`, `CTAButton.astro`)
+- **Pages**: lowercase (`index.astro`, `thank-you.astro`)
+- **Styles**: kebab-case (`design-system.css`, `form-components.css`)
+- **Scripts**: kebab-case (`form-validation.js`, `analytics-tracking.js`)
+
+#### Content Variables
+Even when storing Portuguese content, use English variable names:
+```javascript
+// ✅ Correct
+const heroTitle = "Transforme sua vida com treinos personalizados";
+const ctaButtonText = "Comece Agora";
+const successMessage = "Obrigado! Entraremos em contato em breve.";
+
+// ❌ Incorrect
+const tituloHero = "Transforme sua vida com treinos personalizados";
+const textoBotaoCTA = "Comece Agora";
+const mensagemSucesso = "Obrigado! Entraremos em contato em breve.";
 ```
 
 ### Task 4: Documentation Architecture
@@ -204,6 +258,9 @@ src/components/
 - [ ] Mobile SEO optimization compliance
 - [ ] CSS design token usage for consistent mobile experience
 - [ ] Component-based CSS architecture with mobile priority
+- [ ] **English-only code**: All variables, constants, functions, and comments in English
+- [ ] **Consistent naming**: Follow established camelCase/kebab-case/SCREAMING_SNAKE_CASE patterns
+- [ ] **BEM CSS methodology**: Component-based CSS class naming in English
 
 #### 5.2 Performance Benchmarks
 - [ ] Mobile Lighthouse score > 90 (optimized for Brazilian mobile networks)
@@ -257,6 +314,9 @@ src/components/
 - [ ] Components use established naming conventions
 - [ ] Brazilian Portuguese content properly implemented and optimized
 - [ ] Cultural sensitivity and local market adaptation verified
+- [ ] **Code language compliance**: All variables, constants, functions, and comments in English
+- [ ] **Naming pattern consistency**: camelCase for JS variables/functions, kebab-case for CSS, SCREAMING_SNAKE_CASE for constants
+- [ ] **BEM methodology**: CSS classes follow English BEM naming patterns
 
 ## ⚙️ Development Guidelines
 
@@ -488,10 +548,12 @@ When reviewing or modifying CSS in this project, ensure:
 - `--line-height-*`: Line height values for comfortable reading of Portuguese text by mature users
 
 ### CSS Naming Conventions
-- **Components**: `.c-component-name`
-- **Utilities**: `.u-utility-name`
-- **JavaScript hooks**: `.js-hook-name`
-- **State classes**: `.is-state` or `.has-state`
+- **Components**: `.c-component-name` (English kebab-case)
+- **Utilities**: `.u-utility-name` (English kebab-case)
+- **JavaScript hooks**: `.js-hook-name` (English kebab-case)
+- **State classes**: `.is-state` or `.has-state` (English state descriptors)
+- **BEM Elements**: `.component-name__element` (English descriptors)
+- **BEM Modifiers**: `.component-name--modifier` (English descriptors)
 
 ### CSS Performance Guidelines
 - [ ] Mobile-first CSS loading strategy
@@ -511,6 +573,9 @@ When reviewing or modifying CSS in this project, ensure:
 - [ ] Touch-friendly interaction states and feedback
 - [ ] Mobile accessibility compliance (WCAG 2.1 AA)
 - [ ] Portuguese text rendering optimization (font choices, spacing, line breaks)
+- [ ] **English naming**: All CSS classes, custom properties, and comments in English
+- [ ] **BEM consistency**: Follow established English BEM methodology patterns
+- [ ] **Naming pattern compliance**: kebab-case for all CSS identifiers
 
 ## 🚀 Project Setup Instructions
 
@@ -560,6 +625,7 @@ npm run preview
 
 | Version | Date | Changes | Maintainer |
 |---------|------|---------|------------|
+| 2.6 | 2025-07-09 | Added English-only code requirements and comprehensive naming conventions | Development Team |
 | 2.5 | 2025-07-09 | Emphasized Brazilian Portuguese speaking target audience throughout all sections | Development Team |
 | 2.4 | 2025-07-09 | Updated target audience to 40-70 years, Vila Velha location, accessibility improvements | Development Team |
 | 2.3 | 2025-07-09 | Enhanced mobile-first approach throughout all sections | Development Team |

@@ -462,14 +462,12 @@
     const carousel = document.querySelector('.training-carousel__container');
     
     if (carousel) {
-      carousel.addEventListener('touchstart', (e) => {
-        const touchEvent = e as TouchEvent;
-        touchStartX = touchEvent.changedTouches[0].screenX;
+      carousel.addEventListener('touchstart', e => {
+        touchStartX = e.changedTouches[0].screenX;
       });
       
-      carousel.addEventListener('touchend', (e) => {
-        const touchEvent = e as TouchEvent;
-        touchEndX = touchEvent.changedTouches[0].screenX;
+      carousel.addEventListener('touchend', e => {
+        touchEndX = e.changedTouches[0].screenX;
         handleSwipe();
       });
     }

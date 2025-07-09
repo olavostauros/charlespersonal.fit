@@ -1,4 +1,10 @@
 ---
+// BUSINESS PURPOSE: Base layout template for Charles Personal landing page conversion funnel
+// TECHNICAL PURPOSE: Astro layout component providing mobile-first structure for Brazilian Portuguese speakers
+// TARGET AUDIENCE: Adults 40-70 interested in fitness, primarily mobile users in Vila Velha, ES
+// CONVERSION IMPACT: SEO optimization and performance tuning increase organic traffic and reduce bounce rate
+// LANGUAGE IMPLEMENTATION: Full Brazilian Portuguese optimization with cultural sensitivity
+
 // Layout.astro - Template base para todas as páginas
 import '../styles/design-system.css';
 
@@ -10,6 +16,7 @@ export interface Props {
   canonicalURL?: string;
 }
 
+// Default meta values optimized for Charles Personal brand and Vila Velha market
 const {
   title = "Charles Personal - Personal Trainer no MFit | Treinos Personalizados",
   description = "Transforme seu corpo com Charles Personal! Personal trainer especializado em emagrecimento, ganho muscular e saúde. Treinos personalizados no aplicativo MFit. Comece sua transformação hoje!",
@@ -22,24 +29,36 @@ const {
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <!-- Meta Tags Básicas -->
+  <!-- 
+    BUSINESS PURPOSE: Mobile-first meta tags optimized for Brazilian Portuguese speakers aged 40-70
+    TECHNICAL PURPOSE: SEO and performance optimization for Vila Velha, ES market
+    CONVERSION IMPACT: Local SEO targeting increases qualified traffic and reduces bounce rate
+  -->
+  
+  <!-- Meta Tags Básicas - Mobile-first configuration for mature Brazilian users -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="generator" content={Astro.generator} />
   
-  <!-- Performance & Mobile -->
+  <!-- Performance & Mobile - Optimized for Brazilian 3G/4G networks -->
   <meta name="format-detection" content="telephone=no" />
   <meta name="mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="theme-color" content="#3B82F6" />
   
-  <!-- SEO Meta Tags -->
+  <!-- SEO Meta Tags - Otimizado para Vila Velha, ES e público 40-70 anos -->
   <title>{title}</title>
   <meta name="description" content={description} />
   <meta name="keywords" content={keywords} />
   <meta name="author" content="Charles Personal Trainer" />
+  
+  <!-- Geographic targeting for local Vila Velha, ES business -->
+  <meta name="geo.region" content="BR-ES" />
+  <meta name="geo.placename" content="Vila Velha, Espírito Santo" />
+  <meta name="geo.position" content="-20.3297;-40.2925" />
+  <meta name="ICBM" content="-20.3297, -40.2925" />
   <link rel="canonical" href={canonicalURL} />
   
   <!-- Open Graph / Facebook -->
@@ -74,7 +93,7 @@ const {
   <link rel="preload" href="/images/charles-hero.jpg" as="image" />
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" as="style" />
   
-  <!-- Schema.org JSON-LD -->
+  <!-- Schema.org JSON-LD - Otimizado para personal trainer Vila Velha, ES -->
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -82,12 +101,13 @@ const {
       "name": "Charles Personal Trainer",
       "jobTitle": "Personal Trainer",
       "url": "https://charlespersonal.fit",
-      "description": "Personal trainer especializado em treinos personalizados, emagrecimento e ganho muscular em Vitória, ES",
+      "description": "Personal trainer especializado em treinos personalizados, emagrecimento e ganho muscular para adultos de 40-70 anos em Vila Velha, ES",
       "address": {
         "@type": "PostalAddress",
-        "addressLocality": "Vitória",
-        "addressRegion": "ES",
-        "addressCountry": "BR"
+        "addressLocality": "Vila Velha",
+        "addressRegion": "ES", 
+        "addressCountry": "BR",
+        "areaServed": ["Praia da Costa", "Praia de Itaparica", "Praia de Itapuã", "Itapoã", "Coqueiral", "Residencial Coqueiral"]
       },
       "sameAs": [
         "https://instagram.com/charlestonpersonaltrainer",
@@ -96,20 +116,28 @@ const {
       "knowsAbout": [
         "Personal Training",
         "Emagrecimento",
-        "Ganho de Massa Muscular",
+        "Ganho de Massa Muscular", 
         "Condicionamento Físico",
         "Treino Online",
-        "Aplicativo MFit"
+        "Aplicativo MFit",
+        "Envelhecimento Ativo",
+        "Saúde do Adulto Maduro"
       ],
       "makesOffer": {
         "@type": "Offer",
         "itemOffered": {
           "@type": "Service",
-          "name": "Treinos Personalizados",
-          "description": "Treinos personalizados para emagrecimento, ganho muscular e saúde geral através do aplicativo MFit",
+          "name": "Treinos Personalizados MFit",
+          "description": "Treinos personalizados para emagrecimento, ganho muscular e saúde geral através do aplicativo MFit, especializado para adultos de 40-70 anos",
           "areaServed": {
-            "@type": "Place",
-            "name": "Vitória, ES, Brasil"
+            "@type": "Place", 
+            "name": "Vila Velha, ES, Brasil"
+          },
+          "audience": {
+            "@type": "Audience",
+            "audienceType": "Adultos interessados em fitness e saúde",
+            "suggestedMinAge": 40,
+            "suggestedMaxAge": 70
           }
         }
       }
@@ -136,9 +164,13 @@ const {
     <slot name="footer" />
   </footer>
   
-  <!-- Smooth Scroll Polyfill para navegadores antigos -->
+  <!-- 
+    BUSINESS PURPOSE: Conversion tracking and analytics for optimization
+    TECHNICAL PURPOSE: Track WhatsApp, MFit, and Instagram CTAs for ROI measurement
+    CONVERSION IMPACT: Data-driven optimization increases conversion rates over time
+  -->
   <script>
-    // Smooth scroll para âncoras
+    // Smooth scroll para âncoras - Enhanced UX for mature users (40-70)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -152,7 +184,10 @@ const {
       });
     });
     
-    // Tracking de CTAs (preparação para analytics)
+    // 
+    // BUSINESS PURPOSE: CTA tracking enables conversion optimization and ROI measurement
+    // TECHNICAL PURPOSE: Track critical conversion events for analytics
+    // 
     function trackCTA(action, label) {
       // Preparado para Google Analytics
       if (typeof globalThis.gtag !== 'undefined') {
