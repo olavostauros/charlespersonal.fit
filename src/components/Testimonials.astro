@@ -885,6 +885,7 @@
     constructor(element: HTMLElement) {
       this.carousel = element;
       this.track = element.querySelector('[data-carousel-track]') as HTMLElement;
+      this.testimonials = element.querySelectorAll('[data-testimonial]') as NodeListOf<HTMLElement>;
       this.originalTestimonials = Array.from(element.querySelectorAll('[data-testimonial]') as NodeListOf<HTMLElement>);
       this.prevBtn = element.querySelector('[data-carousel-prev]');
       this.nextBtn = element.querySelector('[data-carousel-next]');
@@ -1117,12 +1118,16 @@
     }
     
     handleTouchStart(e: TouchEvent) {
-      this.touchStartX = e.changedTouches[0].screenX;
+      if (e.changedTouches && e.changedTouches[0]) {
+        this.touchStartX = e.changedTouches[0].screenX;
+      }
     }
     
     handleTouchEnd(e: TouchEvent) {
-      this.touchEndX = e.changedTouches[0].screenX;
-      this.handleSwipe();
+      if (e.changedTouches && e.changedTouches[0]) {
+        this.touchEndX = e.changedTouches[0].screenX;
+        this.handleSwipe();
+      }
     }
     
     handleSwipe() {

@@ -24,30 +24,48 @@
         <span>CREF 008165-G/ES • 18+ Anos</span>
       </div>
       
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-        <div>
-          <p class="text-base text-gray-700 mb-6 leading-relaxed">
-            Ao longo dessa jornada, já ajudei <strong>mais de mil pessoas</strong> a conquistarem o corpo que desejavam — com mais saúde, autoestima e qualidade de vida.
-          </p>
-          <p class="text-base text-gray-700 mb-6 leading-relaxed">
-            Sou <strong>especialista em emagrecimento e definição muscular para pessoas com mais de 40 anos</strong>, um público que muitas vezes se sente esquecido pelos métodos tradicionais.
-          </p>
-          <p class="text-base text-gray-700 mb-6 leading-relaxed">
-            Acredito que com o acompanhamento certo, é possível acelerar os resultados e conquistar mudanças reais — mesmo para quem já tentou de tudo e não teve sucesso.
-          </p>
-          <p class="text-base text-gray-700 mb-6 leading-relaxed">
-            Se você está nessa fase da vida e quer voltar a se sentir bem com o seu corpo, eu estou aqui para te mostrar que <strong>ainda dá tempo de viver o seu melhor momento físico</strong>.
-          </p>  
-          <div class="grid sm:grid-cols-2 gap-6 mb-8">
-            <div class="card card-shadow text-center">
-              <div class="text-2xl font-bold text-primary mb-2">+200</div>
-              <div class="text-sm text-gray-600">Clientes Transformados</div>
-            </div>
-            
-            <div class="card card-shadow text-center">
-              <div class="text-2xl font-bold text-secondary mb-2">18+</div>
-              <div class="text-sm text-gray-600">Anos de Experiência</div>
-            </div>
+      <h2 class="about-section__title">
+        Conheça Seu 
+        <span class="about-section__highlight">Personal Trainer</span>
+      </h2>
+      
+      <p class="about-section__subtitle">
+        Meu nome é Charleston Braggio, sou formado em Educação Física pela Universidade de Vila Velha e atuo na área há mais de 18 anos, especializado em adultos de 40 a 70 anos.
+      </p>
+    </div>
+    
+    <!-- 
+      BUSINESS PURPOSE: Two-column layout showcases credentials and visual proof
+      CONVERSION IMPACT: Personal story builds trust, carousel shows real training sessions
+    -->
+    <div class="about-section__content">
+      <div class="about-section__text">
+        <p class="about-section__description">
+          Ao longo dessa jornada, já ajudei <strong>mais de 200 pessoas em Vila Velha</strong> a conquistarem o corpo que desejavam — com mais saúde, autoestima e qualidade de vida.
+        </p>
+        
+        <p class="about-section__description">
+          Sou <strong>especialista em emagrecimento e fortalecimento muscular para pessoas com mais de 40 anos</strong>, um público que muitas vezes se sente esquecido pelos métodos tradicionais.
+        </p>
+        
+        <p class="about-section__description">
+          Acredito que com o acompanhamento certo, é possível acelerar os resultados e conquistar mudanças reais — mesmo para quem já tentou de tudo e não teve sucesso.
+        </p>
+        
+        <p class="about-section__description about-section__description--emphasis">
+          Se você está nessa fase da vida e quer voltar a se sentir bem com o seu corpo, eu estou aqui para te mostrar que <strong>ainda dá tempo de viver o seu melhor momento físico</strong>.
+        </p>
+        
+        <!-- Statistics Grid -->
+        <div class="about-section__stats">
+          <div class="stat-card">
+            <div class="stat-card__number">+200</div>
+            <div class="stat-card__label">Clientes Transformados</div>
+          </div>
+          
+          <div class="stat-card">
+            <div class="stat-card__number">18+</div>
+            <div class="stat-card__label">Anos de Experiência</div>
           </div>
           
           <div class="stat-card">
@@ -444,14 +462,14 @@
     const carousel = document.querySelector('.training-carousel__container');
     
     if (carousel) {
-      carousel.addEventListener('touchstart', (e) => {
+      carousel.addEventListener('touchstart', e => {
         const touchEvent = e as TouchEvent;
         if (touchEvent.changedTouches && touchEvent.changedTouches[0]) {
           touchStartX = touchEvent.changedTouches[0].screenX;
         }
       });
       
-      carousel.addEventListener('touchend', (e) => {
+      carousel.addEventListener('touchend', e => {
         const touchEvent = e as TouchEvent;
         if (touchEvent.changedTouches && touchEvent.changedTouches[0]) {
           touchEndX = touchEvent.changedTouches[0].screenX;

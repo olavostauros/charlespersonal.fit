@@ -1,0 +1,469 @@
+---
+// BUSINESS PURPOSE: Social proof and engagement for Charles Personal brand awareness
+// TECHNICAL PURPOSE: Instagram and WhatsApp integration with conversion tracking
+// TARGET AUDIENCE: Adults 40-70 interested in fitness, primarily mobile users in Vila Velha, ES
+// CONVERSION IMPACT: Social proof builds trust, WhatsApp enables direct communication
+// ACCESSIBILITY: Large touch targets, clear labels, screen reader support for mature users
+// DEPENDENCIES: WhatsApp Business API, Instagram integration, analytics tracking
+
+// SocialSection.astro - Seção de redes sociais e contato direto
+---
+
+<section class="social-section" id="social">
+  <div class="container">
+    <!-- Section Header -->
+    <div class="social-section__header">
+      <div class="social-section__badge">
+        <span class="social-section__badge-icon">🤳</span>
+        Siga nas Redes
+      </div>
+      
+      <h2 class="social-section__title">
+        Acompanhe Minha <span class="social-section__highlight">Jornada</span>
+      </h2>
+      
+      <p class="social-section__subtitle">
+        Veja transformações reais, dicas de treino e fique por dentro das novidades. 
+        Siga no Instagram e fale comigo no WhatsApp!
+      </p>
+    </div>
+
+    <!-- Social Cards Grid -->
+    <div class="social-section__grid">
+      
+      <!-- Instagram Card -->
+      <div class="social-card social-card--instagram">
+        <div class="social-card__header">
+          <div class="social-card__icon">
+            📸
+          </div>
+          <div class="social-card__info">
+            <h3 class="social-card__title">Instagram</h3>
+            <p class="social-card__handle">@charlestonpersonaltrainer</p>
+          </div>
+        </div>
+        
+        <div class="social-card__content">
+          <p class="social-card__description">
+            Veja transformações dos meus alunos, dicas de treino, receitas saudáveis 
+            e muito conteúdo sobre fitness e qualidade de vida.
+          </p>
+          
+          <div class="social-card__stats">
+            <div class="social-stat">
+              <span class="social-stat__number">500+</span>
+              <span class="social-stat__label">Seguidores</span>
+            </div>
+            <div class="social-stat">
+              <span class="social-stat__number">100+</span>
+              <span class="social-stat__label">Posts</span>
+            </div>
+          </div>
+        </div>
+        
+        <a 
+          href="https://instagram.com/charlestonpersonaltrainer"
+          class="social-card__cta"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-cta="instagram"
+          aria-label="Seguir Charles Personal no Instagram"
+        >
+          <span class="social-card__cta-icon">📱</span>
+          Seguir no Instagram
+        </a>
+      </div>
+
+      <!-- WhatsApp Card -->
+      <div class="social-card social-card--whatsapp">
+        <div class="social-card__header">
+          <div class="social-card__icon">
+            💬
+          </div>
+          <div class="social-card__info">
+            <h3 class="social-card__title">WhatsApp</h3>
+            <p class="social-card__handle">(27) 99622-4175</p>
+          </div>
+        </div>
+        
+        <div class="social-card__content">
+          <p class="social-card__description">
+            Fale diretamente comigo! Tire suas dúvidas, conheça os planos 
+            e comece sua transformação hoje mesmo.
+          </p>
+          
+          <div class="social-card__features">
+            <div class="social-feature">
+              <span class="social-feature__icon">⚡</span>
+              <span class="social-feature__text">Resposta rápida</span>
+            </div>
+            <div class="social-feature">
+              <span class="social-feature__icon">💪</span>
+              <span class="social-feature__text">Suporte direto</span>
+            </div>
+            <div class="social-feature">
+              <span class="social-feature__icon">🎯</span>
+              <span class="social-feature__text">Plano personalizado</span>
+            </div>
+          </div>
+        </div>
+        
+        <a 
+          href="https://wa.me/5527996224175?text=Olá%20Charles!%20Vi%20seu%20site%20e%20gostaria%20de%20saber%20mais%20sobre%20os%20treinos%20personalizados."
+          class="social-card__cta social-card__cta--primary"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-cta="whatsapp"
+          aria-label="Conversar com Charles Personal no WhatsApp"
+        >
+          <span class="social-card__cta-icon">💬</span>
+          Falar no WhatsApp
+        </a>
+      </div>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="social-section__bottom-cta">
+      <p class="social-section__cta-text">
+        Prefere começar direto no app? Sem problemas!
+      </p>
+      <a 
+        href="https://client.mfitpersonal.com.br/out/signup-link/ODY5NTY="
+        class="btn btn-primary btn-lg"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-cta="mfit-social"
+      >
+        <span class="btn-icon">🏋️</span>
+        Começar no MFit
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* ==========================================================================
+     SOCIAL SECTION STYLES - Mobile-First BEM Methodology
+     ========================================================================== */
+
+  .social-section {
+    background: var(--color-gray-50);
+    padding: var(--spacing-16) 0;
+    position: relative;
+  }
+
+  /* Section Header */
+  .social-section__header {
+    text-align: center;
+    margin-bottom: var(--spacing-12);
+  }
+
+  .social-section__badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-2);
+    background: var(--color-accent-light);
+    color: var(--color-accent-dark);
+    padding: var(--spacing-2) var(--spacing-4);
+    border-radius: 2rem;
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    margin-bottom: var(--spacing-4);
+  }
+
+  .social-section__badge-icon {
+    font-size: var(--font-size-base);
+  }
+
+  .social-section__title {
+    font-size: var(--font-size-3xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-900);
+    line-height: var(--line-height-tight);
+    margin-bottom: var(--spacing-4);
+  }
+
+  .social-section__highlight {
+    color: var(--color-accent);
+  }
+
+  .social-section__subtitle {
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-600);
+    line-height: var(--line-height-relaxed);
+    max-width: 42rem;
+    margin: 0 auto;
+  }
+
+  /* Social Cards Grid */
+  .social-section__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-8);
+    max-width: 56rem;
+    margin: 0 auto;
+  }
+
+  @media (min-width: 768px) {
+    .social-section__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  /* Social Card */
+  .social-card {
+    background: var(--color-white);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-8);
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--color-gray-200);
+    transition: all var(--transition-fast);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-6);
+  }
+
+  .social-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+  }
+
+  /* Social Card Variants */
+  .social-card--instagram {
+    border-top: 4px solid #E4405F;
+  }
+
+  .social-card--whatsapp {
+    border-top: 4px solid #25D366;
+  }
+
+  /* Social Card Header */
+  .social-card__header {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-4);
+  }
+
+  .social-card__icon {
+    width: 3rem;
+    height: 3rem;
+    background: var(--color-gray-100);
+    border-radius: var(--radius-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+
+  .social-card--instagram .social-card__icon {
+    background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+    color: var(--color-white);
+  }
+
+  .social-card--whatsapp .social-card__icon {
+    background: #25D366;
+    color: var(--color-white);
+  }
+
+  .social-card__info {
+    flex: 1;
+  }
+
+  .social-card__title {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-gray-900);
+    margin-bottom: var(--spacing-1);
+  }
+
+  .social-card__handle {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-600);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  /* Social Card Content */
+  .social-card__content {
+    flex: 1;
+  }
+
+  .social-card__description {
+    font-size: var(--font-size-base);
+    color: var(--color-gray-700);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--spacing-6);
+  }
+
+  /* Social Stats */
+  .social-card__stats {
+    display: flex;
+    gap: var(--spacing-6);
+  }
+
+  .social-stat {
+    text-align: center;
+  }
+
+  .social-stat__number {
+    display: block;
+    font-size: var(--font-size-2xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    line-height: 1;
+  }
+
+  .social-stat__label {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-600);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  /* Social Features */
+  .social-card__features {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-3);
+  }
+
+  .social-feature {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-2);
+  }
+
+  .social-feature__icon {
+    flex-shrink: 0;
+    font-size: var(--font-size-base);
+  }
+
+  .social-feature__text {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-700);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  /* Social Card CTA */
+  .social-card__cta {
+    background: var(--color-gray-100);
+    color: var(--color-gray-800);
+    border: 2px solid var(--color-gray-300);
+    padding: var(--spacing-4) var(--spacing-6);
+    border-radius: var(--radius-lg);
+    text-decoration: none;
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-base);
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-2);
+    min-height: var(--touch-target-min); /* Accessibility for mature users */
+  }
+
+  .social-card__cta:hover {
+    background: var(--color-gray-200);
+    border-color: var(--color-gray-400);
+    transform: translateY(-2px);
+  }
+
+  .social-card__cta--primary {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: var(--color-white);
+    border-color: #25D366;
+  }
+
+  .social-card__cta--primary:hover {
+    background: linear-gradient(135deg, #128C7E, #075E54);
+    border-color: #128C7E;
+  }
+
+  .social-card__cta-icon {
+    flex-shrink: 0;
+    font-size: var(--font-size-lg);
+  }
+
+  /* Bottom CTA */
+  .social-section__bottom-cta {
+    text-align: center;
+    margin-top: var(--spacing-16);
+    padding-top: var(--spacing-12);
+    border-top: 1px solid var(--color-gray-300);
+  }
+
+  .social-section__cta-text {
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-700);
+    margin-bottom: var(--spacing-6);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .btn-icon {
+    margin-right: var(--spacing-2);
+    flex-shrink: 0;
+  }
+
+  /* Responsive Design */
+  @media (min-width: 640px) {
+    .social-card {
+      padding: var(--spacing-10);
+    }
+    
+    .social-card__features {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: var(--spacing-4);
+    }
+    
+    .social-feature {
+      flex: 1;
+      min-width: 120px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .social-section__title {
+      font-size: var(--font-size-4xl);
+    }
+    
+    .social-card__stats {
+      justify-content: space-around;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .social-section {
+      padding: var(--spacing-24) 0;
+    }
+    
+    .social-section__grid {
+      max-width: 64rem;
+    }
+  }
+
+  /* Accessibility improvements for mature users */
+  @media (prefers-reduced-motion: reduce) {
+    .social-card {
+      transition: none;
+    }
+    
+    .social-card:hover {
+      transform: none;
+    }
+    
+    .social-card__cta:hover {
+      transform: none;
+    }
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .social-card {
+      border-width: 2px;
+    }
+    
+    .social-card__cta {
+      border-width: 3px;
+    }
+  }
+</style>

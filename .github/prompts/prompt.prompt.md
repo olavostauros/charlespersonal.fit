@@ -1,82 +1,673 @@
-Você é um especialista em marketing digital, design de UX/UI, desenvolvimento web com Astro e documentação técnica. Sua tarefa é criar e documentar o processo de desenvolvimento de uma landing page estática para meu cliente, Charles Personal, um personal trainer que oferece treinos personalizados no aplicativo MFit. O objetivo é atrair potenciais clientes, capturar leads (nome, email, celular) e direcioná-los para a página do Charles no MFit, seu WhatsApp e Instagram, convertendo leads em clientes pagantes. O projeto usa Astro, HTML, CSS vanilla e JavaScript puro, sendo hospedado no plano gratuito da Vercel.
+# Charles Personal Landing Page - Development Prompt
 
-**Contexto do Projeto:**
-- **Público-alvo**: Pessoas de 18 a 45 anos interessadas em fitness, buscando treinos personalizados online para emagrecimento, ganho muscular ou saúde.
-- **Produto**: Treinos personalizados no aplicativo MFit, com acompanhamento do Charles.
-- **Objetivos da landing page**:
-  1. Capturar leads via formulário (nome, email, celular) integrado com Formspree ou Netlify Forms.
-  2. Direcionar para a página do MFit (https://client.mfitpersonal.com.br/out/signup-link/ODY5NTY=).
-  3. Redirecionar para o WhatsApp do Charles (+55 27 99622-4175) com mensagem personalizada.
-  4. Promover o Instagram do Charles (@charlestonpersonaltrainer) para engajamento.
-  5. Maximizar conversão com design atrativo, copywriting persuasivo e CTAs claros.
-- **Tecnologias**:
-  - Framework: Astro (páginas estáticas, SSG).
-  - Linguagem: HTML, CSS vanilla e JavaScript puro.
-  - Estilização: CSS customizado (design responsivo).
-  - Hospedagem: Vercel (plano gratuito).
-- **Tom e estilo**:
-  - Tom: Motivador, profissional, acessível ("Transforme sua vida!", "Comece agora!").
-  - Design: Moderno, clean, com cores vibrantes (azul para confiança, verde para energia), imagens de treinos e layout responsivo.
-- **Restrições**:
-  - Página estática, com JavaScript mínimo necessário.
-  - Formulário integrado com serviços externos (ex.: Formspree).
-  - Otimizada para SEO e carregamento rápido.
+> **Version**: 2.7  
+> **Last Updated**: July 9, 2025  
+> **Project**: charlinho
+- Mobile-first form validation (vanilla JS)
+- Touch-optimized interactions and feedback
+- WhatsApp redirect with pre-filled message including form data
+- Mobile analytics event - [ ] **Naming pattern compliance**: camelCase for JS/TS variables/functions, kebab-case for CSS, SCREAMING_SNAKE_CASE for constants
+- [ ] **BEM methodology**: CSS classes follow English BEM naming patterns
+- [ ] **TypeScript compliance**: Proper type definitions, interfaces, and strict type checking enabledacking
+- Progressive enhancement approach (mobile-first baseline)
 
-**Tarefas Específicas:**
-1. **Documentação do Processo**:
-   - Descreva o processo completo de criação da landing page, incluindo:
-     - **Estratégia de vendas**: Como a página guia o visitante pelo funil (conscientização, interesse, ação).
-     - **Design**: Escolha de cores, tipografia (ex.: system fonts), imagens (ex.: Charles treinando), e posicionamento de CTAs.
-     - **Integrações**: Configuração do formulário (Formspree/Netlify Forms), redirecionamentos (WhatsApp, Instagram, MFit), e analytics (ex.: Google Analytics).
-     - **Conversão**: Táticas como copywriting persuasivo, ofertas (ex.: teste grátis no MFit), e follow-up (WhatsApp/email).
-   - Forneça um resumo em Markdown (`PROCESSO.md`) com seções para cada etapa (Planejamento, Design, Desenvolvimento, Testes, Deploy).
+### Code Language Standards
+- **Variables & Constants**: English only using camelCase (`userName`, `phoneNumber`, `whatsappRedirectUrl`)
+- **Functions**: English camelCase verbs (`validateForm`, `redirectToWhatsapp`, `trackConversion`)
+- **CSS Classes**: English kebab-case BEM methodology (`form-section__input`, `cta-button--primary`)
+- **Comments**: English only for all inline and block comments
+- **Content Variables**: English variable names even when storing Portuguese content (`heroTitle`, `ctaButtonText`)
+- **Constants**: English SCREAMING_SNAKE_CASE (`WHATSAPP_NUMBER`, `MFIT_SIGNUP_URL`, `FORM_VALIDATION_RULES`)sonal Fitness Landing Page  
+> **Maintainer**: Development Team  
 
-2. **Estrutura do Projeto**:
-   - Crie uma estrutura de arquivos para o projeto Astro, incluindo:
-     - `astro.config.mjs`: Configuração básica do Astro.
-     - `package.json`: Dependências mínimas e scripts.
-     - `src/styles/global.css`: Estilos globais e responsivos.
-     - `src/scripts/main.js`: JavaScript para formulário e interações.
-     - `src/components/Header.astro`: Cabeçalho com título e slogan.
-     - `src/components/Hero.astro`: Seção inicial com CTA para MFit.
-     - `src/components/FormSection.astro`: Formulário de captura de leads.
-     - `src/components/SocialSection.astro`: Links para WhatsApp e Instagram.
-     - `src/components/Footer.astro`: Rodapé com copyright.
-     - `src/pages/index.astro`: Página principal que importa componentes.
-   - Use JavaScript vanilla para funcionalidades como validação de formulário e redirecionamento para WhatsApp.
+## 🎯 Role Definition
 
-3. **Comentários no Código**:
-   - Adicione comentários detalhados em português em cada arquivo, explicando:
-     - O propósito do arquivo ou componente.
-     - A função de cada seção ou bloco de código.
-     - Como o código contribui para vendas ou conversão (ex.: CTA no Hero atrai cliques para MFit).
-     - Qualquer configuração específica (ex.: integração com Formspree, uso de CSS Grid/Flexbox).
-   - Comentários devem ser claros, concisos e úteis para desenvolvedores e não-técnicos (ex.: equipe de marketing).
+You are an expert in digital marketing, UX/UI design, web development with Astro, and technical documentation. Your task is to create and document the development process for a static landing page for Charles Personal, a personal trainer who offers personalized workouts on the MFit app.
 
-4. **Arquivos Markdown de Documentação**:
-   - Para cada arquivo do projeto (ex.: `index.astro`, `Header.astro`), crie um arquivo Markdown correspondente (ex.: `index.astro.md`, `Header.astro.md`) no mesmo diretório.
-   - Cada arquivo Markdown deve conter:
-     - **Título**: Nome do arquivo (ex.: `index.astro`).
-     - **Propósito**: O que o arquivo faz na landing page.
-     - **Estrutura**: Descrição das seções ou funcionalidades (ex.: "Importa todos os componentes e define o layout principal").
-     - **Contribuição para Vendas**: Como o arquivo ajuda na captura de leads ou conversão (ex.: "O Hero incentiva cliques no MFit com um CTA claro").
-     - **Notas Técnicas**: Detalhes sobre CSS, JavaScript, ou integrações (ex.: "Usa CSS Grid para layout responsivo").
-   - Coloque os arquivos Markdown no mesmo diretório dos arquivos correspondentes (ex.: `src/pages/index.astro.md` ao lado de `src/pages/index.astro`).
+## 📋 Project Overview
 
-5. **Saída Esperada**:
-   - **Resumo do Processo**: Arquivo `PROCESSO.md` detalhando planejamento, design, desenvolvimento, testes e deploy.
-   - **Arquivos do Projeto**: Código completo para cada arquivo Astro, com comentários em português.
-   - **Arquivos Markdown**: Um `.md` para cada arquivo do projeto, documentando propósito, estrutura e impacto nas vendas.
-   - **Estrutura de Diretórios**: Mostre a organização dos arquivos (ex.: `src/components/`, `src/pages/`).
-   - **Notas Adicionais**:
-     - Inclua uma nota no `PROCESSO.md` sobre o uso do plano gratuito da Vercel e CSS/JavaScript vanilla para simplicidade e performance.
-     - Forneça instruções breves para rodar o projeto (ex.: `npm install`, `npm run build`, `npm run dev`).
+**Goal**: Attract potential clients, capture leads (name, email, phone), and direct them to Charles's MFit page, WhatsApp, and Instagram, converting leads into paying customers.
 
-**Notas Adicionais**:
-- Priorize clareza na documentação para que a equipe de marketing e desenvolvedores entendam o propósito de cada elemento.
-- Use copywriting motivador nos componentes (ex.: "Quero Meu Plano!" no formulário).
-- Considere o SEO (meta tags no `index.astro`) e analytics para rastrear conversões.
-- Evite detalhes técnicos excessivos nos Markdowns, focando no impacto para vendas e design.
-- Substitua placeholders (ex.: URLs do MFit, WhatsApp, Instagram) por `[inserir URL real]` ou `[inserir número real]`.
-- Use CSS moderno (Grid, Flexbox, Custom Properties) para layout responsivo sem frameworks.
-- Mantenha JavaScript mínimo e focado em funcionalidades essenciais (validação, redirecionamentos).
+**Technology Stack**: Astro, HTML, vanilla CSS, pure JavaScript, hosted on Vercel's free plan.
+
+## 🎯 Business Requirements
+
+### Target Audience
+- **Demographics**: Ages 40-70 interested in fitness, primarily mobile users
+- **Language**: Brazilian Portuguese speakers
+- **Location**: Vila Velha, Espírito Santo, Brazil - specifically Praia da Costa, Praia de Itaparica, Praia de Itapuã/Itapoã, Itapuã/Itapoã, Coqueiral, and Residencial Coqueiral areas
+- **Device Usage**: 70% mobile, 25% desktop, 5% tablet traffic expected
+- **Goals**: Personalized online workouts for weight loss, muscle gain, health maintenance, and active aging
+- **Product**: Personalized workouts on MFit app with Charles's guidance
+- **Mobile Context**: Quick decisions, on-the-go browsing, touch interactions
+- **Local Context**: Beach community lifestyle, health-conscious mature adults seeking convenient fitness solutions
+- **Cultural Context**: Brazilian fitness culture, local beach lifestyle preferences
+
+### Conversion Funnel Objectives
+1. **Lead Capture**: Form handling (name, email, phone) with client-side validation and WhatsApp redirect
+2. **Primary CTA**: Direct to MFit page: `https://client.mfitpersonal.com.br/out/signup-link/ODY5NTY=`
+3. **Secondary CTA**: WhatsApp redirect: `+55 27 99622-4175` with personalized message including form data
+4. **Social Engagement**: Instagram promotion: `@charlestonpersonaltrainer`
+5. **Optimization**: Maximize conversion with design, copywriting, and clear CTAs
+
+### Brand Guidelines
+- **Tone**: Motivational, professional, respectful (appropriate for 40-70 age group)
+- **Language**: Brazilian Portuguese throughout all content
+- **Messaging**: "Transforme sua vida!", "Comece agora!" (Transform your life!, Start now!)
+- **Colors**: Blue (trust, reliability), green (health, vitality)
+- **Design**: Mobile-first, clean, workout imagery featuring mature adults, accessible interactions
+- **Mobile UX**: Extra-large touch targets (min 48px for older users), easy scrolling, minimal typing
+- **Accessibility**: High contrast, readable fonts, intuitive navigation for mature users
+- **Cultural Sensitivity**: Brazilian fitness culture awareness, local community values
+
+## 🛠️ Technical Specifications
+
+### Technology Stack
+| Component | Technology | Purpose |
+|-----------|------------|---------|
+| Framework | Astro (SSG) | Static site generation |
+| Markup | HTML | Structure |
+| Styling | Vanilla CSS | Custom responsive design |
+| Scripting | TypeScript | Form handling and interactions with type safety |
+| Hosting | Vercel (free) | Static hosting |
+
+### Performance Requirements
+- ✅ Mobile-first design optimized for mature users (40-70)
+- ✅ Touch-optimized interactions (min 48px touch targets for accessibility)
+- ✅ Fast mobile loading (< 3s on 3G networks common in Brazil)
+- ✅ Responsive images with mobile optimization
+- ✅ SEO optimized with mobile-friendly meta tags and local Vila Velha keywords
+- ✅ Static page with minimal JavaScript for reliability
+- ✅ Modern CSS (Grid, Flexbox, Custom Properties) with accessibility focus
+
+### CSS Architecture
+- ✅ Mobile-first CSS with progressive enhancement
+- ✅ Design token system with CSS custom properties
+- ✅ Component-based CSS structure optimized for mobile
+- ✅ Touch-friendly utility classes and interactions
+- ✅ Consistent mobile breakpoint system
+
+## 📋 Development Tasks
+
+### Task 1: Process Documentation
+Create comprehensive documentation covering:
+
+#### 1.1 Sales Strategy Documentation
+- Visitor journey mapping (awareness → interest → action)
+- Conversion funnel optimization strategies
+- Lead nurturing and follow-up processes
+
+#### 1.2 Design System Documentation
+- Mobile-first design principles for mature Brazilian Portuguese speakers (40-70)
+- Color palette optimized for mobile displays and age-related vision considerations
+- Typography hierarchy (larger, readable fonts for mature audience, Portuguese text optimization)
+- Touch-friendly component design patterns with accessibility focus
+- Image strategy (responsive, mobile-optimized Charles training photos with local Vila Velha settings)
+- CTA placement optimized for thumb navigation and older user comfort
+- CSS architecture and design token system
+- Brazilian Portuguese content structure and readability guidelines
+
+#### 1.3 Technical Integration Documentation
+- Form handling with client-side validation and WhatsApp integration
+- Redirect mechanisms (WhatsApp with form data, Instagram, MFit)
+- Analytics implementation (Google Analytics)
+- SEO optimization checklist
+
+#### 1.4 Conversion Optimization Documentation
+- Copywriting guidelines and examples in Brazilian Portuguese
+- Offer strategies (free MFit trial) with Brazilian market considerations
+- A/B testing recommendations for Portuguese content
+- Performance metrics tracking
+- Cultural adaptation strategies for Brazilian fitness market
+
+**Deliverable**: `PROCESS.md` with sections: Planning, Design, Development, Testing, Deploy
+
+### Task 2: Project Architecture
+Create modular Astro project structure:
+
+```
+├── astro.config.mjs          # Basic Astro configuration
+├── package.json              # Minimal dependencies and scripts
+├── tsconfig.json             # TypeScript configuration
+├── src/
+│   ├── styles/
+│   │   └── global.css        # Global and responsive styles
+│   ├── scripts/
+│   │   └── main.ts           # Form validation and interactions (TypeScript)
+│   ├── components/
+│   │   ├── Header.astro      # Navigation with title and tagline
+│   │   ├── Hero.astro        # Primary CTA section
+│   │   ├── FormSection.astro # Lead capture form
+│   │   ├── SocialSection.astro # WhatsApp and Instagram links
+│   │   └── Footer.astro      # Copyright and legal
+│   └── pages/
+│       └── index.astro       # Main landing page
+```
+
+**TypeScript Requirements**:
+- Mobile-first form validation with type safety
+- Touch-optimized interactions with typed event handlers
+- WhatsApp redirect with strongly-typed message data structure
+- Mobile analytics event tracking with typed event parameters
+- Progressive enhancement approach with type definitions
+- Interface definitions for form data, validation rules, and API responses
+
+### Task 3: Code Documentation Standards
+
+#### 3.1 Inline Comment Requirements
+For each file, include comments explaining:
+- **Purpose**: File/component function in conversion funnel
+- **Structure**: Section-by-section breakdown
+- **Sales Impact**: How code contributes to lead generation
+- **Technical Details**: Configuration specifics (WhatsApp integration, CSS design tokens, CSS Grid, etc.)
+- **Language Notes**: Brazilian Portuguese content considerations and implementation
+
+#### 3.2 Comment Audience
+- **Primary**: Developers (technical implementation)
+- **Secondary**: Marketing team (business impact)
+- **Tertiary**: Client (project understanding)
+
+#### 3.3 Comment Format
+```typescript
+/**
+ * BUSINESS PURPOSE: [How this contributes to conversion]
+ * TECHNICAL PURPOSE: [What this code does]
+ * DEPENDENCIES: [External services, APIs, etc.]
+ * TYPE DEFINITIONS: [Custom types and interfaces used]
+ * NOTE: All comments, variables, and function names must be in English
+ */
+```
+
+### Code Naming Conventions
+#### JavaScript/TypeScript
+- **Variables**: camelCase (`userName`, `isFormValid`, `submitButtonElement`)
+- **Constants**: SCREAMING_SNAKE_CASE (`WHATSAPP_NUMBER`, `FORM_SUBMIT_URL`, `MAX_NAME_LENGTH`)
+- **Functions**: camelCase verbs (`validateEmail`, `redirectToWhatsapp`, `trackFormSubmission`)
+- **Classes**: PascalCase (`FormValidator`, `WhatsappRedirect`, `ConversionTracker`)
+- **Objects**: camelCase (`formData`, `validationRules`, `userPreferences`)
+- **Types/Interfaces**: PascalCase (`FormData`, `ValidationRule`, `WhatsappConfig`)
+- **Type Parameters**: Single uppercase letter (`T`, `K`, `V`)
+- **Enums**: PascalCase (`FormStatus`, `ValidationError`, `EventType`)
+
+#### CSS
+- **Components**: kebab-case with BEM (`form-section`, `cta-button`, `hero-section`)
+- **Modifiers**: BEM double dash (`cta-button--primary`, `form-section--mobile`)
+- **Elements**: BEM double underscore (`form-section__input`, `cta-button__text`)
+- **Utilities**: prefix with `u-` (`u-margin-top`, `u-hide-mobile`, `u-text-center`)
+- **JavaScript hooks**: prefix with `js-` (`js-form-submit`, `js-whatsapp-redirect`)
+
+#### HTML
+- **IDs**: camelCase (`heroSection`, `contactForm`, `submitButton`)
+- **Classes**: kebab-case BEM methodology
+- **Data attributes**: kebab-case (`data-form-field`, `data-tracking-event`)
+
+#### File Naming
+- **Components**: PascalCase (`Header.astro`, `FormSection.astro`, `CTAButton.astro`)
+- **Pages**: lowercase (`index.astro`, `thank-you.astro`)
+- **Styles**: kebab-case (`design-system.css`, `form-components.css`)
+- **Scripts**: kebab-case (`form-validation.ts`, `analytics-tracking.ts`)
+- **Types**: kebab-case (`form-types.ts`, `analytics-types.ts`)
+
+#### Content Variables
+Even when storing Portuguese content, use English variable names with proper TypeScript typing:
+```typescript
+// ✅ Correct - with TypeScript types
+const heroTitle: string = "Transforme sua vida com treinos personalizados";
+const ctaButtonText: string = "Comece Agora";
+const successMessage: string = "Obrigado! Entraremos em contato em breve.";
+
+// Better - with interface
+interface ContentStrings {
+  heroTitle: string;
+  ctaButtonText: string;
+  successMessage: string;
+}
+
+const content: ContentStrings = {
+  heroTitle: "Transforme sua vida com treinos personalizados",
+  ctaButtonText: "Comece Agora",
+  successMessage: "Obrigado! Entraremos em contato em breve."
+};
+
+// ❌ Incorrect
+const tituloHero = "Transforme sua vida com treinos personalizados";
+const textoBotaoCTA = "Comece Agora";
+const mensagemSucesso = "Obrigado! Entraremos em contato em breve.";
+```
+
+### Task 4: Documentation Architecture
+
+#### 4.1 Component Documentation
+For each `.astro` file, create corresponding `.md` file:
+
+**Template Structure**:
+```markdown
+# [Component Name]
+
+## Purpose
+[Business and technical purpose]
+
+## Structure
+[Component breakdown]
+
+## Sales Contribution
+[Conversion impact]
+
+## Technical Notes
+[Implementation details]
+
+## Dependencies
+[External services, imports]
+```
+
+#### 4.2 File Organization
+```
+src/components/
+├── Header.astro
+├── Header.astro.md
+├── Hero.astro
+├── Hero.astro.md
+└── [...other components]
+```
+
+### Task 5: Quality Assurance
+
+#### 5.1 Code Quality Standards
+- [ ] Semantic HTML structure optimized for mobile
+- [ ] Touch-accessible form design (44px+ touch targets)
+- [ ] Mobile-first responsive CSS approach
+- [ ] TypeScript implementation with strict type checking for error prevention
+- [ ] Mobile SEO optimization compliance
+- [ ] CSS design token usage for consistent mobile experience
+- [ ] Component-based CSS architecture with mobile priority
+- [ ] **English-only code**: All variables, constants, functions, and comments in English
+- [ ] **Consistent naming**: Follow established camelCase/kebab-case/SCREAMING_SNAKE_CASE patterns
+- [ ] **BEM CSS methodology**: Component-based CSS class naming in English
+- [ ] **TypeScript standards**: Proper type definitions, interfaces, and error handling
+
+#### 5.2 Performance Benchmarks
+- [ ] Mobile Lighthouse score > 90 (optimized for Brazilian mobile networks)
+- [ ] First Contentful Paint < 2s on mobile in Brazil
+- [ ] Cumulative Layout Shift < 0.1 on mobile devices
+- [ ] Touch target minimum 48px compliance (accessibility for 40-70 age group)
+- [ ] WhatsApp redirect success rate tracking on mobile
+- [ ] Portuguese language content optimization
+
+#### 5.3 Conversion Optimization
+- [ ] Clear value proposition visible in mobile viewport
+- [ ] Friction-free mobile form design (minimal typing)
+- [ ] Thumb-friendly CTAs throughout the page
+- [ ] Mobile-optimized social proof integration
+- [ ] Touch-optimized mobile conversion flow
+
+## 📦 Expected Deliverables
+
+### Primary Deliverables
+| Deliverable | Description | Location |
+|-------------|-------------|----------|
+| `PROCESS.md` | Complete development process documentation | Root directory |
+| Project Files | Astro components with inline comments | `src/` directory |
+| Documentation | `.md` files for each component | Alongside components |
+| Setup Guide | Installation and run instructions | `PROCESS.md` |
+
+### Documentation Structure
+```
+├── PROCESS.md                    # Main process documentation
+├── tsconfig.json                 # TypeScript configuration
+├── src/
+│   ├── components/
+│   │   ├── Header.astro         # Component files
+│   │   ├── Header.astro.md      # Component documentation
+│   │   └── [...other components]
+│   ├── pages/
+│   │   ├── index.astro
+│   │   └── index.astro.md
+│   ├── scripts/
+│   │   ├── main.ts              # TypeScript files
+│   │   └── types/
+│   │       └── form-types.ts    # Type definitions
+│   └── styles/
+│       ├── global.css
+│       └── global.css.md
+```
+
+### Quality Checklist
+- [ ] All files have comprehensive inline comments (including Portuguese content notes)
+- [ ] Each component has corresponding `.md` documentation
+- [ ] Business impact clearly explained for marketing team
+- [ ] Technical implementation documented for developers
+- [ ] Setup and deployment instructions included
+- [ ] Performance optimization notes provided
+- [ ] CSS architecture follows design token system
+- [ ] Components use established naming conventions
+- [ ] Brazilian Portuguese content properly implemented and optimized
+- [ ] Cultural sensitivity and local market adaptation verified
+- [ ] **Code language compliance**: All variables, constants, functions, and comments in English
+- [ ] **Naming pattern consistency**: camelCase for JS variables/functions, kebab-case for CSS, SCREAMING_SNAKE_CASE for constants
+- [ ] **BEM methodology**: CSS classes follow English BEM naming patterns
+
+## ⚙️ Development Guidelines
+
+### Content Strategy
+- **Value Proposition**: Clear fitness transformation messaging for mature Brazilian adults (40-70)
+- **Social Proof**: Testimonials and success stories from local Vila Velha community in Portuguese
+- **Urgency**: Health-focused motivation rather than time-limited offers, culturally appropriate for Brazilian market
+- **Trust Signals**: Professional certifications, experience with mature clients, local presence
+- **Local Connection**: Emphasize understanding of beach community lifestyle and local fitness needs
+- **Cultural Relevance**: Brazilian fitness culture integration, local community values
+
+### Copywriting Framework
+- **Headlines**: Age-appropriate, health-focused messaging for 40-70 demographic in Brazilian Portuguese
+- **Body Copy**: Mature, respectful tone addressing health maintenance and active aging in Portuguese
+- **CTAs**: Clear, accessible action verbs in Portuguese ("Comece Seu Treino" - Start Your Workout, "Transforme Sua Vida" - Transform Your Life)
+- **Form Fields**: Simple, minimal friction design with Portuguese labels and placeholders
+- **Language**: Natural Brazilian Portuguese with local Vila Velha cultural references and expressions
+- **Cultural Adaptation**: Brazilian communication style, respectful formality level for mature audience
+
+### SEO Requirements
+- **Meta Tags**: Mobile-optimized title, description, viewport meta tag in Portuguese
+- **Local SEO**: Vila Velha, Espírito Santo location optimization with Portuguese keywords
+- **Schema Markup**: Local business and personal trainer service markup in Portuguese
+- **Image Optimization**: Responsive images, WebP format, mobile-first sizing with Portuguese alt text
+- **URL Structure**: Clean, descriptive URLs (consider Portuguese URL structure)
+- **Mobile Performance**: Core Web Vitals optimization
+- **Portuguese Language**: Content fully optimized for Brazilian Portuguese audience and search patterns
+- **Brazilian Search Behavior**: Local search terms and phrases commonly used in Brazil
+
+### Analytics Tracking
+- **Events**: Form interactions, CTA clicks, page engagement, WhatsApp redirects
+- **Goals**: Lead data capture, MFit redirects, social follows
+- **Funnels**: Visitor journey from landing to WhatsApp conversion
+
+## 🔧 Technical Implementation Notes
+
+### Form Integration Options
+1. **Client-side handling**: TypeScript-based form validation and WhatsApp redirect with type-safe data structures
+2. **Analytics tracking**: Strongly-typed form interaction events and conversion funnels
+3. **Progressive enhancement**: Works without JavaScript, enhanced with TypeScript for better reliability
+
+### Responsive Design Strategy
+- **Mobile-first**: Design and code for mobile, then enhance for larger screens
+- **Breakpoints**: 320px (small mobile), 375px (mobile), 768px (tablet), 1024px (desktop), 1440px (large desktop)
+- **Touch Targets**: Minimum 48px for all interactive elements (accessibility for mature users)
+- **Typography**: Larger, readable mobile-first font sizes for 40-70 age group
+- **Images**: Mobile-optimized loading with responsive srcset, featuring local Vila Velha settings
+- **Performance**: Minimize mobile data usage for Brazilian mobile networks
+- **Accessibility**: High contrast ratios, clear navigation for mature users
+
+## 🎨 CSS Architecture Guidelines
+
+### Current CSS Structure
+This project uses a mobile-first, design token-based CSS architecture with:
+- Single CSS file: `src/styles/global.css` (mobile-first approach)
+- CSS custom properties optimized for mobile performance
+- Component-based structure with mobile-priority utility classes
+- Progressive enhancement from mobile to desktop
+- Touch-optimized interactions and spacing
+
+### CSS Code Review Checklist
+
+When reviewing or modifying CSS in this project, ensure:
+
+#### File Organization
+- [ ] CSS changes maintain the current token-based system
+- [ ] New styles follow existing naming patterns
+- [ ] Component styles are grouped logically
+- [ ] Utility classes remain single-purpose
+- [ ] TypeScript integration for CSS-in-JS or type-safe style handling (if applicable)
+
+#### Design Tokens
+- [ ] Use existing custom properties before creating new ones
+- [ ] Follow the established color naming convention (`--color-*`)
+- [ ] Maintain spacing scale consistency (`--space-*`)
+- [ ] Typography tokens are used appropriately
+
+#### Responsive Design
+- [ ] Mobile-first CSS implementation (base styles for mobile)
+- [ ] Progressive enhancement for larger screens
+- [ ] Breakpoints use mobile-priority values (320px, 375px, 768px, 1024px, 1440px)
+- [ ] Touch targets minimum 48px compliance (accessibility for 40-70 age group)
+- [ ] Mobile-optimized typography and spacing for mature users
+- [ ] Responsive utilities prioritize mobile experience
+- [ ] High contrast and readable design for age-related vision considerations
+
+### CSS Implementation Standards
+
+#### Component CSS Template
+```css
+/* Mobile-first component template */
+.c-component-name {
+  /* Mobile base styles using design tokens */
+  color: var(--color-text-primary);
+  padding: var(--space-md);
+  min-height: 48px; /* Touch target compliance for mature users */
+  
+  /* Mobile interaction states */
+  &:hover, &:focus {
+    /* Touch-friendly feedback */
+  }
+  
+  &.is-active {
+    /* Mobile active state */
+  }
+}
+
+/* Progressive enhancement for larger screens */
+@media (min-width: 768px) {
+  .c-component-name {
+    /* Tablet+ enhancements */
+    padding: var(--space-lg);
+  }
+}
+
+@media (min-width: 1024px) {
+  .c-component-name {
+    /* Desktop+ enhancements */
+  }
+}
+
+/* Modifiers */
+.c-component-name--variant {
+  /* Mobile-first variant styles */
+}
+
+/* Elements */
+.c-component-name__element {
+  /* Mobile-first element styles */
+}
+```
+
+#### Utility Class Pattern
+```css
+/* Mobile-first utility patterns */
+.u-margin-top-{size} {
+  margin-top: var(--space-{size});
+}
+
+/* Touch-friendly spacing utilities */
+.u-touch-target {
+  min-height: 48px; /* Accessibility for mature users */
+  min-width: 48px;
+}
+
+/* Mobile-optimized logical properties */
+.u-padding-inline-{size} {
+  padding-inline: var(--space-{size});
+}
+
+/* Responsive display utilities */
+.u-hide-mobile {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .u-hide-mobile {
+    display: block;
+  }
+  
+  .u-hide-desktop {
+    display: none;
+  }
+}
+```
+
+#### Media Query Structure
+```css
+/* Mobile-first progressive enhancement */
+.component {
+  /* Base mobile styles (320px+) */
+  font-size: var(--font-size-sm);
+  padding: var(--space-sm);
+}
+
+/* Small mobile optimization */
+@media (min-width: 375px) {
+  .component {
+    /* Enhanced mobile styles */
+    font-size: var(--font-size-md);
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 768px) {
+  .component {
+    /* Tablet+ enhancements */
+    padding: var(--space-md);
+    display: flex;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .component {
+    /* Desktop+ enhancements */
+    padding: var(--space-lg);
+  }
+}
+
+/* Large desktop */
+@media (min-width: 1440px) {
+  .component {
+    /* Large screen optimizations */
+    max-width: 1200px;
+    margin-inline: auto;
+  }
+}
+```
+
+### Design Token Reference
+
+#### Color System
+- `--color-primary-*`: Main brand colors (blues)
+- `--color-secondary-*`: Secondary brand colors (greens)
+- `--color-text-*`: Text colors (light/dark)
+- `--color-bg-*`: Background colors
+- `--color-border-*`: Border colors
+
+#### Spacing Scale
+- `--space-xs` through `--space-3xl`: Mobile-optimized spacing scale
+- Use for padding, margin, and gap properties
+- Base scale: 0.25rem increments optimized for touch interfaces
+- Mobile-priority sizing with comfortable touch targets
+
+#### Typography Tokens
+- `--font-family-*`: Font stacks (system fonts optimized for Portuguese text readability by mature users)
+- `--font-size-*`: Mobile-first type scale with larger base sizes for 40-70 age group, optimized for Portuguese text
+- `--font-weight-*`: Font weights optimized for mobile screens and Portuguese character readability
+- `--line-height-*`: Line height values for comfortable reading of Portuguese text by mature users
+
+### CSS Naming Conventions
+- **Components**: `.c-component-name` (English kebab-case)
+- **Utilities**: `.u-utility-name` (English kebab-case)
+- **JavaScript hooks**: `.js-hook-name` (English kebab-case)
+- **State classes**: `.is-state` or `.has-state` (English state descriptors)
+- **BEM Elements**: `.component-name__element` (English descriptors)
+- **BEM Modifiers**: `.component-name--modifier` (English descriptors)
+
+### CSS Performance Guidelines
+- [ ] Mobile-first CSS loading strategy
+- [ ] Avoid duplicate CSS rules across breakpoints
+- [ ] Minimize specificity conflicts
+- [ ] Use efficient selectors optimized for mobile parsing
+- [ ] Leverage CSS custom properties for mobile theming
+- [ ] Optimize images and minimize CSS/JS payload for mobile networks
+- [ ] Critical CSS inlining for mobile performance
+
+### CSS Quality Standards
+- [ ] Mobile-first design token usage over hardcoded values
+- [ ] Progressive enhancement CSS from mobile to desktop
+- [ ] Document complex calculations and mobile-specific optimizations
+- [ ] Prefer CSS logical properties for Brazilian Portuguese text internationalization
+- [ ] Use meaningful class names describing mobile interaction patterns
+- [ ] Touch-friendly interaction states and feedback
+- [ ] Mobile accessibility compliance (WCAG 2.1 AA)
+- [ ] Portuguese text rendering optimization (font choices, spacing, line breaks)
+- [ ] **English naming**: All CSS classes, custom properties, and comments in English
+- [ ] **BEM consistency**: Follow established English BEM methodology patterns
+- [ ] **Naming pattern compliance**: kebab-case for all CSS identifiers
+
+## 🚀 Project Setup Instructions
+
+### Development Environment
+```bash
+# Clone and setup
+npm install
+
+# Development server
+npm run dev
+
+# Production build
+npm run build
+
+# Preview build
+npm run preview
+```
+
+### Required Dependencies
+- `astro`: Static site generator
+- `@astrojs/sitemap`: SEO sitemap generation
+- `typescript`: Type checking and error prevention
+- `@types/node`: Node.js type definitions
+- Minimal external dependencies for performance
+
+## 📋 Maintenance Guidelines
+
+### Regular Updates
+- [ ] Update contact information as needed
+- [ ] Refresh testimonials and success stories
+- [ ] Monitor WhatsApp redirect rates
+- [ ] Update conversion tracking
+- [ ] Review and optimize copy performance
+- [ ] Maintain CSS design token consistency
+- [ ] Update component documentation
+
+### Performance Monitoring
+- [ ] Mobile-first Lighthouse audits
+- [ ] WhatsApp redirect conversion tracking on mobile devices
+- [ ] Mobile page load speed monitoring (3G networks)
+- [ ] Touch usability testing across device sizes
+- [ ] CSS performance optimization for mobile
+- [ ] Design token usage consistency across breakpoints
+- [ ] Mobile Core Web Vitals tracking
+
+---
+
+## 📝 Prompt Maintenance Log
+
+| Version | Date | Changes | Maintainer |
+|---------|------|---------|------------|
+| 2.7 | 2025-07-09 | Updated to use TypeScript instead of JavaScript for better error tracking and type safety | Development Team |
+| 2.6 | 2025-07-09 | Added English-only code requirements and comprehensive naming conventions | Development Team |
+| 2.5 | 2025-07-09 | Emphasized Brazilian Portuguese speaking target audience throughout all sections | Development Team |
+| 2.4 | 2025-07-09 | Updated target audience to 40-70 years, Vila Velha location, accessibility improvements | Development Team |
+| 2.3 | 2025-07-09 | Enhanced mobile-first approach throughout all sections | Development Team |
+| 2.2 | 2025-07-09 | Integrated CSS architecture guidelines | Development Team |
+| 2.1 | 2025-07-09 | Removed Formspree/Netlify, focus on client-side form handling | Development Team |
+| 2.0 | 2025-07-09 | Restructured for maintainability, added modular sections | Development Team |
+| 1.0 | 2025-07-09 | Initial English translation from Portuguese | Development Team |
+
+### Update Guidelines
+- **Version Control**: Increment version number for major changes
+- **Change Documentation**: Log all modifications in maintenance log
+- **Stakeholder Review**: Marketing and development team approval for changes
+- **Testing**: Validate prompt effectiveness with sample implementations

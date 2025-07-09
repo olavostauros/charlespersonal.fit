@@ -6,14 +6,15 @@ import Hero from '../components/Hero.astro';
 import Services from '../components/Services.astro';
 import About from '../components/About.astro';
 import Testimonials from '../components/Testimonials.astro';
+import FormSection from '../components/FormSection.astro';
 import CTASection from '../components/CTASection.astro';
 import Footer from '../components/Footer.astro';
 ---
 
 <Layout
-  title="Charles Personal | Transforme Seu Corpo em 90 Dias - Personal Trainer Vitória ES"
-  description="Transforme seu corpo em 90 dias com Charles Personal! Treinos personalizados no MFit, suporte 24/7 via WhatsApp. +200 clientes transformados. Personal trainer em Vitória/ES com método comprovado."
-  keywords="personal trainer vitória, treinos personalizados, emagrecimento, ganho muscular, fitness vitória, MFit, Charles Personal, treino online, transformação corporal, 90 dias"
+  title="Charles Personal | Transforme Seu Corpo em 90 Dias - Personal Trainer Vila Velha ES"
+  description="Transforme seu corpo em 90 dias com Charles Personal! Treinos personalizados no MFit para adultos 40-70 anos em Vila Velha. +200 clientes transformados. Suporte 24/7 via WhatsApp. Comece agora!"
+  keywords="personal trainer vila velha, treinos personalizados, emagrecimento adultos, ganho muscular 40 anos, fitness vila velha, MFit app, Charles Personal, treino online, transformação corporal 90 dias, praia da costa, itaparica, coqueiral"
   ogImage="/images/charles-hero.jpg"
 >
   <Header slot="header" />
@@ -29,6 +30,9 @@ import Footer from '../components/Footer.astro';
   
   <!-- Testimonials Section -->
   <Testimonials />
+  
+  <!-- Contact Form Section -->
+  <FormSection />
   
   <!-- CTA Section -->
   <CTASection />
@@ -69,3 +73,14 @@ import Footer from '../components/Footer.astro';
   
   <Footer slot="footer" />
 </Layout>
+
+<!-- 
+  BUSINESS PURPOSE: TypeScript-based conversion tracking and form validation
+  TECHNICAL PURPOSE: Type-safe event tracking and form handling for improved reliability
+  CONVERSION IMPACT: Reduced errors and improved user experience increases conversion rates
+-->
+<script>
+  if (typeof window !== 'undefined') {
+    import('../scripts/main.ts');
+  }
+</script>
